@@ -41,7 +41,7 @@ h3 {
 @media only screen and (max-width: 460px) {
     h1 {
         font-size: 1.6rem;
-        letter-spacing: -0.04rem;
+        letter-spacing: -0.05rem;
     }
 
     h2 {
