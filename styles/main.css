@@ -9,6 +9,7 @@ h1 {
 @media only screen and (max-width: 750px) {
     h1 {
         font-size: 3rem;
+        letter-spacing: -0.15rem;
     }
 }
 
