@@ -42,10 +42,10 @@ hr {
 h1 {
     color: var(--color-header);
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     letter-spacing: -0.15rem;
-    padding: 2.5em 40px 0 40px;
+    padding: 3em 40px 0 40px;
 }
 
 h2 {
