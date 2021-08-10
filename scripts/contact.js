@@ -1,4 +1,19 @@
-function submitForm() {
+const cBase = [
+    ["A dog is an ...", "animal"],
+    ["6 * 2 + 1 = ", "13"],
+    ["88 + 0.5 = ", "88.5"],
+    ["7 / 2 = ", "3.5"],
+    ["0 * 5 + 7 = ", "7"],
+];
+
+let answer = "";
+
+function submitForm(e) {
+    e.preventDefault();
+
+    const cForm = document.querySelector("#form-wrapper #form-c");
+    const cLabel = document.querySelector("#form-wrapper #form-c-label");
+
     let emailForm = document.querySelector("#form-email");
     let messageForm = document.querySelector("#form-message");
 
@@ -7,7 +22,7 @@ function submitForm() {
 
     let valid = true;
 
-    if (emailForm.value === "" || !validateEmail(emailForm.value)) {
+    if (!emailForm.value || !validateEmail(emailForm.value)) {
         emailForm.style.borderColor = "var(--color-error)"
         emailLabel.style.color = "var(--color-error)";
         valid = false;
@@ -16,13 +31,22 @@ function submitForm() {
         emailLabel.style.color = "var(--color-header)";
     }
 
-    if (messageForm.value === "") {
+    if (!messageForm.value) {
         messageForm.style.borderColor = "var(--color-error)"
         messageLabel.style.color = "var(--color-error)";
         valid = false;
     } else {
         messageForm.style.borderColor = "var(--color-dark-gray)";
         messageLabel.style.color = "var(--color-header)";
+    }
+
+    if (!cValidate()) {
+        cForm.style.borderColor = "var(--color-error)";
+        cLabel.style.color = "var(--color-error)";
+        valid = false;
+    } else {
+        cForm.style.borderColor = "var(--color-dark-gray)";
+        cLabel.style.color = "var(--color-dark-gray)";
     }
 
     if (!valid) return;
@@ -38,7 +62,7 @@ function submitForm() {
             Subject: `${email} has contacted you!`,
             Body: `You have a new message from ${email}<br>${message}`
         }).then(
-            successfulContact(emailForm, messageForm)
+            successfulContact(emailForm, messageForm, cForm)
         );
 
     } catch (error) {
@@ -52,18 +76,39 @@ function validateEmail(email) {
     return pattern.test(email);
 }
 
-function successfulContact(emailForm, messageForm) {
+function cGenerate() {
+    const cInput = document.getElementById("form-c");
+
+    const seed = cBase.indexOf(cBase[cBase.length * Math.random() | 0]);
+    const question = cBase[seed][0];
+    answer = cBase[seed][1];
+
+    console.log(question);
+    console.log(answer);
+
+    cInput.placeholder = question;
+}
+
+function cValidate() {
+    const cInput = document.querySelector("#form-wrapper #form-c");
+    return cInput.value && cInput.value.toLowerCase() === answer;
+}
+
+function successfulContact(emailForm, messageForm, cForm) {
     emailForm.value = "";
     messageForm.value = "";
+    cForm.value = "";
 
     emailForm.style.display = "none";
     messageForm.style.display = "none";
+    cForm.style.display = "none";
 
     document.querySelector(".contact-body h1").textContent = "✅";
     document.querySelector("#form-wrapper #form-email-label").style.display = "none";
     document.querySelector("#form-wrapper #form-message-label").style.display = "none";
+    document.querySelector("#form-wrapper #form-c-label").style.display = "none";
 
-    const button = document.querySelector("#form-wrapper .g-recaptcha");
+    const button = document.querySelector("#form-wrapper .form-button");
     button.textContent = "Message sent! We will get in touch with you shortly.";
     button.style.color = "var(--color-header-accent)";
     button.style.background = "var(--color-border)";
@@ -74,4 +119,9 @@ function successfulContact(emailForm, messageForm) {
         e.preventDefault();
         return false;
     })
+}
+
+window.onload = function () {
+    document.querySelector("#form-wrapper .form-button").addEventListener("click", submitForm);
+    cGenerate();
 }

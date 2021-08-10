@@ -10,12 +10,6 @@
     <script src="scripts/app.js"></script>
     <script src="scripts/contact.js"></script>
     <script src="scripts/nav-bar.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-    <script>
-        function onSubmit(token) {
-            submitForm();
-        }
-    </script>
     <title>Contact // Futureblur</title>
 </head>
 <body>
@@ -38,15 +32,15 @@
 <div class="contact-body">
     <h1>Contact</h1>
     <div id="form-wrapper">
-        <form>
+        <form action="">
             <label id="form-email-label">Email</label>
             <input type="email" id="form-email" name="Email" placeholder="example@gmail.com" required>
             <label id="form-message-label">Message</label>
             <textarea id="form-message" name="Message" placeholder="How can we help you?" required></textarea>
-            <!--            <label>You can also reach me through Discord: Futureblur#9395</label>-->
-            <button class="g-recaptcha" data-sitekey="6LfWdvAbAAAAALHy1D09ehxYa51xCnN--LBO6F9T"
-                    data-callback='onSubmit'>Submit
-            </button>
+            <label id="form-c-label">Captcha</label>
+            <input type="email" id="form-c" name="Captcha"
+                   placeholder="If the question doesn't load please enable javascript in your browser." required>
+            <button class="form-button">Submit</button>
         </form>
     </div>
 </div>
