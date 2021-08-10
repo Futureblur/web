@@ -147,7 +147,7 @@ figcaption {
     box-shadow: inset 0 -1px 0 0 var(--color-border);
 
     width: 100%;
-    padding: 15px 0;
+    padding: 12px 0;
     position: fixed;
     z-index: 10;
     top: 0;
@@ -160,7 +160,7 @@ figcaption {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 1100px;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
 #nav-bar .nav-bar-left {
@@ -170,8 +170,9 @@ figcaption {
 }
 
 #nav-bar img {
+    content: url("../img/logos/futureblur-logo-full.png");
     margin-left: 25px;
-    height: 50px;
+    height: 48px;
     image-rendering: -webkit-optimize-contrast;
     transition: 150ms;
 }
@@ -235,6 +236,15 @@ figcaption {
 }
 
 @media only screen and (max-width: 580px) {
+    #nav-bar-wrapper {
+        padding: 5px 0;
+    }
+
+    #nav-bar-wrapper img {
+        height: 42px;
+        margin-left: 0;
+    }
+
     #nav-bar .nav-bar-right {
         display: none;
         flex-direction: column;

@@ -26,12 +26,14 @@ const navSlide = () => {
 
 window.addEventListener("load", function () {
     navSlide();
+
+    //document.addEventListener('scroll', scrollEvent);
 });
 
 //Hide when scrolling down
 let lastScroll = window.pageYOffset;
 
-window.onscroll = function () {
+function scrollEvent() {
     const currentScroll = window.pageYOffset;
 
     if (lastScroll > currentScroll) {
