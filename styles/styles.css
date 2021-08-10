@@ -329,6 +329,7 @@ figcaption {
     #nav-bar .nav-bar-right.active {
         display: flex;
         animation: nav-bar-slide 700ms cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+        margin-top: -15px;
     }
 
     @keyframes nav-bar-slide {
