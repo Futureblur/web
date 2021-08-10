@@ -29,9 +29,6 @@ function submitForm(e) {
 
     if (!valid) return;
 
-    console.log("sent message");
-    successfulContact(emailForm, messageForm);
-    return;
     let email = emailForm.value;
     let message = messageForm.value;
 
