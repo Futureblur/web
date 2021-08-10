@@ -237,11 +237,11 @@ figcaption {
 
 @media only screen and (max-width: 580px) {
     #nav-bar-wrapper {
-        padding: 5px 0;
+        padding: 4px 0;
     }
 
     #nav-bar-wrapper img {
-        height: 42px;
+        height: 38px;
         margin-left: 0;
     }
 
