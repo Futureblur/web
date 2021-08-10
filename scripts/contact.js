@@ -78,10 +78,6 @@ function successfulContact(emailForm, messageForm) {
     })
 }
 
-function onSubmit(token) {
-    submitForm();
-}
-
 window.addEventListener("load", function () {
     // document.querySelector("#form-wrapper .button").addEventListener("click", submitForm);
 });
