@@ -70,7 +70,7 @@ p {
 }
 
 .p-margin-top {
-    margin-top: 150px;
+    margin-top: 130px;
 }
 
 a {
@@ -95,6 +95,18 @@ figcaption {
     font-size: 0.8rem;
     margin-top: 20px;
     padding: var(--min-padding);
+}
+
+.img-responsive-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.img-responsive {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    margin: auto;
 }
 
 .btn {

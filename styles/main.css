@@ -69,22 +69,8 @@ h1 {
     margin-bottom: 280px;
 }
 
-#projects #projects-art-img {
-    background-image: url("../img/crystal-render.png");
-    max-height: 500px;
-    min-height: 220px;
+#projects .img-responsive {
     max-width: 900px;
-    margin: auto;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-@media only screen and (max-width: 900px) {
-    #projects #projects-art-img {
-        margin: var(--min-padding);
-    }
 }
 
 #about {
