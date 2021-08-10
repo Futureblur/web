@@ -63,6 +63,8 @@ h2 {
 p {
     font-size: 0.9rem;
     letter-spacing: -0.02rem;
+    line-height: 1.4rem;
+
     color: var(--color-p);
     max-width: 750px;
     margin: auto;
@@ -264,6 +266,7 @@ figcaption {
 @media only screen and (max-width: 580px) {
     p {
         font-size: 0.8rem;
+        line-height: 1.2rem;
     }
 
     a {
