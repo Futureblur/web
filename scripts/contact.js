@@ -1,6 +1,4 @@
 function submitForm() {
-    // e.preventDefault();
-
     let emailForm = document.querySelector("#form-email");
     let messageForm = document.querySelector("#form-message");
 
@@ -54,6 +52,10 @@ function validateEmail(email) {
     return pattern.test(email);
 }
 
+function onSubmit(token) {
+    submitForm();
+}
+
 function successfulContact(emailForm, messageForm) {
     emailForm.value = "";
     messageForm.value = "";
@@ -65,7 +67,7 @@ function successfulContact(emailForm, messageForm) {
     document.querySelector("#form-wrapper #form-email-label").style.display = "none";
     document.querySelector("#form-wrapper #form-message-label").style.display = "none";
 
-    const button = document.querySelector("#form-wrapper .button");
+    const button = document.querySelector("#form-wrapper .g-recaptcha");
     button.textContent = "Message sent! We will get in touch with you shortly.";
     button.style.color = "var(--color-header-accent)";
     button.style.background = "var(--color-border)";
@@ -77,7 +79,3 @@ function successfulContact(emailForm, messageForm) {
         return false;
     })
 }
-
-window.addEventListener("load", function () {
-    // document.querySelector("#form-wrapper .button").addEventListener("click", submitForm);
-});
