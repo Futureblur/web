@@ -235,7 +235,38 @@ figcaption {
     color: white;
 }
 
+.youtube-embed-wrapper {
+    overflow: hidden;
+    margin: 30px auto auto auto;
+    position: relative;
+    max-width: 750px;
+    height: 425px;
+    padding: var(--min-padding);
+}
+
+.youtube-embed-wrapper iframe, embed {
+    width: 100%;
+    height: 100%;
+}
+
 @media only screen and (max-width: 580px) {
+    p {
+        font-size: 0.8rem;
+    }
+
+    a {
+        font-size: 0.8rem;
+    }
+
+    .youtube-embed-wrapper {
+        height: 260px;
+    }
+
+    .youtube-embed-wrapper iframe, embed {
+        min-height: 100px;
+        height: 260px;
+    }
+
     #nav-bar-wrapper {
         padding: 4px 0;
     }
@@ -293,20 +324,6 @@ figcaption {
             transform: translate(0%);
         }
     }
-}
-
-.youtube-embed-wrapper {
-    overflow: hidden;
-    margin: 30px auto auto auto;
-    position: relative;
-    max-width: 750px;
-    height: 425px;
-    padding: var(--min-padding);
-}
-
-.youtube-embed-wrapper iframe, embed {
-    width: 100%;
-    height: 100%;
 }
 
 footer {
