@@ -7,7 +7,7 @@ h1 {
 }
 
 .btn-text {
-    font-weight: 800;
+    font-weight: 700;
 }
 
 #home {
@@ -121,4 +121,12 @@ h1 {
     width: 20px;
     vertical-align: middle;
     margin-left: 12px;
+}
+
+@media only screen and (max-width: 580px) {
+    #skills .dot {
+        height: 15px;
+        width: 15px;
+        margin-left: 8px;
+    }
 }
