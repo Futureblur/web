@@ -52,10 +52,6 @@ function validateEmail(email) {
     return pattern.test(email);
 }
 
-function onSubmit(token) {
-    submitForm();
-}
-
 function successfulContact(emailForm, messageForm) {
     emailForm.value = "";
     messageForm.value = "";
