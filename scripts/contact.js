@@ -1,5 +1,5 @@
-function submitForm(e) {
-    e.preventDefault();
+function submitForm() {
+    // e.preventDefault();
 
     let emailForm = document.querySelector("#form-email");
     let messageForm = document.querySelector("#form-message");
