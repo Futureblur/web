@@ -4,6 +4,19 @@ const cBase = [
     ["88 + 0.5 = ", "88.5"],
     ["7 / 2 = ", "3.5"],
     ["0 * 5 + 7 = ", "7"],
+    ["1 + 2 + 3 * 1 = ", "6"],
+    ["1 * 2 + 0 = ", "2"],
+    ["Enter the missing number: 1, 2, 3, 4, ..., 6, 7, 8, 9", "5"],
+    ["The first letter in the english alphabet is ...", "a"],
+    ["The last letter in the english alphabet is ...", "z"],
+    ["Enter the following emoji: 😍", "😍"],
+    ["Enter the following emoji: ⚡", "⚡"],
+    ["A guitar is an ...", "instrument"],
+    ["A week has ... days.", "7"],
+    ["A day has ... hours.", "24"],
+    ["One minute has ... seconds.", "60"],
+    ["Enter the following: Hello there!", "Hello there!"],
+    ["An ... a day keeps the doctor away.", "apple"],
 ];
 
 let answer = "";
@@ -23,7 +36,7 @@ function submitForm(e) {
     let valid = true;
 
     if (!emailForm.value || !validateEmail(emailForm.value)) {
-        emailForm.style.borderColor = "var(--color-error)"
+        emailForm.style.borderColor = "var(--color-error)";
         emailLabel.style.color = "var(--color-error)";
         valid = false;
     } else {
