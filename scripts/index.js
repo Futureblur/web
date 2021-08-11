@@ -6,7 +6,7 @@ window.addEventListener("load", function () {
         for (let f = 0; f < skills[i]; f++) {
             let dot = document.createElement('span');
             dot.className = 'dot';
-            dot.style.opacity = ((f + 0.5) * 0.2).toString();
+            dot.style.opacity = ((f + 1) * 0.2).toString();
 
             skillItems[i].innerHTML += dot.outerHTML;
         }
