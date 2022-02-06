@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="icon" type="image/png" href="img/logos/futureblur-icon.png">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/contact.js"></script>
+    <script src="scripts/nav-bar.js"></script>
+    <title>Contact // Futureblur</title>
+</head>
+<body>
+<div id="nav-bar-wrapper">
+    <div id="nav-bar">
+        <div class="nav-bar-left">
+            <a href="https://futureblur.com">
+                <img src="img/logos/futureblur-logo-full.png" alt="">
+            </a>
+        </div>
+        <div id="burger"></div>
+        <div class="nav-bar-right">
+            <a href="https://instagram.com/ItsFutureblur">Gallery</a>
+            <a href="https://futureblur.com#about">About</a>
+            <a href="https://futureblur.com/contact">Contact</a>
+        </div>
+    </div>
+</div>
+
+<div class="contact-body">
+    <h1>Contact</h1>
+    <div id="form-wrapper">
+        <form action="">
+            <label id="form-email-label">Email</label>
+            <input type="email" id="form-email" name="Email" placeholder="example@gmail.com" required>
+            <label id="form-message-label">Message</label>
+            <textarea id="form-message" name="Message" placeholder="How can we help you?" required></textarea>
+            <label id="form-c-label">Captcha</label>
+            <input type="text" id="form-c" name="Captcha"
+                   placeholder="If the question doesn't load please enable javascript in your browser." required>
+            <button class="form-button">Submit</button>
+        </form>
+    </div>
+</div>
+
+<footer>
+    <hr class="border">
+    <div id="footer-wrapper">
+        <div class="footer-connect">
+            <p>Social</p>
+            <div class="footer-social-list">
+                <a href="https://instagram.com/ItsFutureblur">
+                    <img src="img/logos/instagram-logo.png">
+                </a>
+                <a href="https://twitter.com/ItsFutureblur">
+                    <img src="img/logos/twitter-logo.png">
+                </a>
+                <a href="https://github.com/Futureblur">
+                    <img src="img/logos/github-logo.png">
+                </a>
+                <a href="https://youtube.com/Futureblur">
+                    <img src="img/logos/youtube-logo.png">
+                </a>
+                <button type="button" onclick="window.location.href='https://futureblur.com/discord'" class="btn">
+                    <span class="btn-icon"><ion-icon size="large" name="logo-discord"></ion-icon></span>
+                    <span class="btn-text">Join the community</span>
+                </button>
+            </div>
+        </div>
+        <div class="footer-section">
+            <p>Futureblur</p>
+            <div class="footer-section-list">
+                <a href="https://futureblur.com#about">About</a>
+                <a href="https://futureblur.com/contact">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-button-wrapper">
+
+    </div>
+    <div class="footer-legal">
+        <p>Copyright &copy; 2021 Futureblur. All rights reserved.</p>
+        <div class="footer-legal-list">
+            <a href="https://futureblur.com/legal">Legal Notice</a>
+            <a href="https://futureblur.com/privacy">Privacy Policy</a>
+        </div>
+    </div>
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
