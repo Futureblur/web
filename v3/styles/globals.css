@@ -1,0 +1,45 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Prompt, Manrope, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+    --font-family: Prompt, Manrope, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+    --base-padding: 0 24px;
+
+    --color-bg: black;
+    --color-fg: white;
+    --color-gray: #868686;
+    --color-dark-gray: #606060;
+    --color-primary: #dbff00;
+    --color-primary-dark: #1b2000;
+    --color-button-shadow: rgba(219, 255, 0, 0.3);
+    --color-secondary: #de9bf0;
+    --color-error: #a253ff;
+
+    background: var(--color-bg);
+}
+
+* {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+
+img {
+    image-rendering: smooth;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+mark {
+    color: var(--color-primary);
+    background-color: transparent;
+}
