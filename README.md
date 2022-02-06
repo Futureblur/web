@@ -21,10 +21,13 @@ With each new version, I try to improve the last one:
 ## Screenshots
 
 Landing page: \
+\
 ![LandingPage](https://user-images.githubusercontent.com/61380971/152680024-11610a95-b141-42f3-bd2b-632db0a6a0cd.png)
 
 Skills section: \
+\
 ![SkillsSection](https://user-images.githubusercontent.com/61380971/152680034-3a23e636-47b4-40e9-829e-908f7cfa4a15.png)
 
 Contact form: \
+\
 ![ContactForm](https://user-images.githubusercontent.com/61380971/152680042-88e7f3e1-c232-4cfa-b11f-8cd01643f507.png)
