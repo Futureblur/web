@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy github pages 🚀\" && git subtree push --prefix out origin v3"
   },
   "dependencies": {
     "next": "^12.0.10",
