@@ -1,45 +1,71 @@
+@font-face {
+	font-family: "Syne";
+	src: url("../fonts/Syne/Syne-Extra.ttf");
+	font-style: normal;
+	font-weight: 900;
+	font-display: swap;
+}
+
 html,
 body {
-    padding: 0;
-    margin: 0;
-    font-family: Prompt, Manrope, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	padding: 0;
+	margin: 0;
+	font-family: var(--font-family);
+	scroll-behavior: smooth;
 
-    --font-family: Prompt, Manrope, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	--font-family: Prompt, Manrope, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+	Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
-    --base-padding: 0 24px;
+	--base-padding: 0 24px;
 
-    --color-bg: black;
-    --color-fg: white;
-    --color-gray: #868686;
-    --color-dark-gray: #606060;
-    --color-primary: #dbff00;
-    --color-primary-dark: #1b2000;
-    --color-button-shadow: rgba(219, 255, 0, 0.3);
-    --color-secondary: #de9bf0;
-    --color-error: #a253ff;
+	--color-bg: black;
+	--color-fg: white;
+	--color-gray: #868686;
+	--color-dark-gray: #606060;
+	--color-button-shadow: rgba(219, 255, 0, 0.3);
+	--color-primary: #b29cfd;
+	--color-secondary-dark: #110f17;
+	--color-error: #a253ff;
+	--color-yellow: #ECB647;
+	/*--color-gradient: linear-gradient(90deg, #DBFF00FF, #a2ff00);*/
+	/*--color-gradient: linear-gradient(90deg, #00ffbb, #d72cfd);*/
+	--color-gradient: linear-gradient(180deg, white, #ECB647, #CF7898, #6965FF);
 
-    background: var(--color-bg);
+	/*background-attachment: fixed;*/
+	/*background-repeat: no-repeat;*/
+	/*background-position: center;*/
+	/*background-image: url("../public/gradient-bg.png");*/
+}
+
+body {
+	background: var(--color-bg);
 }
 
 * {
-    box-sizing: border-box;
-    text-rendering: optimizeLegibility;
+	box-sizing: border-box;
+	text-rendering: optimizeLegibility;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
-    color: var(--color-primary);
+	text-decoration: none;
+	color: var(--color-primary);
 }
 
 img {
-    image-rendering: smooth;
-    image-rendering: -webkit-optimize-contrast;
+	image-rendering: smooth;
+	/*image-rendering: -webkit-optimize-contrast;*/
 }
 
 mark {
-    color: var(--color-primary);
-    background-color: transparent;
+	color: var(--color-primary);
+	background-color: transparent;
+}
+
+h1, h2, h3, h4 {
+	color: white;
+}
+
+::selection {
+	background: var(--color-yellow);
+	color: black;
 }

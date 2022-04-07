@@ -5,9 +5,8 @@ import { useEffect, useRef } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-//let emailRef, messageRef, captchaRef, emailErrorRef, messageErrorRef, captchaErrorRef;
-
-const apiURL = "http://localhost:8000";
+// const apiURL = "http://localhost:8000";
+const apiURL = "https://futureblur-api.herokuapp.com";
 const colorGray = "var(--color-gray)";
 const colorError = "var(--color-error)";
 

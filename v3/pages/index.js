@@ -2,32 +2,42 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Button from "../components/Button";
 import Footer from "../components/Footer";
+import { useEffect, useRef } from "react";
+
+let sectionRef;
 
 export default function Home({ title, artist }) {
+
+	sectionRef = useRef(null);
+
+	const scrollToSection = () => {
+		if (sectionRef.current) sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+	};
+
 	return (
 		<div className={ styles.homeRoot }>
 			<Head>
-				<title>Futureblur - Winter Drop!</title>
+				<title>Futureblur - Spring Drop!</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
 				<meta name="description"
 					  content="Software Engineer and creative digital artist who strives to produce high quality content."/>
 				<link rel="icon" href="/favicon.ico"/>
 			</Head>
+			<img src={ "gradient-bg.png" } className={ styles.bg } alt={ "background" }/>
 
 			<section className={ styles.main }>
 				<h1 className={ styles.mega }>Create,<br/>Polish,<br/>Repeat.</h1>
 				<h2 className={ styles.subtitle }>Software Engineer and creative digital artist who strives to produce
 					high quality content.</h2>
-				<Button text={ "Start exploring!" } top={ 70 }/>
+				<Button text={ "Start exploring!" } top={ 70 } isFunc={ true } link={ scrollToSection }/>
 			</section>
 
-			{ MeetSection() }
-			{ ExploreSection() }
-			{ MusicProjectsSection() }
-			{ BadlandsSection() }
-			{ SkillsSection() }
-			{/*{ WhoIsSection() }*/ }
-			{ FeedbackSection() }
+			<MeetSection/>
+			<ExploreSection/>
+			<MusicProjectsSection/>
+			<BadlandsSection/>
+			<SkillsSection/>
+			<FeedbackSection/>
 
 			<Footer/>
 
@@ -37,22 +47,16 @@ export default function Home({ title, artist }) {
 
 function MeetSection() {
 	return (
-		<section>
+		<section ref={ sectionRef }>
 			<div className={ styles.sectionWrapper }>
-				<h2 className={ styles.sectionTitle }>Meet V3</h2>
-				{/*<div className={ styles.infoCard }>
-                    <span className={ styles.infoCardText }>NEW</span>
-                </div>*/ }
-				<iframe className={ styles.videoPlayer } width="1000" height="315"
-						src="https://www.youtube-nocookie.com/embed/XjC4bnRoSO4?controls=0"
-						title="YouTube video player" frameBorder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen></iframe>
-				<p className={ styles.sectionParagraph }>Completely overhauled design, lots of new content for you
-					to
+				<h2 className={ styles.sectionTitle } style={ { paddingTop: "100px" } }>Meet V3</h2>
+				<img src={ "../v3-banner.png" } className={ styles.exploreBanner } alt={ "Banner" } style={ {
+					margin: "-50px auto", padding: "0"
+				} }/>
+				<p className={ styles.sectionParagraph }>Completely overhauled design, lots of new content for you to
 					explore and so much more. To celebrate 2022, Futureblur is happy to announce the newest website
 					update:<br/>
-					<mark>V3 // Winter Drop</mark>
+					<mark>V3 // Spring Drop</mark>
 				</p>
 			</div>
 		</section>
@@ -65,7 +69,7 @@ function ExploreSection() {
 			<div className={ styles.sectionWrapper }>
 				<h2 className={ styles.sectionTitle }>Explore</h2>
 				<div className={ styles.exploreBannerWrapper }>
-					<img src={ "../LaveCubeFinal.png" } alt={ "Lava Cube" } className={ styles.exploreBanner }/>
+					<img src={ "../explore-banner.png" } alt={ "Banner" } className={ styles.exploreBanner }/>
 				</div>
 				<p className={ styles.sectionParagraph }>Ready to dive into the world of CGI renders? I’ve got you
 					covered!
@@ -192,20 +196,13 @@ function FeedbackSection() {
 		<section className={ styles.feedbackSection }>
 			<div className={ styles.sectionWrapper }>
 				<h2 className={ styles.sectionTitle }>
-					I have a question or want to give feedback. <br/>What should I do?
+					Questions & Feedback
 				</h2>
 				<p className={ styles.sectionParagraph }>
 					Quality always comes before quantity. I make sure to take my time and create something that I can be
 					proud of, before it gets released to the public. That’s why it’s even the more important to receive
-					feedback, so I can constantly improve stuff!
-					<br/><br/>
-					There are several ways to get in touch with Futureblur:<br/>
-					Discord server or contact form.
-					Choose which one you prefer :)
+					feedback, so I can keep improving!
 				</p>
-				{/*<p className={ styles.boldParagraph }>
-                    There is also an <a href={ "futureblur.com/faq" }>FAQ</a> if you have any questions.
-                </p>*/ }
 				<div className={ styles.buttonWrapper }>
 					<Button text={ "Join Discord" } width={ 148 } link={ "https://google.com" }></Button>
 					<Button text={ "Contact" } width={ 148 }></Button>

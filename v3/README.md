@@ -1,4 +1,3 @@
-# Version 3 🌵
+# Version 3 🍃
 
-**This version is under development.
-Estimated release date: End of February**
+Available NOW on the world wide web. Enjoy.
