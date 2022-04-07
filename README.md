@@ -1,6 +1,6 @@
 # Version 2 🍉
 This version was published around the Summer of 2021. It was really fun to make, since I improved a lot ever since. <br>
-I learned how to a website responsive and how to make a proper navbar. I kept the design very minimalistic and used only one accent color. <br>
+I learned how to create a responsive website and how to make a proper navbar. I kept the design very minimalistic and used only one accent color. <br>
 
 ## Which frameworks/langauges were used?
 At that time, I never heard of any frameworks that would make my life easier. I coded everything from ground up using only three elements:
