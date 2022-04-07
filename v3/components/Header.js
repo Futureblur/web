@@ -23,14 +23,14 @@ export default function Header() {
                 {
                     navBarActive ?
                         <div className={ styles.rightActive }>
-                            <a className={ styles.navLink } href={ "https://futureblur.com/gallery" }>Virtual
+                            <a className={ styles.navLink } href={ "https://instagram.com/itsfutureblur" }>Virtual
                                 Gallery</a>
                             <a className={ styles.navLink } href={ "#" }>About</a>
                             <a className={ styles.navLink } href={ "https://futureblur.com/contact" }>Contact</a>
                         </div> :
 
                         <div className={ styles.right }>
-                            <a className={ styles.navLink } href={ "https://futureblur.com/gallery" }>Virtual
+                            <a className={ styles.navLink } href={ "https://instagram.com/itsfutureblur" }>Virtual
                                 Gallery</a>
                             <a className={ styles.navLink } href={ "#" }>About</a>
                             <a className={ styles.navLink } href={ "https://futureblur.com/contact" }>Contact</a>
