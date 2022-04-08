@@ -19,7 +19,7 @@ export default function Footer() {
 					<span className={ styles.boldHeader }>EXPLORE</span>
 					<a className={ styles.linkItem } href={ "https://instagram.com/itsfutureblur" }>Virtual Gallery</a>
 					{/*<a className={ styles.linkItem } href={ "https://futureblur.com/story" }>Story</a>*/}
-					<a className={ styles.linkItem } href={ "https://futureblur.com/github" }>Open Source</a>
+					<a className={ styles.linkItem } href={ "https://github.com/futureblur" }>Open Source</a>
 					<a className={ styles.linkItem }
 					   href={ "https://youtube.com/playlist?list=PLF32kULKiTMRpXWteNeJTRiAx7yxiRfhb" }>Exclusives</a>
 				</div>
@@ -32,7 +32,7 @@ export default function Footer() {
 				</div>
 			</div>
 
-			<span className={ styles.version }>Version 3.0 (Spring Drop)</span>
+			<span className={ styles.version }>Version 3.1 (Spring Drop)</span>
 			<span className={ styles.copyright }>Copyright © 2022 Futureblur. All rights reserved.</span>
 		</footer>
 	)

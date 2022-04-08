@@ -6,7 +6,7 @@ import { useRef } from "react";
 
 let sectionRef;
 
-export default function Home({ title, artist }) {
+export default function Home() {
 
 	sectionRef = useRef(null);
 
@@ -18,6 +18,7 @@ export default function Home({ title, artist }) {
 		<div className={ styles.homeRoot }>
 			<Head>
 				<title>Futureblur - Spring Drop!</title>
+				<meta name="icon" content="../favicon.png"/>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
 				<meta name="description"
 					  content="Software Engineer and creative digital artist who strives to produce high quality content."/>
@@ -74,7 +75,7 @@ function ExploreSection() {
 					covered!
 					Whether you need inspiration or
 					just want to walk through the virtual gallery, you’ll surely find the right shot.</p>
-				<Button text={ "Virtual Gallery" }/>
+				<Button text={ "Virtual Gallery" } link={"https://instagram.com/itsfutureblur"}/>
 			</div>
 		</section>
 	)
@@ -124,7 +125,7 @@ function BadlandsSection() {
 						src="https://www.youtube-nocookie.com/embed/0_mZrW5zunE?controls=0"
 						title="YouTube video player" frameBorder="0"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen></iframe>
+						allowFullScreen/>
 				<p className={ styles.sectionParagraph }>
 					Welcome to the Wild West. Reload your revolvers, sit back, and enjoy this short showcase video made
 					in Unreal Engine 5.
@@ -174,22 +175,6 @@ function SkillProgressBar(name, progress) {
 	)
 }
 
-function WhoIsSection() {
-	return (
-		<section className={ styles.whoIsSection }>
-			<div className={ styles.sectionWrapper }>
-				<h2 className={ styles.sectionTitle }>Who is Futureblur?</h2>
-				<p className={ styles.sectionParagraph }>
-					Ever wanted to learn more about Futureblur?
-					Who are they, what are they doing and how did everything start?
-					Luckily, the answer to all of your questions is written in a short article below.
-				</p>
-				<Button text={ "Take me there!" }/>
-			</div>
-		</section>
-	)
-}
-
 function FeedbackSection() {
 	return (
 		<section className={ styles.feedbackSection }>
@@ -203,8 +188,8 @@ function FeedbackSection() {
 					feedback, so I can keep improving!
 				</p>
 				<div className={ styles.buttonWrapper }>
-					<Button text={ "Join Discord" } width={ 148 } link={ "https://google.com" }></Button>
-					<Button text={ "Contact" } width={ 148 }></Button>
+					<Button text={ "Join Discord" } width={ 148 } link={ "https://discord.gg/NtQ95K65gw" }/>
+					<Button text={ "Contact" } width={ 148 } link={"https://futureblur.com/contact"}/>
 				</div>
 			</div>
 		</section>
