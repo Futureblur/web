@@ -119,7 +119,6 @@ export default function Contact({ props }) {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
 				<meta name="description"
 					  content="Software Engineer and creative digital artist who strives to produce high quality content."/>
-				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 
 			<h1 className={ styles.title } style={ { marginBottom: "-5px" } }>Contact</h1>

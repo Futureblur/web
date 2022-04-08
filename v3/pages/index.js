@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Button from "../components/Button";
 import Footer from "../components/Footer";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 let sectionRef;
 
@@ -21,7 +21,6 @@ export default function Home({ title, artist }) {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
 				<meta name="description"
 					  content="Software Engineer and creative digital artist who strives to produce high quality content."/>
-				<link rel="icon" href="/favicon.ico"/>
 			</Head>
 			<img src={ "gradient-bg.png" } className={ styles.bg } alt={ "background" }/>
 

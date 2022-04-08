@@ -6,7 +6,7 @@ class AppDocument extends Document {
 			<Html lang="en">
 				<Head>
 					<meta charSet="utf-8"/>
-					<link rel="icon" href="/public/favicon.png"/>
+					<link rel="icon" href="./favicon.png"/>
 					<link rel="dns-prefetch" href="//fonts.googleapis.com"/>
 					<link rel="preconnect" href="https://fonts.googleapis.com"/>
 					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
