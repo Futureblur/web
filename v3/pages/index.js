@@ -153,7 +153,7 @@ function SkillsSection() {
 				<div className={ styles.progressBarWrapper }>
 					{ SkillProgressBar("Unreal Engine", 60) }
 					{ SkillProgressBar("Unity Engine", 97) }
-					{ SkillProgressBar("blender ", 45) }
+					{ SkillProgressBar("blender", 45) }
 				</div>
 
 				<p className={ styles.sectionParagraph }>
