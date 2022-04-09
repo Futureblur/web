@@ -3,8 +3,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
+    "build": "next build",
+    "export": "next export",
     "lint": "next lint",
     "deploy": "next build && next export && touch out/.nojekyll && git add out/ && git commit -m \"Deploy github pages 🚀\" && git subtree push --prefix out origin v3"
   },
