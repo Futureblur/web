@@ -32,7 +32,7 @@ export default function Footer() {
 				</div>
 			</div>
 
-			<span className={ styles.version }>Version 3.1 (Spring Drop)</span>
+			<span className={ styles.version }>Version 3.2 (Spring Drop)</span>
 			<span className={ styles.copyright }>Copyright © 2022 Futureblur. All rights reserved.</span>
 		</footer>
 	)
