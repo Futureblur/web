@@ -146,7 +146,7 @@ function SkillsSection() {
 					{ SkillProgressBar("C#", 90) }
 					{ SkillProgressBar("Kotlin", 35) }
 					{ SkillProgressBar("Java", 20) }
-					{ SkillProgressBar("JavaScript", 27) }
+					{ SkillProgressBar("JS", 27) }
 				</div>
 
 				<h3>Software</h3>

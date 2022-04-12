@@ -44,6 +44,7 @@ body {
 * {
 	box-sizing: border-box;
 	text-rendering: optimizeLegibility;
+	overflow-x: hidden;
 }
 
 a {

@@ -20,8 +20,8 @@
 
 .line {
     height: 1px;
-    width: 500px;
-    margin: auto 32px;
+    width: 142px;
+    margin: auto 62px;
     background-color: #181818;
 }
 
@@ -89,9 +89,18 @@
 }
 
 @media only screen and (max-width: 700px) {
+    .titleWrapper {
+        justify-content: space-around;
+    }
+
     .footerRoot h3 {
-        font-size: 24px;
+        font-size: 20px;
         letter-spacing: -0.7px;
+    }
+
+    .footerRoot .line {
+        width: 100px;
+        margin: auto 12px;
     }
 
     .footerRoot span {
