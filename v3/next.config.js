@@ -1,5 +1,5 @@
 module.exports = {
   reactStrictMode: true,
-  basePath: '/futureblur-web',
-  assetPrefix: "/futureblur-web/"
+  // basePath: '/futureblur-web',
+  // assetPrefix: "/futureblur-web/"
 }
