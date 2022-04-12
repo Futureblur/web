@@ -20,10 +20,10 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
-        run: npm install
+        run: npm --prefix ./v3 install
 
       - name: Build project
-        run: npm run deploy
+        run: npm --prefix ./v3 run deploy
         
 #      - name: Install and Build
 #        run: |
