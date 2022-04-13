@@ -1,5 +1,7 @@
 .btn {
-	margin: auto;
+	/*margin: auto;*/
+	margin-left: 14px;
+	margin-right: 14px;
 	border: none;
 	cursor: pointer;
 	border-radius: 8px;
@@ -18,12 +20,10 @@
 	padding: 10px 14px;
 	margin: auto;
 	border-radius: 12px;
-	/*
-	white-space: nowrap;
-	*/
+	/*white-space: nowrap;*/
 	font-size: 18px;
 	font-family: var(--font-family);
-	font-weight: 600;
+	font-weight: 500;
 	text-align: center;
 	background: white;
 	color: var(--color-bg);
@@ -33,10 +33,14 @@
 @media only screen and (max-width: 600px) {
 	.btn {
 		min-height: 48px;
+		box-shadow: none;
+		width: 100%;
+
+		margin-left: 0;
+		margin-right: 0;
 	}
 
 	.text {
 		font-size: 16px;
-		font-weight: 700;
 	}
 }

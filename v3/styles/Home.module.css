@@ -168,7 +168,7 @@
 	background-size: cover;
 	background-position: center;
 	pointer-events: none;
-	width: 600px;
+	width: 680px;
 }
 
 .musicCardTitleBlur {
@@ -259,11 +259,13 @@
 	margin-top: 0;
 }
 
-.feedbackSection .buttonWrapper {
+.buttonWrapper {
 	display: flex;
-	justify-content: space-between;
-	width: 340px;
+	justify-content: center;
+	/*width: 340px;*/
 	margin: auto;
+	width: 100%;
+	max-width: 400px;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -299,7 +301,8 @@
 	}
 
 	.musicCard {
-		margin: 24px auto;
+		margin: 24px 24px;
+		width: inherit;
 	}
 }
 
@@ -309,13 +312,13 @@
 	}
 
 	.mega {
-		font-size: 3rem;
-		line-height: 3rem;
+		font-size: 12vw;
+		line-height: 12vw;
 		margin-top: 0;
 	}
 
-	.subtitle{
-		font-size: 18px;
+	.subtitle {
+		font-size: 20px;
 		padding: var(--base-padding);
 	}
 
@@ -348,11 +351,20 @@
 	.skillProgressBarBG {
 		height: 26px;
 	}
-}
 
-@media only screen and (max-width: 400px) {
-	.mega {
-		font-size: 2.4rem;
-		line-height: 2.4rem;
+	.buttonWrapper {
+		flex-direction: column;
+		padding: var(--base-padding);
+	}
+
+	.buttonWrapper .button {
+		margin: 10px auto;
 	}
 }
+
+/*@media only screen and (max-width: 400px) {*/
+/*	.mega {*/
+/*		font-size: 2.4rem;*/
+/*		line-height: 2.4rem;*/
+/*	}*/
+/*}*/
