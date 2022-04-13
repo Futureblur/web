@@ -18,7 +18,6 @@ export default function Home() {
 		<div className={ styles.homeRoot }>
 			<Head>
 				<title>Futureblur - Spring Drop!</title>
-				<meta name="icon" content="../favicon.png"/>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
 				<meta name="description"
 					  content="Software Engineer and creative digital artist who strives to produce high quality content."/>
@@ -29,7 +28,9 @@ export default function Home() {
 				<h1 className={ styles.mega }>Create,<br/>Polish,<br/>Repeat.</h1>
 				<h2 className={ styles.subtitle }>Software Engineer and creative digital artist who strives to produce
 					high quality content.</h2>
-				<Button text={ "Start exploring!" } top={ 70 } isFunc={ true } link={ scrollToSection }/>
+				<div className={ styles.buttonWrapper }>
+					<Button text={ "Start exploring!" } top={ 70 } isFunc={ true } link={ scrollToSection }/>
+				</div>
 			</section>
 
 			<MeetSection/>
@@ -75,7 +76,10 @@ function ExploreSection() {
 					covered!
 					Whether you need inspiration or
 					just want to walk through the virtual gallery, you’ll surely find the right shot.</p>
-				<Button text={ "Virtual Gallery" } link={"https://instagram.com/itsfutureblur"}/>
+
+				<div className={ styles.buttonWrapper }>
+					<Button text={ "Virtual Gallery" } link={ "https://instagram.com/itsfutureblur" }/>
+				</div>
 			</div>
 		</section>
 	)
@@ -188,10 +192,19 @@ function FeedbackSection() {
 					feedback, so I can keep improving!
 				</p>
 				<div className={ styles.buttonWrapper }>
-					<Button text={ "Join Discord" } width={ 148 } link={ "https://discord.gg/NtQ95K65gw" }/>
-					<Button text={ "Contact" } width={ 148 } link={"https://futureblur.com/contact"}/>
+					<ListButton text={ "Join Discord" } link={ "https://discord.gg/NtQ95K65gw" }/>
+					<ListButton text={ "Contact" } link={ "https://futureblur.com/contact" } isAccent={ true }/>
 				</div>
 			</div>
 		</section>
+	)
+}
+
+function ListButton({ text, link, isAccent }) {
+	return (
+		<Button text={ text } link={ link } width={ "100%" } top={ 12 } bottom={ 12 } borderWidth={ 2 }
+				color={ isAccent ? "var(--color-bg)" : "var(--color-fg)" }
+				textColor={ isAccent ? "var(--color-primary)" : "var(--color-bg)" }
+				borderColor={ isAccent ? "var(--color-primary)" : "transparent" }/>
 	)
 }
