@@ -23,16 +23,11 @@
 }
 
 .logo {
-	height: 30px;
-	vertical-align: middle;
 	pointer-events: none;
-	display: block;
+	display: flex;
 }
 
 .logoIcon {
-	height: 30px;
-	vertical-align: middle;
-	pointer-events: none;
 	display: none;
 }
 
@@ -128,12 +123,12 @@
 	}
 
 	.logo {
-		height: 24px;
 		display: none;
 	}
 
 	.logoIcon {
-		display: block;
+		display: flex;
+		pointer-events: none;
 		margin: 6px;
 	}
 

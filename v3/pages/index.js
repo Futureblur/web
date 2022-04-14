@@ -2,13 +2,13 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Button from "../components/Button";
 import Footer from "../components/Footer";
+import ResponsiveImage from "../components/ResponsiveImage";
 import { useRef } from "react";
-
-let sectionRef;
+import ExportedImage from "next-image-export-optimizer";
 
 export default function Home() {
 
-	sectionRef = useRef(null);
+	const sectionRef = useRef(null);
 
 	const scrollToSection = () => {
 		if (sectionRef.current) sectionRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -22,7 +22,16 @@ export default function Home() {
 				<meta name="description"
 					  content="Software Engineer and creative digital artist who strives to produce high quality content."/>
 			</Head>
-			<img src={ "gradient-bg.png" } className={ styles.bg } alt={ "background" }/>
+			{/*<div style={ { position: "fixed", height: "100%", width: "100%", zIndex: "-99", top: 0 } }>*/ }
+			{/*	<ExportedImage src={ "images/gradient-bg.png" } className={ styles.bg } alt={ "Background" }*/ }
+			{/*				   layout={ "fill" } objectPosition={ "center" }/>*/ }
+			{/*</div>*/ }
+
+			{/* eslint-disable-next-line @next/next/no-img-element */ }
+			<img src={ "images/gradient-bg.png" } className={ styles.bg } alt={ "background" }/>
+
+			{/*<ResponsiveImage className={ styles.bg } src={ "images/gradient-bg.png" } alt={ "Background" }*/ }
+			{/*				 width={ 1500 } height={ 1500 }/>*/ }
 
 			<section className={ styles.main }>
 				<h1 className={ styles.mega }>Create,<br/>Polish,<br/>Repeat.</h1>
@@ -33,7 +42,7 @@ export default function Home() {
 				</div>
 			</section>
 
-			<MeetSection/>
+			<MeetSection sectionRef={ sectionRef }/>
 			<ExploreSection/>
 			<MusicProjectsSection/>
 			<BadlandsSection/>
@@ -46,14 +55,17 @@ export default function Home() {
 	)
 }
 
-function MeetSection() {
+function MeetSection({ sectionRef }) {
 	return (
 		<section ref={ sectionRef }>
 			<div className={ styles.sectionWrapper }>
 				<h2 className={ styles.sectionTitle } style={ { paddingTop: "100px" } }>Meet V3</h2>
-				<img src={ "../v3-banner.png" } className={ styles.exploreBanner } alt={ "Banner" } style={ {
-					margin: "-50px auto", padding: "0"
-				} }/>
+				{/*<ImageContainer width={ 800 } height={ 420 } marginTop={ -50 } marginBottom={ -50 }>*/ }
+				{/*	<ExportedImage src={ "../images/v3-banner.png" } className={ styles.exploreBanner } alt={ "Banner" }*/ }
+				{/*				   layout={ "responsive" } width={ 800 } height={ 420 }/>*/ }
+				{/*</ImageContainer>*/ }
+				<ResponsiveImage className={ styles.exploreBanner } src={ "../images/v3-banner.png" }
+								 alt={ "Meet V3 Banner" } width={ 800 } height={ 420 }/>
 				<p className={ styles.sectionParagraph }>Completely overhauled design, lots of new content for you to
 					explore and so much more. To celebrate 2022, Futureblur is happy to announce the newest website
 					update:<br/>
@@ -70,7 +82,14 @@ function ExploreSection() {
 			<div className={ styles.sectionWrapper }>
 				<h2 className={ styles.sectionTitle }>Explore</h2>
 				<div className={ styles.exploreBannerWrapper }>
-					<img src={ "../explore-banner.png" } alt={ "Banner" } className={ styles.exploreBanner }/>
+					{/*<ImageContainer width={ 800 } height={ 423 }>*/ }
+					{/*	<ExportedImage src={ "../images/explore-banner.png" } alt={ "Banner" }*/ }
+					{/*				   className={ styles.exploreBanner } layout={ "responsive" } width={ 800 }*/ }
+					{/*				   height={ 423 }/>*/ }
+					{/*</ImageContainer>*/ }
+
+					<ResponsiveImage className={ styles.exploreBanner } src={ "../images/explore-banner.png" }
+									 alt={ "Explore Banner" } width={ 800 } height={ 423 }/>
 				</div>
 				<p className={ styles.sectionParagraph }>Ready to dive into the world of CGI renders? I’ve got you
 					covered!
@@ -93,9 +112,9 @@ function MusicProjectsSection() {
 				<div className={ styles.musicCards }>
 					<div className={ styles.musicCardsWrapper }>
 						{ MusicCard("Phenomenon Remix", "Unknown Brain & Hoober",
-							"phenomenon-cover.png", "https://youtu.be/zBKKTF6G6_8") }
+							"images/phenomenon-cover.png", "https://youtu.be/zBKKTF6G6_8") }
 						{ MusicCard("Retro Glitch", "Futureblur & RetroCyde",
-							"retroglitch-cover.png", "https://youtu.be/89iXrz1Cdt8") }
+							"images/retroglitch-cover.png", "https://youtu.be/89iXrz1Cdt8") }
 					</div>
 				</div>
 				<p className={ styles.sectionParagraph }>Even though I have not that much experience in music
@@ -109,7 +128,10 @@ function MusicProjectsSection() {
 function MusicCard(title, artist, coverURL, songURL) {
 	return (
 		<div className={ styles.musicCard }>
-			<img className={ styles.musicCardCover } src={ coverURL } alt={ title }/>
+			<ExportedImage className={ styles.musicCardCover } src={ coverURL } alt={ title }
+						   layout={ "fill" } objectFit={ "cover" }/>
+			{/*<ResponsiveImage className={ styles.musicCardCover } src={ coverURL } alt={ title }*/ }
+			{/*				 width={ 680 } height={ 400 }/>*/ }
 			<a href={ songURL }>
 				<div className={ styles.musicCardTitleBlur }>
 					<h3 className={ styles.musicCardTitle }>{ title }</h3>
@@ -122,12 +144,12 @@ function MusicCard(title, artist, coverURL, songURL) {
 
 function BadlandsSection() {
 	return (
-		<section className={ styles.badlands }>
+		<section>
 			<div className={ styles.sectionWrapper }>
 				<h2 className={ styles.sectionTitle }>Badlands</h2>
 				<iframe className={ styles.videoPlayer } width="560" height="315"
 						src="https://www.youtube-nocookie.com/embed/0_mZrW5zunE?controls=0"
-						title="YouTube video player" frameBorder="0"
+						title="YouTube video player"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 						allowFullScreen/>
 				<p className={ styles.sectionParagraph }>
