@@ -302,7 +302,7 @@
 	.mega {
 		font-size: 12vw;
 		line-height: 12vw;
-		margin-top: 0;
+		margin-top: -50px;
 	}
 
 	.subtitle {

@@ -21,8 +21,6 @@ class AppDocument extends Document {
 					<link
 						href="https://fonts.googleapis.com/css2?family=Manrope:wght@700&family=Prompt:wght@400;600;700;900&display=swap"
 						rel="stylesheet"/>
-
-					<link rel="preload" href="../fonts/Syne/Syne-Extra.ttf" as="font" crossOrigin=""/>
 				</Head>
 				<body>
 				<Main/>

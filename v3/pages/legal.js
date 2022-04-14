@@ -8,8 +8,7 @@ export default function Legal() {
 			<Head>
 				<title>Legal // Futureblur</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
-				<meta name="description"
-					  content="Legal notice"/>
+				<meta name="description" content="Legal notice"/>
 			</Head>
 
 			<div className={ styles.legal } style={ {
