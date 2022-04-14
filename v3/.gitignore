@@ -32,3 +32,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# optimized images
+/public/images/nextImageExportOptimizer
+/public/images/next-image-export-optimizer-hashes.json
