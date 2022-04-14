@@ -68,22 +68,10 @@
 }
 
 .videoPlayer {
+	border: 0;
 	margin: 8px auto 0 auto;
 	width: 1000px;
 	height: 420px;
-}
-
-.infoCard {
-	background-color: var(--color-primary-dark);
-	width: fit-content;
-	width: -moz-fit-content;
-	border-radius: 4px;
-}
-
-.infoCardText {
-	color: white;
-	font-weight: 600;
-	padding: 12px;
 }
 
 .sectionTitle {
