@@ -18,7 +18,7 @@ export default function Footer() {
 				<div className={ styles.footerSection }>
 					<span className={ styles.boldHeader }>EXPLORE</span>
 					<a className={ styles.linkItem } href={ "https://instagram.com/itsfutureblur" }>Virtual Gallery</a>
-					{/*<a className={ styles.linkItem } href={ "https://futureblur.com/story" }>Story</a>*/}
+					{/*<a className={ styles.linkItem } href={ "https://futureblur.com/story" }>Story</a>*/ }
 					<a className={ styles.linkItem } href={ "https://github.com/futureblur" }>Open Source</a>
 					<a className={ styles.linkItem }
 					   href={ "https://youtube.com/playlist?list=PLF32kULKiTMRpXWteNeJTRiAx7yxiRfhb" }>Exclusives</a>
@@ -28,11 +28,11 @@ export default function Footer() {
 					<a className={ styles.linkItem } href={ "https://futureblur.com/discord" }>Join the community</a>
 					<a className={ styles.linkItem } href={ "https://futureblur.com/contact" }>Contact</a>
 					<a className={ styles.linkItem } href={ "https://futureblur.com/legal" }>Legal Notice</a>
-					{/*<a className={ styles.linkItem } href={ "https://futureblur.com/privacy" }>Privacy Policy</a>*/}
+					{/*<a className={ styles.linkItem } href={ "https://futureblur.com/privacy" }>Privacy Policy</a>*/ }
 				</div>
 			</div>
 
-			<span className={ styles.version }>Version 3.2 (Spring Drop)</span>
+			<span className={ styles.version }>Version 3.3 (Spring Drop)</span>
 			<span className={ styles.copyright }>Copyright © 2022 Futureblur. All rights reserved.</span>
 		</footer>
 	)
