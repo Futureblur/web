@@ -28,7 +28,7 @@ export default function Home() {
 			{/*</div>*/ }
 
 			{/* eslint-disable-next-line @next/next/no-img-element */ }
-			{/*<img src={ "images/gradient-bg.png" } className={ styles.bg } alt={ "background" }/>*/}
+			{/*<img src={ "images/gradient-bg.png" } className={ styles.bg } alt={ "background" }/>*/ }
 
 			{/*<ResponsiveImage className={ styles.bg } src={ "images/gradient-bg.png" } alt={ "Background" }*/ }
 			{/*				 width={ 1500 } height={ 1500 }/>*/ }
