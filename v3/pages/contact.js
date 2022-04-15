@@ -94,14 +94,13 @@ export default function Contact({ props }) {
 					method: "POST", body: reqBody, headers: {
 						'Content-Type': 'application/json'
 					},
-				}).catch((err) => console.log(err));
+				}).catch();
 
 				if (emailReq.status === 200) {
 					formRef.current.style.display = "none";
 					successMessage.current.style.display = "flex";
-					console.log("Submitted! Email: " + emailRef.current.value);
 				} else {
-					console.log("Something went wrong. Status: ", emailReq.status);
+					//console.log("Something went wrong. Status: ", emailReq.status);
 				}
 			}
 
