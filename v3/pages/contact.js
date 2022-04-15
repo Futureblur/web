@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-// const apiURL = "http://localhost:8000";
+//const apiURL = "http://localhost:8000";
 const apiURL = "https://futureblur-api.herokuapp.com";
 const colorGray = "var(--color-gray)";
 const colorError = "var(--color-error)";
@@ -192,10 +192,12 @@ export async function getStaticProps() {
 
 	if (status === 200) {
 		const data = await response.json();
+		console.log(data);
 		return {
 			props: { props: data }
 		}
 	} else {
+		console.log("nothing there");
 		return { props: {} }
 	}
 }
