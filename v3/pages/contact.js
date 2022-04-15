@@ -34,7 +34,7 @@ export default function Contact({ props }) {
 	const validateForm = async event => {
 		event.preventDefault();
 
-		//Refresh the page if button is clicked (previously submit)
+		//Refresh the page if the button is clicked (previously submit)
 		if (rateLimited) {
 			router.reload();
 			return;
