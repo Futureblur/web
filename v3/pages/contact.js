@@ -192,12 +192,10 @@ export async function getStaticProps() {
 
 	if (status === 200) {
 		const data = await response.json();
-		console.log(data);
 		return {
 			props: { props: data }
 		}
 	} else {
-		console.log("nothing there");
 		return { props: {} }
 	}
 }
