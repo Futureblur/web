@@ -28,7 +28,6 @@ export default function Footer() {
 					<a className={ styles.linkItem } href={ "https://futureblur.com/discord" }>Join the community</a>
 					<a className={ styles.linkItem } href={ "https://futureblur.com/contact" }>Contact</a>
 					<a className={ styles.linkItem } href={ "https://futureblur.com/legal" }>Legal Notice</a>
-					{/*<a className={ styles.linkItem } href={ "https://futureblur.com/privacy" }>Privacy Policy</a>*/ }
 				</div>
 			</div>
 

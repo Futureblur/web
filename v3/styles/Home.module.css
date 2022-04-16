@@ -3,10 +3,6 @@
 }
 
 .bg {
-	/*background-image: url("../public/gradient-bg.png");*/
-	/*background-image: var(--color-gradient);*/
-	/*border-radius: 10%;*/
-	/*filter: blur(200px) brightness(20%);*/
 	height: 1500px;
 	width: 1500px;
 	background-repeat: no-repeat;
@@ -45,8 +41,6 @@
 	background-image: var(--color-gradient);
 	text-align: center;
 	overflow: hidden;
-	/*margin-top: -70px;*/
-	/*margin-bottom: 50px;*/
 	margin: 50px 0;
 	font-size: 8rem;
 	line-height: 8rem;

@@ -60,10 +60,6 @@ function MeetSection({ sectionRef }) {
 		<section ref={ sectionRef }>
 			<div className={ styles.sectionWrapper }>
 				<h2 className={ styles.sectionTitle } style={ { paddingTop: "100px" } }>Meet V3</h2>
-				{/*<ImageContainer width={ 800 } height={ 420 } marginTop={ -50 } marginBottom={ -50 }>*/ }
-				{/*	<ExportedImage src={ "../images/v3-banner.png" } className={ styles.exploreBanner } alt={ "Banner" }*/ }
-				{/*				   layout={ "responsive" } width={ 800 } height={ 420 }/>*/ }
-				{/*</ImageContainer>*/ }
 				<ResponsiveImage className={ styles.exploreBanner } src={ "../images/v3-banner.png" }
 								 alt={ "Meet V3 Banner" } width={ 800 } height={ 420 }/>
 				<p className={ styles.sectionParagraph }>Completely overhauled design, lots of new content for you to
@@ -82,12 +78,6 @@ function ExploreSection() {
 			<div className={ styles.sectionWrapper }>
 				<h2 className={ styles.sectionTitle }>Explore</h2>
 				<div className={ styles.exploreBannerWrapper }>
-					{/*<ImageContainer width={ 800 } height={ 423 }>*/ }
-					{/*	<ExportedImage src={ "../images/explore-banner.png" } alt={ "Banner" }*/ }
-					{/*				   className={ styles.exploreBanner } layout={ "responsive" } width={ 800 }*/ }
-					{/*				   height={ 423 }/>*/ }
-					{/*</ImageContainer>*/ }
-
 					<ResponsiveImage className={ styles.exploreBanner } src={ "../images/explore-banner.png" }
 									 alt={ "Explore Banner" } width={ 800 } height={ 423 }/>
 				</div>
@@ -130,8 +120,6 @@ function MusicCard(title, artist, coverURL, songURL) {
 		<div className={ styles.musicCard }>
 			<ExportedImage className={ styles.musicCardCover } src={ coverURL } alt={ title }
 						   layout={ "fill" } objectFit={ "cover" }/>
-			{/*<ResponsiveImage className={ styles.musicCardCover } src={ coverURL } alt={ title }*/ }
-			{/*				 width={ 680 } height={ 400 }/>*/ }
 			<a href={ songURL }>
 				<div className={ styles.musicCardTitleBlur }>
 					<h3 className={ styles.musicCardTitle }>{ title }</h3>
