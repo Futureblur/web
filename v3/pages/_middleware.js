@@ -19,7 +19,7 @@ const routes = {
 	"badlands": "https://youtu.be/0_mZrW5zunE",
 }
 
-export default async function Middleware(req) {
+function Middleware(req) {
 	const { pathname } = req.nextUrl;
 
 	// for (const obj of urls) {
@@ -40,3 +40,5 @@ export default async function Middleware(req) {
 		return NextResponse.next();
 	}
 }
+
+export default Middleware;
