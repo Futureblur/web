@@ -31,10 +31,11 @@ export default async function Middleware(req) {
 	// 	}
 	// }
 
+	// Remove first slash character
 	const currentUrl = pathname.substring(1);
 
 	if (routes[currentUrl]) {
-		return NextResponse.redirect(routes[currentUrl]);
+		return NextResponse.rewrite(routes[currentUrl]);
 	} else {
 		return NextResponse.next();
 	}
