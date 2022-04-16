@@ -1,5 +1,6 @@
 import Button from "../components/Button";
 import Footer from "../components/Footer";
+import Head from "next/head";
 
 const emotes = [
 	"(⩾﹏⩽)", "(>_<)", "(=_=)", "(-_-)", "(°◇°)", "(._.)"
@@ -10,6 +11,12 @@ export default function NotFound() {
 
 	return (
 		<>
+			<Head>
+				<title>404 // Page not found</title>
+				<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+				<meta name="description" content="The page you are looking for was not found. Error code: 404"/>
+			</Head>
+
 			<div className={ "wrapper" }>
 				<h1>{ random }</h1>
 				<h2>We traveled to the moon and beyond, but we could not find the page you are looking for...</h2>
