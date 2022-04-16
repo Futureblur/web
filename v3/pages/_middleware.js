@@ -19,26 +19,15 @@ const routes = {
 	"badlands": "https://youtu.be/0_mZrW5zunE",
 }
 
-function Middleware(req) {
+export default async function Middleware(req) {
 	const { pathname } = req.nextUrl;
-
-	// for (const obj of urls) {
-	// 	const name = obj[0];
-	// 	const link = obj[1];
-	//
-	// 	if (pathname === '/' + name) {
-	// 		return NextResponse.redirect(link);
-	// 	}
-	// }
 
 	// Remove first slash character
 	const currentUrl = pathname.substring(1);
 
 	if (routes[currentUrl]) {
-		return NextResponse.rewrite(routes[currentUrl]);
+		return NextResponse.redirect(routes[currentUrl]);
 	} else {
 		return NextResponse.next();
 	}
 }
-
-export default Middleware;
