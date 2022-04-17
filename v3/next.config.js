@@ -1,5 +1,29 @@
 module.exports = {
 	reactStrictMode: true,
+	async redirects() {
+		return [
+			{
+				source: '/youtube',
+				destination: 'https://youtube.com/futureblur',
+				permanent: true,
+			},
+			{
+				source: '/twitter',
+				destination: 'https://twitter.com/itsfutureblur',
+				permanent: true,
+			},
+			{
+				source: '/instagram',
+				destination: 'https://instagram.com/itsfutureblur',
+				permanent: true,
+			},
+			{
+				source: '/github',
+				destination: 'https://github.com/futureblur',
+				permanent: true,
+			},
+		]
+	},
 	images: {
 		loader: "custom",
 		nextImageExportOptimizer: {
