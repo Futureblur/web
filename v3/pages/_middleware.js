@@ -20,14 +20,14 @@ const routes = {
 }
 
 export default async function Middleware(req) {
-	const { pathname } = req.nextUrl;
-
-	// Remove first slash character
-	const currentUrl = pathname.substring(1);
-
-	if (routes[currentUrl]) {
-		return NextResponse.redirect(routes[currentUrl]);
-	} else {
-		return NextResponse.next();
-	}
+	// const { pathname } = req.nextUrl;
+	//
+	// // Remove first slash character
+	// const currentUrl = pathname.substring(1);
+	//
+	// if (routes[currentUrl]) {
+	// 	return NextResponse.redirect(routes[currentUrl]);
+	// } else {
+	// 	return NextResponse.next();
+	// }
 }
