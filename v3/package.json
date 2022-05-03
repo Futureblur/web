@@ -8,7 +8,7 @@
     "deploy": "next build && next export && next-image-export-optimizer && touch out/.nojekyll"
   },
   "dependencies": {
-    "next": "^12.0.10",
+    "next": "^12.1.5",
     "next-image-export-optimizer": "^0.9.3",
     "react": "17.0.2",
     "react-dom": "17.0.2"
