@@ -2,7 +2,6 @@
 This repository contains the code for my [website](https://futureblur.com). 
 
 Every version of the website has its own subtree.
-Currently, we're at **V2** 🌠, and I'm working on **V3** which will be released until the end of February.
-These changes will massively overhaul the design as well as improve the user experience.
+Currently, we're at **v3.3** ✨, and I'm working on the fourth generation with massive improvements for the user experience (animations, brand new design, more content for the landing page and much more).
 
-👉 Click [here](https://twitter.com/ItsFutureblur) to stay up to date.
+👉 Click [here](https://twitter.com/ByFutureblur) to stay up to date.
