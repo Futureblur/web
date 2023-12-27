@@ -42,12 +42,9 @@ import Layout from "../layouts/Layout.astro";
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        const toggleButton = document.querySelector('.hs-collapse-toggle');
-        const navbar = document.querySelector('#navbar-image-1');
-
-        toggleButton?.addEventListener('click', () => {
-            navbar?.classList.toggle('hidden');
-        });
+    const notifyButton = document.querySelector('#notify-button');
+    notifyButton.addEventListener('click', () => {
+        posthog.capture('notify button clicked');
+        console.log('clicked')
     });
 </script>
