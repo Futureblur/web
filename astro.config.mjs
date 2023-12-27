@@ -4,6 +4,5 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
     site: 'https://beta.futureblur.com',
-    base: '/web',
     integrations: [tailwind()]
 });
