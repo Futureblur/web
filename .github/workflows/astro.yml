@@ -30,7 +30,7 @@ env:
 
 jobs:
   build:
-    name: Build and deploy
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -75,8 +75,14 @@ jobs:
         with:
           path: ${{ env.BUILD_PATH }}/dist
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.0.0
-        with:
-          BRANCH: github-pages
-          FOLDER: dist/
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
