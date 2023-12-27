@@ -11,7 +11,7 @@ export default function Header() {
     return (
         <div className={styles.headerContainer}>
             <div className={styles.messageBanner}>
-                <p className={styles.bannerText}>As one story ends, another begins. <a href={"soon-to-come"}><strong>Get
+                <p className={styles.bannerText}>As one story ends, another begins. <a href={"https://beta.futureblur.com"}><strong>Get
                     ready
                     for the 4th
                     generation</strong></a>.</p>
