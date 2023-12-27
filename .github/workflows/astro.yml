@@ -79,4 +79,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.0.0
         with:
           BRANCH: github-pages
-          FOLDER: dist
+          FOLDER: dist/
