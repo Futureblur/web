@@ -41,9 +41,9 @@ import Layout from "../layouts/Layout.astro";
     }
 </style>
 
-<script>
+<script async>
     const notifyButton = document.querySelector('#notify-button');
-    notifyButton.addEventListener('click', () => {
+    notifyButton?.addEventListener('click', () => {
         posthog.capture('notify button clicked');
         console.log('clicked')
     });
