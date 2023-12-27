@@ -83,14 +83,14 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
+      - name: List dist contents
+        run: ls .
+    
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
           name: github-pages
           path: ${{ env.BUILD_PATH }}/dist
-
-      - name: List dist contents
-        run: ls .
 
       - name: Deploy to GitHub Pages
         id: deployment
