@@ -2,44 +2,31 @@
 import Layout from "../layouts/Layout.astro";
 ---
 <Layout title="Futureblur — Wonder Awaits.">
-    <div class="flex flex-col text-center m-auto w-full max-w-5xl space-y-14 px-4">
-        <h1 class="font-thin tracking-tight px-4 text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-tight lg:leading-[144px] text-white from-[#4d4d4d] to-[#fbfbfb] bg-clip-text text-transparent">
-            <span class="font-mono font-bold">️️🛠️</span> Create →
-            <span class="font-mono font-bold">🔬</span> Polish →
-            <span class="font-mono font-bold">🌀</span> Repeat.
-        </h1>
-        <div class="flex flex-col m-auto justify-center items-center w-full md:max-w-lg space-y-10">
-            <h2 class="text-md md:text-lg text-center text-white/50">
-                <span class="text-transparent font-bold animate-gradient">···</span>
-                launching in 20<span class="text-transparent animate-gradient">XX</span> .<br>
-                Be the first to be notified when it's time.</h2>
-            <div class="inline-block md:flex w-full space-y-2 md:space-x-2">
-                <label for="email" class="hidden">Your email address</label>
-                <input type="email" name="email" id="email" placeholder="Your email address"
-                       class="w-full h-[50px] border-[1px] rounded-md border-white/10 bg-white/10 text-white/90 placeholder-white/40 p-2 px-3 outline-none">
-                <button type="submit" id="notify-button"
-                        class="w-full md:w-52 h-[50px] bg-white font-bold rounded-md text-center">
-                    Let me in 🔔
-                </button>
+    <div class="h-screen justify-center flex">
+        <div class="flex flex-col text-center m-auto w-full max-w-5xl space-y-14 px-4">
+            <h1 class="font-thin tracking-tight px-4 text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-tight lg:leading-[144px] text-white from-[#4d4d4d] to-[#fbfbfb] bg-clip-text text-transparent">
+                <span class="font-mono font-bold">️️🛠️</span> Create →
+                <span class="font-mono font-bold">🔬</span> Polish →
+                <span class="font-mono font-bold">🌀</span> Repeat.
+            </h1>
+            <div class="flex flex-col m-auto justify-center items-center w-full md:max-w-lg space-y-10">
+                <h2 class="text-md md:text-lg text-center text-white/50">
+                    <span class="text-transparent font-bold animate-gradient">···</span>
+                    launching in 20<span class="text-transparent animate-gradient">XX</span> .<br>
+                    Be the first to be notified when it's time.</h2>
+                <div class="inline-block md:flex w-full space-y-2 md:space-x-2">
+                    <label for="email" class="hidden">Your email address</label>
+                    <input type="email" name="email" id="email" placeholder="Your email address"
+                           class="w-full h-[50px] border-[1px] rounded-md border-white/10 bg-white/10 text-white/90 placeholder-white/40 p-2 px-3 outline-none">
+                    <button type="submit" id="notify-button"
+                            class="w-full md:w-52 h-[50px] bg-white font-bold rounded-md text-center">
+                        Let me in 🔔
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </Layout>
-
-<style>
-    .animate-gradient {
-        background: linear-gradient(to right,
-        #707070,
-        #fbfbfb,
-        #a4a4a4,
-        #fbfbfb,
-        #707070,
-        #fbfbfb,
-        #a4a4a4);
-        background-size: 300% 300%;
-        background-clip: text;
-    }
-</style>
 
 <script async>
     const notifyButton = document.querySelector('#notify-button');
