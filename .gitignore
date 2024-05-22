@@ -12,6 +12,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+src/pages/xfiwsv.astro
 
 # environment variables
 .env
