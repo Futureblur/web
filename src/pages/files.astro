@@ -34,25 +34,24 @@ import Layout from "../layouts/Layout.astro";
             </div>
         </div>
     </div>
+    <script is:inline>
+        function capture(redirect) {
+            window.posthog.capture("user_joined_discord", {
+                source: "project files",
+                auto_redirect: redirect,
+            });
+        }
+
+        setTimeout(() => {
+            capture(true);
+            window.location.replace("https://discord.gg/blurads");
+        }, 3300);
+
+        const button = document.querySelector("#join-button");
+        if (button) {
+            button.addEventListener("click", () => {
+                capture(false);
+            });
+        }
+    </script>
 </Layout>
-
-<script>
-    function capture(redirect) {
-        window.posthog.capture("user_joined_discord", {
-            source: "project files",
-            auto_redirect: redirect,
-        });
-    }
-
-    setTimeout(() => {
-        capture(true);
-        window.location.replace("https://discord.gg/blurads");
-    }, 3300);
-
-    const button = document.querySelector("#join-button");
-    if (button) {
-        button.addEventListener("click", () => {
-            capture(false);
-        });
-    }
-</script>
