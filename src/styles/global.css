@@ -1,16 +1,98 @@
-body {
-    background-color: #000000;
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.instrument-serif-regular {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.animate-gradient {
-    background: linear-gradient(to right,
-    #707070,
-    #fbfbfb,
-    #a4a4a4,
-    #fbfbfb,
-    #707070,
-    #fbfbfb,
-    #a4a4a4);
-    background-size: 300% 300%;
-    background-clip: text;
+.instrument-serif-regular-italic {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+:root {
+    --header-height: 52px;
+    --clip: inset(0 0 calc(100% - var(--header-height)) 0);
+}
+
+header {
+    height: 100%;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-clip-path: var(--clip);
+    clip-path: var(--clip);
+    transition: clip-path 300ms ease;
+}
+
+header.unblur {
+    clip-path: inset(0 0 calc(100% - var(--header-height)) 0);
+    transition: clip-path 300ms ease;
+}
+
+header.mobileExpanded {
+    backdrop-filter: blur(0px) saturate(100%);
+}
+
+header.mobileCollapsed {
+    backdrop-filter: blur(20px) saturate(140%);
+}
+
+body {
+    @apply text-primary;
+    background-color: #ded9da;
+    font-family: "Space Grotesk Variable";
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+#curtain {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity ease 450ms;
+}
+
+#curtain.blur {
+    opacity: 1;
+}
+
+.hide {
+    max-height: 0;
+    overflow: hidden;
+    transition: ease 350ms;
+}
+
+.animate {
+    @apply -translate-y-3 opacity-0 blur-sm;
+    @apply transition-all duration-500 ease-out;
+}
+
+.animate.show {
+    @apply translate-y-0 opacity-100 blur-none;
+}
+
+.dropdown {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    transition: ease 300ms;
+}
+
+.dropdown.show {
+    max-height: 500px;
+    margin: 20px 0 20px 0;
+    transition: ease 450ms;
 }
