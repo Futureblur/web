@@ -1,0 +1,27 @@
+@import "news.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    color-scheme: light;
+
+    --color-light: #F5F5F5;
+
+    --font-mono: "SpaceGrotesk-Variable";
+}
+
+body {
+    background: var(--color-light);
+}
+
+.wrapper {
+    @apply flex justify-center;
+}
+
+.mono {
+    font-family: var(--font-mono), monospace;
+}

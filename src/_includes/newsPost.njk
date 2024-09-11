@@ -1,0 +1,15 @@
+---
+layout: "base.njk"
+---
+
+<article class="main-article">
+<div class="article-top">
+<back-button></back-button>
+        <div>
+            <time class="article-meta__text--bold" datetime="{{ page.date }}">{{ page.date | postDate }}</time>
+            <span class="article-meta__text">&bull; 3 min read</span>
+        </div>
+        <h1 class="article-title">{{ title }}</h1>
+    </div>
+    {{ content | safe }}
+</article>

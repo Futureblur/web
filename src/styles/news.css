@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main-article {
+    @apply max-w-screen-md;
+    @apply prose prose-img:mx-auto prose-img:my-auto;
+    @apply prose-headings:font-semibold;
+    @apply prose-headings:text-black;
+}
+
+.main-article h1 {
+    @apply md:pt-10;
+    @apply text-2xl italic font-medium tracking-tight md:text-3xl;
+}
+
+.main-article h2 {
+    @apply text-2xl pt-4 tracking-tight;
+}
+
+.main-article .article-top {
+    @apply flex flex-col gap-1.5;
+}
+
+.main-article .article-title {
+    @apply pt-0;
+    @apply text-3xl md:text-5xl not-italic font-serif;
+}
+
+.main-article .article-meta__text {
+    @apply text-sm;
+}
+
+.main-article .article-meta__text--bold {
+    @apply text-sm font-semibold;
+}

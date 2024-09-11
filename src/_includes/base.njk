@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Eleventy">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}} — Futureblur</title>
+    <link rel="stylesheet" href="/bundle.css">
+    <link rel="stylesheet" href="/styles/fonts/space-grotesk.css">
+  </head>
+  <body>
+  {% include "header.njk" %}
+    <main class="wrapper">
+    {{ content | safe }}
+    </main>
+  {% include "footer.njk" %}
+  </body>
+</html>
