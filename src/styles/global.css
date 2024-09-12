@@ -30,10 +30,6 @@ header {
   backdrop-filter: blur(12px) saturate(2);
 }
 
-main {
-  @apply flex-1 py-32;
-}
-
 footer {
   @apply py-6 text-sm;
 }
