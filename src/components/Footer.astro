@@ -1,0 +1,89 @@
+---
+import {
+    getLangFromUrl,
+    useTranslations,
+    useTranslatedPath,
+} from "@i18n/utils";
+import FutureblurLogo from "./Navigation/FutureblurLogo.astro";
+import BackToTop from "./News/BackToTop.astro";
+
+import { footerGroup } from "@consts";
+import type { NavigationGroup, NavigationLink } from "@types";
+import { ui } from "@i18n/ui";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+function getGroupTitle(group: NavigationGroup) {
+    return group.title as keyof (typeof ui)[typeof lang];
+}
+
+function getLinkTitle(link: NavigationLink) {
+    return link.title as keyof (typeof ui)[typeof lang];
+}
+---
+
+<footer
+    class="animate bg-secondary/50 text-primary/70 flex flex-col justify-start py-10 pb-28 font-mono text-sm md:flex-row md:justify-center"
+>
+    <div class="flex flex-col justify-center gap-14 px-3">
+        <div class="flex justify-start md:justify-end">
+            <BackToTop />
+        </div>
+        <div
+            class="flex w-full flex-col justify-center gap-6 md:flex-row md:gap-20"
+        >
+            <div class="flex flex-col justify-between gap-4 md:gap-0">
+                <div class="flex flex-col gap-1">
+                    <div class="flex items-center gap-1">
+                        <FutureblurLogo />
+                        <div class="hidden space-x-2">
+                            <span>/</span>
+                            <a class="text-primary" href="/">News</a>
+                        </div>
+                    </div>
+                    <span class="pl-1.5">Germany</span>
+                </div>
+                <div class="flex">
+                    <span class="text-primary/60 pl-1.5"
+                        >&copy; 2024 Futureblur</span
+                    >
+                </div>
+            </div>
+            <div
+                class="flex flex-wrap justify-between gap-y-8 pt-1.5 md:justify-start md:gap-32"
+            >
+                {
+                    footerGroup.map((group) => (
+                        <div class="flex w-1/2 flex-col gap-2 px-2 md:w-auto md:px-0">
+                            <h2 class="text-primary font-medium">
+                                {t(getGroupTitle(group))}
+                            </h2>
+                            <ul class="flex flex-col gap-2">
+                                {group.links.map((link) => (
+                                    <li>
+                                        <a
+                                            href={
+                                                link.external
+                                                    ? link.url
+                                                    : translatePath(link.url)
+                                            }
+                                            target={
+                                                link.external
+                                                    ? "_blank"
+                                                    : "_self"
+                                            }
+                                        >
+                                            {t(getLinkTitle(link))}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</footer>

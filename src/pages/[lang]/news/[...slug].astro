@@ -1,0 +1,155 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+import FormattedDate from "@components/News/FormattedDate.astro";
+import { getUsername, readingTime } from "@lib/utils";
+import BackToPrevious from "@components/News/BackToPrevious.astro";
+import PostNavigation from "@components/News/PostNavigation.astro";
+import { getEntry } from "astro:content";
+import AuthorInfo from "@components/News/AuthorInfo.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+export async function getStaticPaths() {
+    const news = (await getCollection("news")).sort(
+        (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    );
+
+    const paths = news.map((post) => {
+        const [lang, ...slug] = post.slug.split("/");
+        return {
+            params: { lang, slug: slug.join("/") || undefined },
+            props: post,
+        };
+    });
+
+    return paths;
+}
+
+const news = await getCollection("news");
+const { slug } = Astro.params;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const shareText = t("post.share");
+const copiedText = t("post.copied");
+
+function getNextPost() {
+    let postIndex;
+    for (const post of news) {
+        if (post.slug === slug) {
+            postIndex = news.indexOf(post);
+            if (postIndex < news.length - 1) {
+                let nextPost = news[postIndex + 1];
+                return nextPost.data.draft ? null : nextPost;
+            }
+        }
+    }
+}
+
+function getPrevPost() {
+    let postIndex;
+    for (const post of news) {
+        if (post.slug === slug) {
+            postIndex = news.indexOf(post);
+
+            if (postIndex != 0) {
+                let prevPost = news[postIndex - 1];
+                return prevPost.data.draft ? null : prevPost;
+            }
+        }
+    }
+}
+
+const nextPost = getNextPost();
+const prevPost = getPrevPost();
+
+const post = Astro.props;
+const author = await getEntry(post.data.author);
+const username = getUsername(author.data.handle);
+
+const { Content } = await post.render();
+---
+
+<Layout
+    title={post.data.title}
+    description={post.data.description}
+    cover={post.data.cover.src}
+    author={author.data.name}
+>
+    <Container props="max-w-[730px]">
+        <div class="animate">
+            <BackToPrevious href=`/${lang}`>{t("nav.back")}</BackToPrevious>
+        </div>
+        <div class="my-10 space-y-2">
+            <div class="animate flex items-center gap-1.5 text-sm">
+                <div class="font-semibold" data-pagefind-body>
+                    <FormattedDate date={post.data.date} lang={lang} />
+                </div>
+                &bull;
+                <div class="font-base">
+                    {readingTime(post.body, lang)}
+                </div>
+                {
+                    post.data.draft && (
+                        <div class="uppercase">
+                            &bull; {t("post.draftMode")}
+                        </div>
+                    )
+                }
+            </div>
+            <h1
+                class="animate pb-2 font-serif text-3xl tracking-[-0.4px] text-black dark:text-white md:text-5xl md:tracking-tight"
+                data-pagefind-body
+            >
+                {post.data.title}
+            </h1>
+            <button
+                id="share-button"
+                data-url={post.data.url}
+                class="animate inline-flex cursor-pointer rounded-full bg-black/5 p-2 px-4 text-sm font-bold hover:bg-black/10 dark:bg-white/5 hover:dark:bg-white/10"
+            >
+                {t("post.share")} ↗
+            </button>
+        </div>
+        <article class="animate text-lg" data-pagefind-body>
+            <Content />
+            <hr />
+            <div class="mt-12 space-y-2">
+                <div class="text-sm font-bold">{t("post.philosophyTitle")}</div>
+                <div class="text-sm">
+                    {t("post.philosophy")}
+                </div>
+            </div>
+            <div class="mt-12">
+                <div class="text-sm font-bold uppercase">{t("post.by")}</div>
+                <AuthorInfo author={author.data} username={username} />
+            </div>
+            <div class="mt-24">
+                <PostNavigation prevPost={prevPost} nextPost={nextPost} />
+            </div>
+        </article>
+    </Container>
+</Layout>
+
+<script is:inline define:vars={{ shareText, copiedText }}>
+    async function getSharableLink() {
+        let url = shareButton.getAttribute("data-url");
+
+        let subDomain = window.location.host;
+        if (subDomain.startsWith("preview")) {
+            url = window.location.href;
+        }
+
+        await navigator.clipboard.writeText(url);
+        shareButton.textContent = copiedText;
+        setTimeout(() => {
+            shareButton.textContent = `${shareText} ↗`;
+        }, 2000);
+    }
+
+    // Find button with id "share-button" and add event listener, the url is stored in the data-url attribute
+    const shareButton = document.getElementById("share-button");
+    shareButton?.addEventListener("click", getSharableLink);
+</script>

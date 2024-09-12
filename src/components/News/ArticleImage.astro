@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+const { src, alt } = Astro.props;
+---
+
+<div class="py-8">
+    <div class="-mx-6 lg:-mx-28">
+        <Image
+            src={src}
+            alt={alt}
+            class={"w-full overflow-visible md:overflow-hidden md:rounded-lg"}
+            widths={[240, 540, 960, 1960]}
+            sizes={`(max-width: 360px) 240px, (max-width: 960px) 540px, (max-width: 1600px) 960px, ${1960}px`}
+        />
+    </div>
+    <div class="flex w-full justify-between text-left text-xs font-bold">
+        <div class="mt-1 w-full pr-2">
+            <slot />
+        </div>
+        <a
+            href={src.src}
+            download
+            class="m-auto inline-flex rounded-full bg-black/5 p-2 no-underline after:hidden dark:bg-white/10"
+        >
+            <span
+                class="inline-flex h-3 w-3 items-center justify-center text-sm font-black"
+            >
+                ↓
+            </span>
+        </a>
+    </div>
+</div>

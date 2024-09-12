@@ -1,0 +1,77 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import { HOME } from "@consts";
+import { getLangFromUrl } from "@i18n/utils";
+import Card from "@components/News/Card.astro";
+
+export async function getStaticPaths() {
+    const news = (await getCollection("news")).sort(
+        (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    );
+
+    const paths = news.map((post) => {
+        const [lang, ...slug] = post.slug.split("/");
+        return {
+            params: { lang, slug: slug.join("/") || undefined },
+            props: post,
+        };
+    });
+
+    return paths;
+}
+
+const { lang } = Astro.params;
+
+const data = (await getCollection("news"))
+    .filter((post) => !post.data.draft)
+    .filter(
+        (post) =>
+            getLangFromUrl(
+                new URL(`https://news.futureblur.com/${post.slug}`),
+            ) === lang,
+    )
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+type Acc = {
+    [year: string]: CollectionEntry<"news">[];
+};
+
+const news = data.reduce((acc: Acc, post) => {
+    const year = post.data.date.getFullYear().toString();
+    if (!acc[year]) {
+        acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+}, {});
+
+const years = Object.keys(news).sort((a, b) => parseInt(b) - parseInt(a));
+---
+
+<Layout title={HOME.TITLE} description={HOME.DESCRIPTION} cover={HOME.COVER}>
+    <div class="mx-auto max-w-screen-lg px-6">
+        <div class="space-y-10">
+            <div class="space-y-4">
+                {
+                    years.map((year) => (
+                        <section class="animate space-y-4">
+                            <div class="text-3xl font-bold tracking-tight text-black dark:text-white lg:text-4xl">
+                                {year}
+                            </div>
+                            <div>
+                                <ul class="not-prose flex flex-col gap-4">
+                                    {news[year].map((post) => (
+                                        <li>
+                                            <Card entry={post} />
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </section>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</Layout>

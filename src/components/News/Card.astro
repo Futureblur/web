@@ -1,0 +1,55 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import FormattedDate from "./FormattedDate.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { getTranslatedSlug } from "@lib/utils";
+import { ui } from "@i18n/ui";
+
+type Props = {
+    entry: CollectionEntry<"news">;
+    url?: string;
+};
+
+const { entry } = Astro.props as {
+    entry: CollectionEntry<"news">;
+};
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+function getTag(tag: string) {
+    return ("tag." + tag.toLowerCase()) as keyof (typeof ui)[typeof lang];
+}
+---
+
+<a href={getTranslatedSlug(entry.slug)}>
+    <div
+        class="flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-black lg:flex-row"
+    >
+        <Image
+            class="lg:max-w-2xl"
+            src={entry.data.cover}
+            alt={entry.data.coverDescription}
+            widths={[240, 540, 960, 1960]}
+            sizes={`(max-width: 360px) 240px, (max-width: 960px) 540px, (max-width: 1600px) 960px, ${1960}px`}
+        />
+        <div class="flex flex-col justify-between p-6 lg:p-8">
+            <div class="flex flex-col">
+                <div
+                    class="mb-1 text-xs font-bold uppercase tracking-normal text-black/60 dark:text-white/60 lg:mb-2"
+                >
+                    {t(getTag(entry.data.type))}
+                </div>
+                <div
+                    class="mb-8 text-xl font-bold tracking-[-0.2px] text-black dark:text-white lg:text-3xl lg:tracking-tight"
+                >
+                    {entry.data.title}
+                </div>
+            </div>
+            <div class="text-sm font-bold text-black/60 dark:text-white/60">
+                <FormattedDate date={entry.data.date} lang={lang} />
+            </div>
+        </div>
+    </div>
+</a>
