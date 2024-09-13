@@ -34,6 +34,10 @@ footer {
   @apply py-6 text-sm;
 }
 
+.page-spacing {
+    @apply pt-20 md:pt-36;
+}
+
 article {
   @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold;

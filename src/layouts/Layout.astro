@@ -29,9 +29,16 @@ const lang = getLangFromUrl(Astro.url);
     </head>
     <body>
         <Header />
-        <main class="pt-20 md:pt-36">
+        <main>
             <slot />
         </main>
+        <!-- Cloudflare Web Analytics -->
+        <script
+            is:inline
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon='{"token": "bcb372d150cb41feb85a540c68f70d99"}'
+        ></script>
         <PageFind />
         <Footer />
     </body>

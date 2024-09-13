@@ -78,7 +78,7 @@ const { Content } = await post.render();
     cover={post.data.cover.src}
     author={author.data.name}
 >
-    <Container props="max-w-[730px]">
+    <Container props="max-w-[730px] page-spacing">
         <div class="animate">
             <BackToPrevious href=`/${lang}`>{t("nav.back")}</BackToPrevious>
         </div>
