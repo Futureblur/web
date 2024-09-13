@@ -8,7 +8,7 @@ const { src, alt } = Astro.props;
         <Image
             src={src}
             alt={alt}
-            class={"w-full md:overflow-hidden md:rounded-lg"}
+            class={"w-full md:rounded-lg"}
             widths={[240, 540, 960, 1960]}
             sizes={`(max-width: 360px) 240px, (max-width: 960px) 540px, (max-width: 1600px) 960px, ${1960}px`}
         />
