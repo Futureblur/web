@@ -2,6 +2,7 @@
 import "@styles/global.css";
 import "@fontsource-variable/space-grotesk";
 import "@fontsource/instrument-serif";
+import "@fontsource-variable/instrument-sans";
 
 interface Props {
     title: string;
@@ -68,7 +69,8 @@ const { title, description, cover, author = "Futureblur" } = Astro.props;
 
 <script is:inline>
     function init() {
-        preloadTheme();
+        // preloadTheme();
+        toggleTheme(false);
         onScroll();
         animate();
         updateThemeButtons();
