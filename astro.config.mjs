@@ -11,7 +11,7 @@ const subdomain = process.env.BRANCH || '';
 // https://astro.build/config
 export default defineConfig({
     site: `https://${subdomain}futureblur.com`,
-
+    prefetch: true,
     integrations: [
         tailwind(), sitemap({
             i18n: {

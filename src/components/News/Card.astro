@@ -23,7 +23,7 @@ function getTag(tag: string) {
 }
 ---
 
-<a href={getTranslatedSlug(entry.slug)}>
+<a href={getTranslatedSlug(entry.slug)} data-astro-prefetch>
     <div
         class="flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-black lg:flex-row"
     >
