@@ -1,0 +1,26 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/Container.astro";
+
+const { post } = Astro.props;
+---
+
+<Layout
+    title={post.data.title}
+    description={post.data.description}
+    cover={post.data.cover.src}
+>
+    <Container props="max-w-[730px] page-spacing">
+        <div class="my-10 space-y-2">
+            <h1
+                class="animate pb-2 font-serif text-5xl tracking-tight text-black dark:text-white md:text-6xl"
+                data-pagefind-body
+            >
+                {post.data.title}
+            </h1>
+        </div>
+        <article class="animate text-lg" data-pagefind-body>
+            <slot />
+        </article>
+    </Container>
+</Layout>
