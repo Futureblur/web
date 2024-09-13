@@ -3,7 +3,6 @@ import "@styles/global.css";
 import "@fontsource-variable/space-grotesk";
 import "@fontsource/instrument-serif";
 import "@fontsource-variable/instrument-sans";
-import PostHog from "./PostHog.astro";
 
 interface Props {
     title: string;
@@ -61,8 +60,6 @@ const { title, description, cover, author = "Futureblur" } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(cover, Astro.url)} />
-
-<PostHog />
 
 <!-- <ViewTransitions /> -->
 <script is:inline>
