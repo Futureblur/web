@@ -137,13 +137,14 @@ export const footerGroup: NavigationGroup[] = [
                 url: '/terms',
             },
             {
+                title: 'footer.cookiePolicy',
+                url: '/soon/?cookie-policy',
+            },
+            {
                 title: 'footer.sitemap',
                 url: '/soon/?sitemap',
             },
-            {
-                title: 'Cookie Policy',
-                url: '/soon/?cookie-policy',
-            },
+
         ],
     },
     {
