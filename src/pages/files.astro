@@ -36,6 +36,10 @@ import Layout from "@layouts/Layout.astro";
         </div>
     </div>
     <script is:inline>
+        function redirect() {
+            window.location.replace("https://discord.gg/blurads");
+        }
+
         function capture(redirect) {
             window.posthog.capture("user_joined_discord", {
                 source: "project files",
@@ -45,13 +49,14 @@ import Layout from "@layouts/Layout.astro";
 
         setTimeout(() => {
             capture(true);
-            window.location.replace("https://discord.gg/blurads");
-        }, 3300);
+            redirect();
+        }, 3400);
 
         const button = document.querySelector("#join-button");
         if (button) {
             button.addEventListener("click", () => {
                 capture(false);
+                redirect();
             });
         }
     </script>
