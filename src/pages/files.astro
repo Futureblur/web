@@ -1,0 +1,59 @@
+---
+import { HOME, SITE } from "@consts";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Project Files" description={SITE.DESCRIPTION} cover={HOME.COVER}>
+    <div class="flex h-screen justify-center">
+        <div
+            class="m-auto flex w-full max-w-5xl flex-col space-y-14 px-4 text-center text-black/85"
+        >
+            <h1
+                class="m-auto max-w-4xl px-4 text-5xl font-thin leading-tight tracking-tight sm:text-7xl md:text-8xl lg:text-9xl lg:leading-[144px]"
+            >
+                Look for <span
+                    class="rounded-2xl bg-[#E7E8FE] p-4 py-0 font-mono font-normal text-[#4851C4]"
+                    >#files</span
+                >
+                after joining.
+            </h1>
+            <div
+                class="m-auto flex w-full flex-col items-center justify-center space-y-10 md:max-w-lg"
+            >
+                <h2 class="text-md text-center opacity-80 md:text-lg">
+                    You're about to be redirected.
+                </h2>
+                <div class="inline-block w-full space-y-2 sm:max-w-xs">
+                    <button
+                        type="submit"
+                        id="join-button"
+                        class="rounded-full bg-black/90 p-3 px-6 text-center font-bold text-white"
+                    >
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script is:inline>
+        function capture(redirect) {
+            window.posthog.capture("user_joined_discord", {
+                source: "project files",
+                auto_redirect: redirect,
+            });
+        }
+
+        setTimeout(() => {
+            capture(true);
+            window.location.replace("https://discord.gg/blurads");
+        }, 3300);
+
+        const button = document.querySelector("#join-button");
+        if (button) {
+            button.addEventListener("click", () => {
+                capture(false);
+            });
+        }
+    </script>
+</Layout>
+
