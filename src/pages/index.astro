@@ -1,8 +1,31 @@
+---
+import Head from "@components/Head.astro";
+import { SITE } from "@consts";
+import { getLangFromUrl } from "@i18n/utils";
+
+type Props = {
+    title: string;
+    siteName?: string;
+    description: string;
+    cover: string;
+    author?: string;
+};
+
+const { title, siteName, description, cover, author } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+---
+
 <!doctype html>
 <html lang="en">
     <head>
+        <Head
+            title={`${title} — ${SITE.TITLE}`}
+            siteName={siteName}
+            description={description}
+            cover={cover}
+            author={author}
+            language={"en"}
+        />
         <meta http-equiv="refresh" content="0; url=/en" />
     </head>
-
-
 </html>
