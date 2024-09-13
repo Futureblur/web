@@ -49,7 +49,12 @@ const news = data.reduce((acc: Acc, post) => {
 const years = Object.keys(news).sort((a, b) => parseInt(b) - parseInt(a));
 ---
 
-<Layout title={HOME.TITLE} description={HOME.DESCRIPTION} cover={HOME.COVER}>
+<Layout
+    title={HOME.TITLE}
+    siteName="Futureblur Newsroom"
+    description={HOME.DESCRIPTION}
+    cover={HOME.COVER}
+>
     <div class="page-spacing mx-auto max-w-screen-lg px-6">
         <div class="space-y-10">
             <div class="space-y-4">
