@@ -1,2 +1,2 @@
-/news/:slug /en/news/:slug
+/news/* /en/news/:splat
 /legal /en/legal
