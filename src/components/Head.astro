@@ -3,17 +3,27 @@ import "@styles/global.css";
 import "@fontsource-variable/space-grotesk";
 import "@fontsource/instrument-serif";
 import "@fontsource-variable/instrument-sans";
+import type { Language } from "@i18n/ui";
 
 interface Props {
     title: string;
+    siteName?: string;
     description: string;
     cover: string;
     author?: string;
+    language: Language;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, cover, author = "Futureblur" } = Astro.props;
+const {
+    title,
+    siteName = "Futureblur",
+    description,
+    cover,
+    author = "Futureblur",
+    language,
+} = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -39,6 +49,8 @@ const { title, description, cover, author = "Futureblur" } = Astro.props;
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="alternate" href={Astro.site} hreflang="x-default" />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -51,6 +63,8 @@ const { title, description, cover, author = "Futureblur" } = Astro.props;
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content={language} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(cover, Astro.url)} />
 

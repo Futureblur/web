@@ -142,7 +142,7 @@ export const footerGroup: NavigationGroup[] = [
             },
             {
                 title: 'footer.sitemap',
-                url: '/soon/?sitemap',
+                url: '/sitemap-index.xml',
             },
 
         ],

@@ -11,7 +11,15 @@ const subdomain = process.env.BRANCH || '';
 export default defineConfig({
     site: `https://${subdomain}futureblur.com`,
 
-    integrations: [tailwind(), sitemap(), mdx(), pagefind(), critters()],
+    integrations: [
+        tailwind(), sitemap({
+            i18n: {
+                defaultLocale: 'en',
+                locales: { en: 'en', de: 'de' },
+            },
+        }),
+        mdx(), pagefind(), critters()
+    ],
     markdown: { shikiConfig: { theme: 'css-variables' } },
     i18n: {
         locales: ['en', 'de'],
