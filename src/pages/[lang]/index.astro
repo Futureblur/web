@@ -27,17 +27,22 @@ const news = (await getCollection("news"))
     .filter((post) => !post.data.draft)
     .filter(
         (post) =>
-            getLangFromUrl(
-                new URL(`https://news.futureblur.com/${post.slug}`),
-            ) === lang,
+            getLangFromUrl(new URL("https://futureblur.com/" + post.slug)) ===
+            lang,
     )
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
     .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
 const t = useTranslations(lang);
+
+type Props = {
+    description: string;
+};
+
+const { description = t("site.description") } = Astro.props;
 ---
 
-<Layout title={HOME.TITLE} description={HOME.DESCRIPTION} cover={HOME.COVER}>
+<Layout title={HOME.TITLE} description={description} cover={HOME.COVER}>
     <div class="page-spacing mx-auto max-w-screen-lg px-6">
         <h1
             class="animate mb-10 text-3xl font-bold tracking-tight text-black dark:text-white"

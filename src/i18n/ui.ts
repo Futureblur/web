@@ -7,6 +7,7 @@ export const showDefaultLang = true;
 
 export const ui = {
     en: {
+        'site.description': 'Latest updates and announcements from Futureblur.',
         'nav.search': 'Search',
         'nav.back': 'Back',
         'nav.backToTop': 'Back to top',
@@ -41,6 +42,7 @@ export const ui = {
         'soon.title': 'This page is in development. Check back later.'
     },
     de: {
+        'site.description': 'Das Neuste von Futureblur.',
         'nav.search': 'Suchen',
         'nav.back': 'Zurück',
         'nav.backToTop': 'Nach oben',
