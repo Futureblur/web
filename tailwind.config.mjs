@@ -10,6 +10,11 @@ export default {
                 mono:
                     ['Space Grotesk Variable', ...defaultTheme.fontFamily.mono],
                 serif: ['Instrument Serif', ...defaultTheme.fontFamily.serif],
+                sans:
+                    [
+                        'Instrument Sans Variable',
+                        ...defaultTheme.fontFamily.sans
+                    ],
             },
         },
     },

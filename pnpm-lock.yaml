@@ -23,6 +23,9 @@ importers:
       '@astrojs/tailwind':
         specifier: ^5.1.0
         version: 5.1.0(astro@4.15.4(@types/node@20.14.12)(rollup@4.21.3)(typescript@5.6.2))(tailwindcss@3.4.11)
+      '@fontsource-variable/instrument-sans':
+        specifier: ^5.1.0
+        version: 5.1.0
       '@fontsource-variable/space-grotesk':
         specifier: ^5.0.18
         version: 5.1.0
@@ -394,6 +397,9 @@ packages:
     engines: {node: '>=12'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource-variable/instrument-sans@5.1.0':
+    resolution: {integrity: sha512-ns3iHYQYJFNM9uQnjwNEscR86MQIy/3B0l6nYtUvm5TgWctIyA+Iac8YErRsktmkA6NeGu0crVhQV9sAyRf7eA==}
 
   '@fontsource-variable/space-grotesk@5.1.0':
     resolution: {integrity: sha512-K2mwQYNyLook6EbtMB+Ix8srQsYZRigfxayoSGl1QsgVAk/J21s0FMZu0FWzTvONyQkYAR704rLfYSstVMi6jQ==}
@@ -2911,6 +2917,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.21.5':
     optional: true
+
+  '@fontsource-variable/instrument-sans@5.1.0': {}
 
   '@fontsource-variable/space-grotesk@5.1.0': {}
 

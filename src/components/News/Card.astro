@@ -37,7 +37,7 @@ function getTag(tag: string) {
         <div class="flex flex-col justify-between p-6 lg:p-8">
             <div class="flex flex-col">
                 <div
-                    class="mb-1 text-xs font-bold uppercase tracking-normal text-black/60 dark:text-white/60 lg:mb-2"
+                    class="mb-1 text-xs font-bold uppercase tracking-wide text-black/60 dark:text-white/60 lg:mb-2"
                 >
                     {t(getTag(entry.data.type))}
                 </div>
@@ -47,7 +47,9 @@ function getTag(tag: string) {
                     {entry.data.title}
                 </div>
             </div>
-            <div class="text-sm font-bold text-black/60 dark:text-white/60">
+            <div
+                class="text-sm font-bold tracking-wide text-black/60 dark:text-white/60"
+            >
                 <FormattedDate date={entry.data.date} lang={lang} />
             </div>
         </div>

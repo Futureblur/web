@@ -15,6 +15,7 @@
     "@astrojs/rss": "^4.0.6",
     "@astrojs/sitemap": "^3.1.5",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/instrument-sans": "^5.1.0",
     "@fontsource-variable/space-grotesk": "^5.0.18",
     "@fontsource/instrument-serif": "^5.0.22",
     "astro": "^4.9.2",

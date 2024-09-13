@@ -83,7 +83,9 @@ const { Content } = await post.render();
             <BackToPrevious href=`/${lang}`>{t("nav.back")}</BackToPrevious>
         </div>
         <div class="my-10 space-y-2">
-            <div class="animate flex items-center gap-1.5 text-sm">
+            <div
+                class="animate flex items-center gap-1.5 text-sm tracking-wide"
+            >
                 <div class="font-semibold" data-pagefind-body>
                     <FormattedDate date={post.data.date} lang={lang} />
                 </div>
@@ -117,13 +119,17 @@ const { Content } = await post.render();
             <Content />
             <hr />
             <div class="mt-12 space-y-2">
-                <div class="text-sm font-bold">{t("post.philosophyTitle")}</div>
-                <div class="text-sm">
+                <div class="text-sm font-bold tracking-wide">
+                    {t("post.philosophyTitle")}
+                </div>
+                <div class="text-sm leading-relaxed tracking-normal">
                     {t("post.philosophy")}
                 </div>
             </div>
             <div class="mt-12">
-                <div class="text-sm font-bold uppercase">{t("post.by")}</div>
+                <div class="text-sm font-bold uppercase tracking-wide">
+                    {t("post.by")}
+                </div>
                 <AuthorInfo author={author.data} username={username} />
             </div>
             <div class="mt-24">
