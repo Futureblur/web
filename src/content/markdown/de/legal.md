@@ -13,6 +13,9 @@ Bottroper Straße 47\
 **Vertreten durch**\
 Rasul Adasov
 
+**Umsatzsteueridentifikationsnummer**\
+DE369045447
+
 **Kontakt**\
 Telefon: 017683844569\
 E-Mail: [hello@futureblur.com](mailto:hello@futureblur.com)
