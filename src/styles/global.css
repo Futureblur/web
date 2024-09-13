@@ -45,8 +45,8 @@ article {
 }
 
 article h1 {
-  @apply md:pt-10;
-  @apply tracking-tight text-2xl md:text-3xl italic font-medium;
+  @apply pt-8;
+  @apply tracking-tight md:text-3xl text-2xl font-light;
 }
 
 article h2 {

@@ -82,7 +82,7 @@ const { Content } = await post.render();
         <div class="animate">
             <BackToPrevious href=`/${lang}`>{t("nav.back")}</BackToPrevious>
         </div>
-        <div class="my-10 space-y-2">
+        <div class="my-10 mb-0 space-y-2 md:mb-6">
             <div
                 class="animate flex items-center gap-1.5 text-sm tracking-wide"
             >
@@ -102,7 +102,7 @@ const { Content } = await post.render();
                 }
             </div>
             <h1
-                class="animate pb-2 font-serif text-4xl tracking-[-0.4px] text-black dark:text-white md:text-5xl md:tracking-tight"
+                class="animate pb-2 font-serif text-5xl tracking-tight text-black dark:text-white md:text-6xl"
                 data-pagefind-body
             >
                 {post.data.title}
