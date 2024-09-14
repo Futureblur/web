@@ -49,7 +49,7 @@ export const ui = {
         'footer.resources': 'Ressourcen',
         'footer.legal': 'Impressum',
         'footer.privacy': 'Datenschutz',
-        'footer.terms': 'AGB',
+        'footer.terms': 'Nutzungsbedingungen',
         'footer.cookiePolicy': 'Cookie-Richtlinie',
         'footer.sitemap': 'Sitemap',
         'footer.company': 'Futureblur',
