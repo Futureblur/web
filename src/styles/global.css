@@ -4,6 +4,7 @@
 
 html {
   overflow-y: auto;
+  overflow-x: hidden;
   color-scheme: light;
   scroll-padding-top: 100px;
 }
@@ -58,11 +59,23 @@ article h1 {
 }
 
 article h2 {
-  @apply tracking-tight text-2xl pt-4;
+  @apply tracking-tight text-2xl pt-4 hyphens-manual;
 }
 
 article h3 {
   @apply pt-6;
+}
+
+article p:has(img + em) {
+    @apply -mx-6 py-8 lg:-mx-28;
+}
+
+article img {
+    @apply md:rounded-lg pointer-events-none;
+}
+
+article img + em {
+    @apply mt-5 px-6 lg:px-28 block w-full pr-2 text-xs tracking-wide font-bold text-black/80 not-italic;
 }
 
 @layer utilities {
