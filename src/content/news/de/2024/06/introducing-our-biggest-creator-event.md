@@ -7,7 +7,7 @@ date: 2024-06-07
 author: rasul-adasov
 draft: false
 type: Announcement
-cover: /src/assets/museum.jpeg
+cover: "/src/assets/museum.jpeg"
 alt: "Eine große Ausstellung in einem warm beleuchteten Innenraum zwischen zwei Bäumen. Das Display in der Mitte hat die zeigt die Folie: Create, Polish, Repeat."
 url: https://fut.red/R5PDS
 ---
@@ -20,7 +20,7 @@ Die Futureblur-Community hat in den letzten drei Monaten ein bemerkenswertes Wac
 
 Zunächst wurden Tipps und Tricks zur Erstellung fesselnder Reels präsentiert. Zum Beispiel wurde ein Tutorial über den stark nachgefragten [Glitch-Effekt](https://fut.red/k7yrY) gezeigt. Danach folgte eine Schritt-für-Schritt-Anleitung zur Optimierung von Videoexporten. Wichtige Hinweise waren unter anderem das Anwenden des 'Unscharf Maskieren'-Effekts, die Nutzung des H.264-Formats und das Anpassen der Bitrate für bestmögliche Ergebnisse.
 
-![Ein Screenshot eines leeren Premiere Pro-Projekts.](/src/assets/premiere-pro.jpeg)
+![Ein Screenshot eines leeren Premiere Pro-Projekts.](src/assets/premiere-pro.jpeg)
 *Premiere Pro bleibt weiterhin eine der besten Optionen für die Videobearbeitung.*
 
 ## Metas neue Richtlinien

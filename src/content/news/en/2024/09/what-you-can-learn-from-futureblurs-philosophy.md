@@ -1,7 +1,7 @@
 ---
 title: What you can learn from Futureblur's Philosophy
 tagline: Every sentence holds wisdom. Let's uncover the mystery once and for all.
-caption: Every sentence holds wisdom. Let's uncover the mystery once and for all.
+caption: ""
 description: Every sentence holds wisdom. Let's uncover the mystery once and for all.
 date: 2024-09-09
 author: rasul-adasov
