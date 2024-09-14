@@ -1,29 +1,27 @@
 ---
 import { Image } from "astro:assets";
-const { src, alt } = Astro.props;
+const { src, alt, loading = "lazy" } = Astro.props;
 ---
 
-<figure class="py-8">
+<div class="py-8">
     <div class="-mx-6 lg:-mx-28">
         <Image
             src={src}
             alt={alt}
             class={"w-full md:rounded-lg"}
             widths={[240, 540, 960, 1960]}
-            loading={"eager"}
+            loading={loading}
             sizes={`(max-width: 360px) 240px, (max-width: 960px) 540px, (max-width: 1600px) 960px, ${1960}px`}
         />
     </div>
     <div class="flex w-full justify-between text-left font-bold">
-        <figcaption
-            class="mt-1 w-full pr-2 text-xs tracking-wide text-black/80"
-        >
+        <div class="mt-1 w-full pr-2 text-xs tracking-wide text-black/80">
             <slot />
-        </figcaption>
+        </div>
         <a
             href={src.src}
             download
-            class="m-auto inline-flex rounded-full bg-black/5 p-2 no-underline after:hidden dark:bg-white/10"
+            class="m-auto inline-flex hidden rounded-full bg-black/5 p-2 no-underline after:hidden dark:bg-white/10"
         >
             <span
                 class="inline-flex h-3 w-3 items-center justify-center text-sm font-black"
@@ -32,4 +30,4 @@ const { src, alt } = Astro.props;
             </span>
         </a>
     </div>
-</figure>
+</div>
