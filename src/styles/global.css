@@ -75,7 +75,7 @@ article img {
 }
 
 article img + em {
-    @apply mt-5 px-6 lg:px-28 block w-full pr-2 text-xs tracking-wide font-bold text-black/80 not-italic;
+    @apply mt-5 px-6 lg:px-28 block w-full text-xs tracking-wide font-bold text-black/80 not-italic;
 }
 
 @layer utilities {
