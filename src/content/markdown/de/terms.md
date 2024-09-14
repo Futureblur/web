@@ -124,7 +124,7 @@ Wenn Sie Inhaber eines Urheberrechts sind oder im Namen eines solchen autorisier
 
 Sie können für Schäden (einschließlich Kosten und Anwaltsgebühren) haftbar gemacht werden, wenn Sie wissentlich falsche oder in böser Absicht erhobene Ansprüche bezüglich der Verletzung von Inhalten auf und/oder durch den Dienst erheben.
 
-## **15. DMCA-Hinweis und Verfahren für Urheberrechtsverletzungsansprüche**
+## **15. DMCA-Hinweis und Verfahren für Urheberrechtsver&shy;letzungsansprüche**
 
 Sie können eine Mitteilung gemäß dem Digital Millennium Copyright Act (DMCA) einreichen, indem Sie unserem Urheberrechtsbeauftragten die folgenden Informationen schriftlich übermitteln (siehe 17 U.S.C. 512(c)(3) für weitere Details):
 
