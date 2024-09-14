@@ -1,15 +1,18 @@
 ---
-
+import ChevronDown from "@components/Icons/ChevronDown.astro";
 ---
 
-<select
-    name="languages"
-    class="max-w-48 bg-transparent p-1.5"
-    id="language-select"
->
-    <option value="en">English</option>
-    <option value="de">Deutsch</option>
-</select>
+<div class="flex items-center">
+    <select
+        name="languages"
+        class="max-w-48 bg-transparent p-1.5"
+        id="language-select"
+    >
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+    </select>
+    <ChevronDown />
+</div>
 
 <script>
     import { getLangFromUrl } from "@i18n/utils";

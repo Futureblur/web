@@ -34,6 +34,14 @@ footer {
   @apply py-6 text-sm;
 }
 
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    cursor: pointer;
+}
+
 .page-spacing {
     @apply pt-20 md:pt-36;
 }
