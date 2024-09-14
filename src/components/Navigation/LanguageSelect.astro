@@ -1,0 +1,38 @@
+---
+
+---
+
+<select
+    name="languages"
+    class="max-w-48 bg-transparent p-1.5"
+    id="language-select"
+>
+    <option value="en">English</option>
+    <option value="de">Deutsch</option>
+</select>
+
+<script>
+    import { getLangFromUrl } from "@i18n/utils";
+    let select = document.getElementById(
+        "language-select",
+    ) as HTMLSelectElement;
+
+    let url = window.location.href;
+    const currentLang = getLangFromUrl(new URL(url));
+
+    function init() {
+        if (select) {
+            select.addEventListener("change", onLanguageChange);
+            select.value = currentLang;
+        }
+    }
+
+    function onLanguageChange() {
+        const targetLang = select.value;
+        url = url.replace(currentLang, targetLang);
+        window.location.href = url;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => init());
+    document.addEventListener("astro:after-swap", () => init());
+</script>
