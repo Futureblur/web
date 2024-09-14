@@ -33,7 +33,7 @@ Und schließlich das Highlight der Show. Zum Auftakt von Create Infinities haben
 
 Daher wird empfohlen, den Feed eines Accounts so zu trainieren, dass er relevante Inhalte vorschlägt. Dies kann erreicht werden, indem man klare Signale sendet, wenn man auf ein interessantes Reel stößt, um Instagram zu helfen, deine Vorlieben besser zu verstehen. Liken, Teilen oder wiederholtes Ansehen sind nur einige Beispiele. Am wichtigsten ist es, diese Reels in einer benutzerdefinierten Sammlung zu speichern, auf die später zugegriffen werden kann.
 
-![Das Reels- und Lesezeichen-Symbol kombiniert.](/src/assets/reels-collection.jpeg)
+![Das Reels- und Lesezeichen-Symbol kombiniert.](src/assets/reels-collection.jpeg)
 *Ein robustes Framework, um konstant Inspiration zu finden. Es ist überraschend einfach.*
 
 ## Wie es weiter geht

@@ -20,7 +20,7 @@ Futureblur's community has seen remarkable growth over the past three months, no
 
 The first segment featured invaluable tips and tricks specifically tailored for creating compelling reels. For example, a tutorial on the highly requested [glitch effect](https://fut.red/k7yrY) was demonstrated. Then, we showed a step-by-step guide on optimizing video exports. Key tips included applying the 'Unsharp Mask' effect, using the H.264 format, and adjusting bitrate settings for the best possible results.
 
-![A screenshot of an empty Premiere Pro project.](/src/assets/premiere-pro.jpeg)
+![A screenshot of an empty Premiere Pro project.](src/assets/premiere-pro.jpeg)
 *Premiere Pro still remains one of the best choices for video editing.*
 
 ## Meta's new policies
@@ -33,7 +33,7 @@ And lastly, our highlight of the show. To kick off Create Infinities, we defined
 
 So, it's recommended to train the feed of one account to suggest relevant content. This can be done by giving clear signals whenever you come across a reel that sparks your interest: liking, sharing or replaying are just one of many interactions that help Instagram understand your preferences better. Most importantly, these reels should be saved to a custom collection that can be accessed later.
 
-![The reels and bookmark icon combined.](/src/assets/reels-collection.jpeg)
+![The reels and bookmark icon combined.](src/assets/reels-collection.jpeg)
 *A rock-solid framework to consistently find inspiration. It's surprisingly easy.*
 
 ## Moving onward

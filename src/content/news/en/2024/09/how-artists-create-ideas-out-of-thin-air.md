@@ -34,7 +34,7 @@ In these cases, limitations would simply cause fewer headaches. Professionals in
 
 Let's say you're a student who's excited to learn about rendering in Blender, but you have an outdated graphics card. Instead of creating high-fidelity environments, you can invest time in learning about motion graphics and simple product renders that can be easily done with EEVEE — a much lighter alternative on your GPU. 
 
-![A large display in a warmly lit interior between two trees.](/src/assets/museum.jpeg)
+![A large display in a warmly lit interior between two trees.](src/assets/museum.jpeg)
 *Create Infinities, Futureblur's premier creator event in 2024 was developed and rendered within a single week. Initially, the project was designed with the Cycles rendering engine in mind. Due to the time constraint, however, many scenes were omitted and all lighting was built from scratch to look correctly in EEVEE.*
 
 Sometimes, the best results emerge from the most constrained environments. Get creative. There are a million ways to approach limitations. And upgrading your hardware should always be a last resort.
@@ -45,7 +45,7 @@ Sometimes, the best results emerge from the most constrained environments. Get c
 
 Fast forward a few years later, you'll realize that your first draft rarely makes its way into the final result — which is a good thing, because it shows a sign of growth. Do not follow guidelines as if they were rules. Become a trend-setter.
 
-![Still frame from the animated movie of Spider-Man: Across the Spider-Verse.](/src/asssets/spider-man-across-the-spider-verse.webp)
+![Still frame from the animated movie of Spider-Man: Across the Spider-Verse.](src/assets/spider-man-across-the-spider-verse.webp)
 *In Spider-Man: Across the Spider-Verse, Sony took a completely new approach to animation and shading that inspired many other movies to come.*
 
 ## Arms wide open

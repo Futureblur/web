@@ -34,7 +34,7 @@ In solchen Fällen sind Einschränkungen extrem vorteilhaft. Profis in der Filmb
 
 Angenommen, du bist ein Student mit großem Interesse für Blender, aber deine Grafikkarte hat schon bessere Zeiten gesehen. Anstatt rechenintensive Umgebungen zu modellieren, kannst du dich z.B. an Motion Graphics und einfachen Produkt-Renderings herantasten, die problemlos mit EEVEE — einer viel schnelleren Engine — erstellt werden können.
 
-![Eine große Ausstellung in einem warm beleuchteten Innenraum zwischen zwei Bäumen. Das Display in der Mitte hat die zeigt die Folie: Create, Polish, Repeat.](/src/assets/museum.jpeg)
+![Eine große Ausstellung in einem warm beleuchteten Innenraum zwischen zwei Bäumen. Das Display in der Mitte hat die zeigt die Folie: Create, Polish, Repeat.](src/assets/museum.jpeg)
 *Create Infinities, Futureblurs erstes Creator-Event in 2024 wurde innerhalb einer Woche entwickelt und gerendert. Ursprünglich war das Projekt mit der Cycles-Render-Engine geplant. Aufgrund der Zeitknappheit mussten viele Szenen weggelassen werden und das Set wurde von Grund auf so gebaut, dass es in EEVEE korrekt aussieht.*
 
 Manchmal entstehen die besten Ergebnisse unter den strengsten Bedingungen. Werde kreativ. Es gibt unzählige Möglichkeiten, mit Einschränkungen umzugehen. Und ein Hardware-Upgrade sollte immer die letzte Option sein.
@@ -45,7 +45,7 @@ Manchmal entstehen die besten Ergebnisse unter den strengsten Bedingungen. Werde
 
 Nach ein paar Jahren wirst du feststellen, dass dein erster Entwurf selten in das Endergebnis einfließt — was eine gute Sache ist, denn es zeigt Wachstum. Befolge keine Richtlinien, als wären es Regeln. Werde zum Trendsetter.
 
-![Standbild aus dem Animationsfilm Spider-Man: Across the Spider-Verse.](/src/assets/spider-man-across-the-spider-verse.webp)
+![Standbild aus dem Animationsfilm Spider-Man: Across the Spider-Verse.](src/assets/spider-man-across-the-spider-verse.webp)
 *In Spider-Man: Across the Spider-Verse verfolgte Sony einen völlig neuen Ansatz für Animation und Shading, der viele andere Filme inspirierte.*
 
 ## Team work makes the dream work
