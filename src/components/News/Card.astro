@@ -21,6 +21,12 @@ const t = useTranslations(lang);
 function getTag(tag: string) {
     return ("tag." + tag.toLowerCase()) as keyof (typeof ui)[typeof lang];
 }
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/*.{jpeg,jpg,png,webp}",
+);
+
+const coverSrc = images[entry.data.cover];
 ---
 
 <a href={getTranslatedSlug(entry.slug)} data-astro-prefetch>
@@ -29,8 +35,8 @@ function getTag(tag: string) {
     >
         <Image
             class="lg:max-w-2xl"
-            src={entry.data.cover}
-            alt={entry.data.coverDescription}
+            src={coverSrc()}
+            alt={entry.data.alt}
             widths={[240, 540, 960, 1960]}
             sizes={`(max-width: 360px) 240px, (max-width: 960px) 540px, (max-width: 1600px) 960px, ${1960}px`}
         />

@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/News/FormattedDate.astro";
+import ArticleImage from "@components/News/ArticleImage.astro";
 import { getUsername, readingTime } from "@lib/utils";
 import BackToPrevious from "@components/News/BackToPrevious.astro";
 import PostNavigation from "@components/News/PostNavigation.astro";
@@ -70,13 +71,20 @@ const author = await getEntry(post.data.author);
 const username = getUsername(author.data.handle);
 
 const { Content } = await post.render();
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/*.{jpeg,jpg,png,webp}",
+);
+
+const coverSrc = images[post.data.cover];
+console.log(images);
 ---
 
 <Layout
     title={post.data.title}
     siteName="Futureblur Newsroom"
     description={post.data.description}
-    cover={post.data.cover.src}
+    cover={post.data.cover}
     author={author.data.name}
 >
     <Container props="max-w-[730px] page-spacing">
@@ -85,7 +93,7 @@ const { Content } = await post.render();
         </div>
         <div class="my-10 mb-0 space-y-2 md:mb-6">
             <div
-                class="animate flex items-center gap-1.5 text-sm tracking-wide"
+                class="animate flex flex-wrap items-center gap-1.5 pb-3 text-sm tracking-wide"
             >
                 <div class="font-semibold" data-pagefind-body>
                     <FormattedDate date={post.data.date} lang={lang} />
@@ -96,8 +104,9 @@ const { Content } = await post.render();
                 </div>
                 {
                     post.data.draft && (
-                        <div class="uppercase">
-                            &bull; {t("post.draftMode")}
+                        <div class="font-mono uppercase">
+                            &bull;
+                            {t("post.draftMode")}
                         </div>
                     )
                 }
@@ -117,6 +126,10 @@ const { Content } = await post.render();
             </button>
         </div>
         <article class="animate text-lg" data-pagefind-body>
+            <h1 class="font-medium">{post.data.tagline}</h1>
+            <ArticleImage src={coverSrc()} alt={post.data.alt} loading="eager"
+                ><p>{post.data.caption}</p></ArticleImage
+            >
             <Content />
             <hr />
             <div class="mt-12 space-y-2">
