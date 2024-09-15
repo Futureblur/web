@@ -1,8 +1,9 @@
 ---
 title: Wir stellen unser größtes Creator-Event vor
 caption: Dieses Event wurde vollständig in Blender gerendert.
-description: Today marks a significant milestone in our ongoing mission to
-  support and elevate the world’s most underrated talent.
+description: Wir streben danach, die besten und am wenigsten geschätzten Talente
+  aus der gesamten Welt ins Rampenlicht zu bringen — und heute haben wir das
+  Fundament gelegt.
 authors: rasul-adasov
 cover: /src/assets/museum.jpeg
 alt: "Eine große Ausstellung in einem warm beleuchteten Innenraum zwischen zwei
