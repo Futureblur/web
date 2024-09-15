@@ -6,7 +6,9 @@ import { HOME, SITE } from "@consts";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
+console.log(Astro.url);
 const t = useTranslations(lang);
+console.log("Detected language:", lang);
 ---
 
 <Layout title="404" description={SITE.DESCRIPTION} cover={HOME.COVER}>
