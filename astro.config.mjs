@@ -12,6 +12,7 @@ const subdomain = process.env.BRANCH || '';
 export default defineConfig({
     site: `https://${subdomain}futureblur.com`,
     prefetch: true,
+    build: { format: 'preserve' },
     integrations: [
         tailwind(), sitemap({
             i18n: {
