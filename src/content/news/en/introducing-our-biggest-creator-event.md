@@ -1,5 +1,7 @@
 ---
+date: 2024-06-07
 title: Introducing our biggest creator event
+tagline: Watch the livestream on YouTube.
 caption: This event has been entirely rendered in Blender.
 description: Today marks a significant milestone in our ongoing mission to
   support and elevate the world’s most underrated talent.
@@ -8,8 +10,6 @@ cover: /src/assets/museum.jpeg
 alt: A large displa"y in a warmly lit interior between two trees.
 draft: false
 author: rasul-adasov
-date: 2024-06-07
-tagline: Watch the livestream on YouTube.
 type: Announcement
 url: https://fut.red/R5PDS
 ---

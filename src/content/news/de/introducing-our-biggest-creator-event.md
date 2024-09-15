@@ -1,5 +1,7 @@
 ---
+date: 2024-06-07
 title: Wir stellen unser größtes Creator-Event vor
+tagline: Sieh dir den Livestream auf YouTube an.
 caption: Dieses Event wurde vollständig in Blender gerendert.
 description: Wir streben danach, die besten und am wenigsten geschätzten Talente
   aus der gesamten Welt ins Rampenlicht zu bringen — und heute haben wir das
@@ -11,8 +13,6 @@ alt: "Eine große Ausstellung in einem warm beleuchteten Innenraum zwischen zwei
   Repeat."
 draft: false
 author: rasul-adasov
-date: 2024-06-07
-tagline: Sieh dir den Livestream auf YouTube an.
 type: Announcement
 url: https://fut.red/R5PDS
 ---
