@@ -1,14 +1,16 @@
 ---
 title: Wie großartige Künstler Ideen aus dem Nichts erschaffen
-tagline: Content ist überall. Warum ist es dann so schwer, neue Ideen zu finden?
 caption: Aufgenommen von Rasul Adasov.
 description: Content ist überall. Warum ist es dann so schwer, neue Ideen zu finden?
-date: 2024-09-08
-author: rasul-adasov
-draft: true
-type: Tip
+authors: rasul-adasov
 cover: /src/assets/autmn-landscape.jpg
-alt: Eine friedliche Wiese mit Blick auf eine hügelige Landschaft unter einem trüben Himmel.
+alt: Eine friedliche Wiese mit Blick auf eine hügelige Landschaft unter einem
+  trüben Himmel.
+draft: true
+author: rasul-adasov
+date: 2024-09-08
+tagline: Content ist überall. Warum ist es dann so schwer, neue Ideen zu finden?
+type: Tip
 url: https://fut.red/6ktMf
 ---
 
