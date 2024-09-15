@@ -1,6 +1,9 @@
 ---
 import { HOME, SITE } from "@consts";
 import Layout from "@layouts/Layout.astro";
+import NotFoundLayout from "@layouts/NotFoundLayout.astro";
 ---
 
-<Layout title="404" description={SITE.DESCRIPTION} cover={HOME.COVER} />
+<Layout title="404" description={SITE.DESCRIPTION} cover={HOME.COVER}>
+    <NotFoundLayout lang="en" />
+</Layout>
