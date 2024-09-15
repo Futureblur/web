@@ -48,7 +48,7 @@ collections:
       - { label: "Cover", name: "cover", widget: "image", i18n: duplicate }
       - { label: "Alt", name: "alt", widget: "string", i18n: true }
       - { label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate }
-      - { label: "Type", name: "type", widget: "string", i18n: duplicate }
+      - { label: "Type", name: "type", widget: "select", options: ["Announcement", "Tip", "Story"], i18n: duplicate }
       - { label: "URL", name: "url", widget: "string", i18n: duplicate }
       - { name: body, label: Body, widget: markdown, i18n: true }
 
