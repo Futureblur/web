@@ -26,6 +26,7 @@ collections:
   - name: "authors"
     label: "Authors"
     folder: "src/content/authors"
+    extension: "json"
     i18n: false
     create: true
     fields:
