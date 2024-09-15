@@ -1,7 +1,5 @@
 ---
 import Container from "@components/Container.astro";
-import Layout from "./Layout.astro";
-import { HOME, SITE } from "@consts";
 import BackToPrevious from "@components/News/BackToPrevious.astro";
 import { useTranslations } from "@i18n/utils";
 
@@ -11,7 +9,9 @@ const t = useTranslations(lang);
 
 <Container>
     <div class="mt-16 grid place-items-center gap-3">
-        <h4 class="animate text-2xl font-semibold text-black dark:text-white">
+        <h4
+            class="animate text-center text-2xl font-semibold text-black dark:text-white"
+        >
             {t("404.title")}
         </h4>
         <span class="animate">
