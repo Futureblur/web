@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: github
   repo: futureblur/web
   branch: preview
   base_url: https://beta.futureblur.com
