@@ -4,14 +4,29 @@ backend:
   branch: preview
   base_url: https://beta.futureblur.com
   auth_endpoint: /api/auth
+  commit_messages:
+    create: create {{collection}} "{{slug}}"
+    update: update {{collection}} "{{slug}}"
+    delete: delete {{collection}} "{{slug}}"
+    uploadMedia: upload "{{path}}"
+    openAuthoring: "{{message}}"
+
+i18n:
+  structure: multiple_folders
+  locales: [en, de]
+  default_locale: en
 
 media_folder: "src/assets"
 public_folder: "src/assets"
+
+publish_mode: editorial_workflow
+display_url: https://beta.futureblur.com
 
 collections:
   - name: "authors"
     label: "Authors"
     folder: "src/content/authors"
+    i18n: false
     create: true
     fields:
       - { label: "Name", name: "name", widget: "string" }
@@ -20,6 +35,7 @@ collections:
   - name: "news"
     label: "News"
     folder: "src/content/news"
+    i18n: true
     create: true
     fields: 
       - { label: "Date", name: "date", widget: "datetime" }
