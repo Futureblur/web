@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: preview
+  base_url: https://beta.futureblur.com
+  auth_endpoint: /api/auth
+
+media_folder: "src/assets"
+public_folder: "src/assets"
+
+collections:
+  - name: "authors"
+    label: "Authors"
+    folder: "src/content/authors"
+    create: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Handle", name: "handle", widget: "string" }
+
+  - name: "news"
+    label: "News"
+    folder: "src/content/news"
+    create: true
+    fields: 
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Tagline", name: "tagline", widget: "string" }
+      - { label: "Caption", name: "caption", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Author", name: "authors", widget: "relation", collection: "authors", search_fields: ["name"], value_field: "{{slug}}" }
+      - { label: "Cover", name: "cover", widget: "image" }
+      - { label: "Alt", name: "alt", widget: "string" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Type", name: "type", widget: "string" }
+      - { label: "URL", name: "url", widget: "string" }
+      - { name: body, label: Body, widget: markdown }
+
