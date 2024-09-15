@@ -1,14 +1,15 @@
 ---
 title: How world-class artists create ideas out of thin air
-tagline: Content is everywhere. Why is it so hard to find new ideas then?
 caption: Shot by Rasul Adasov.
 description: Content is everywhere. Why is it so hard to find new ideas then?
-date: 2024-09-08
-author: rasul-adasov
-draft: true
-type: Tip
+authors: rasul-adasov
 cover: /src/assets/autmn-landscape.jpg
 alt: A serene meadow with a distant view of a hilly landscape under a hazy sky.
+draft: true
+author: rasul-adasov
+date: 2024-09-08
+tagline: Content is everywhere. Why is it so hard to find new ideas then?
+type: Tip
 url: https://fut.red/6ktMf
 ---
 
