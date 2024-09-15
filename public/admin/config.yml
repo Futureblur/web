@@ -39,16 +39,16 @@ collections:
     i18n: true
     create: true
     fields: 
-      - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Tagline", name: "tagline", widget: "string" }
-      - { label: "Caption", name: "caption", widget: "string" }
-      - { label: "Description", name: "description", widget: "string" }
-      - { label: "Author", name: "authors", widget: "relation", collection: "authors", search_fields: ["name"], value_field: "{{slug}}" }
-      - { label: "Cover", name: "cover", widget: "image" }
-      - { label: "Alt", name: "alt", widget: "string" }
-      - { label: "Draft", name: "draft", widget: "boolean", default: true }
-      - { label: "Type", name: "type", widget: "string" }
-      - { label: "URL", name: "url", widget: "string" }
-      - { name: body, label: Body, widget: markdown }
+      - { label: "Date", name: "date", widget: "datetime", i18n: duplicate }
+      - { label: "Title", name: "title", widget: "string", i18n: true }
+      - { label: "Tagline", name: "tagline", widget: "string", i18n: true }
+      - { label: "Caption", name: "caption", widget: "string", i18n: true }
+      - { label: "Description", name: "description", widget: "string", i18n: true }
+      - { label: "Author", name: "authors", widget: "relation", collection: "authors", search_fields: ["name"], value_field: "{{slug}}", i18n: duplicate }
+      - { label: "Cover", name: "cover", widget: "image", i18n: duplicate }
+      - { label: "Alt", name: "alt", widget: "string", i18n: true }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true, i18n: duplicate }
+      - { label: "Type", name: "type", widget: "string", i18n: duplicate }
+      - { label: "URL", name: "url", widget: "string", i18n: duplicate }
+      - { name: body, label: Body, widget: markdown, i18n: true }
 
