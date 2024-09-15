@@ -1,4 +1,5 @@
-/news/* /en/news/:splat
 /legal /en/legal
 /terms /en/terms
 /privacy /en/privacy
+
+/news/* /en/news/:splat
