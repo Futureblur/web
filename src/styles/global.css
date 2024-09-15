@@ -28,7 +28,7 @@ body {
 header {
   @apply fixed left-0 right-0 top-0 z-50 py-4;
   @apply bg-neutral-100/75 dark:bg-neutral-900/75;
-  backdrop-filter: blur(12px) saturate(2);
+  backdrop-filter: blur(20px) saturate(2);
 }
 
 footer {
