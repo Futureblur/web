@@ -133,10 +133,6 @@ Wir können Ihre Daten auch in den folgenden Fällen weitergeben: an unsere Toch
 
 Die Sicherheit Ihrer Daten ist uns wichtig. Dennoch ist keine Methode der Übertragung über das Internet oder der elektronischen Speicherung zu 100 % sicher. Wir bemühen uns, Ihre Daten durch angemessene technische und organisatorische Maßnahmen zu schützen, können jedoch keine absolute Sicherheit garantieren.
 
-Hier ist die angepasste Übersetzung der Datenschutzrichtlinie:
-
----
-
 ## **10. Ihre Rechte zum Datenschutz gemäß der Datenschutz-Grundverordnung (DSGVO)**
 
 Wenn Sie in der Europäischen Union (EU) oder im Europäischen Wirtschaftsraum (EWR) ansässig sind, haben Sie bestimmte Datenschutzrechte, die durch die DSGVO geschützt sind. – Weitere Informationen finden Sie [hier](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
