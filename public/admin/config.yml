@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: futureblur/web
   branch: preview
   base_url: https://beta.futureblur.com
   auth_endpoint: /api/auth
