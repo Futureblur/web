@@ -1,25 +1,9 @@
-/event-24 https://youtu.be/D5sPyzEttl8?si=pjFhhZUbgRs23Odm
-/event https://discord.gg/blurads?event=1245102956152623114
-/zip https://github.com/futureblur/zip
-/wa https://wa.me/message/DCEQGSVL7ZXZG1
-/terms https://futureblur.notion.site/Terms-of-Service-e6c3d868a5344f838958f1680ba000f1?pvs=4
-/privacy https://futureblur.notion.site/Privacy-Policy-ce2d5981c57f42a5abffe9815b3169f8?pvs=4
-/contact https://form.jotform.com/241144195852356
-/book https://cal.com/futureblur/30min
-/instagram https://instagram.com/blurads
-/ig https://instagram.com/blurads
-/gumroad https://blurads.gumroad.com
-/x https://x.com/rdsov
-/yt https://youtube.com/@blurads
-/youtube https://youtube.com/@blurads
-/linkedin https://linkedin.com/rasuladasov
-/github https://github.com/Futureblur
-/gh https://github.com/Futureblur
-/magnet https://github.com/Futureblur/magnet
-/sub https://youtube.com/@blurads?sub_confirmation=1
-/subscribe https://youtube.com/@blurads?sub_confirmation=1
-/join https://discord.gg/fZFGf3QjXe
-/tut01 https://youtu.be/RYgU2nR5KlA
-/tut02 https://youtu.be/M-y6ZKelWoc
-/tut03 https://youtu.be/F3VZXgntQZc
-/tut04 https://youtu.be/Z3QPnB061XM
+/legal /en/legal
+/privacy /en/privacy
+/terms /en/terms
+/cookie-policy /en/cookie-policy
+/sitemap /en/sitemap
+
+/brand /en/brand
+
+/news/* /en/news/:splat

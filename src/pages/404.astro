@@ -1,22 +1,9 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import { HOME, SITE } from "@consts";
+import Layout from "@layouts/Layout.astro";
+import NotFoundLayout from "@layouts/NotFoundLayout.astro";
 ---
-<Layout title="404 — Futureblur">
-    <div class="h-screen justify-center flex">
-        <div class="flex flex-col text-center m-auto w-full max-w-5xl space-y-14 px-4">
-            <h1 class="font-thin tracking-tight px-4 text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-tight lg:leading-[144px] text-white from-[#4d4d4d] to-[#fbfbfb] max-w-4xl m-auto bg-clip-text text-transparent">
-                You've traveled too far 🤯
-            </h1>
-            <div class="flex flex-col m-auto justify-center items-center w-full md:max-w-lg space-y-10">
-                <h2 class="text-md md:text-lg text-center text-white/50">
-                    We couldn't find what you were looking for. Maybe go back?</h2>
-                <div class="inline-block w-full sm:max-w-xs space-y-2">
-                    <a type="submit" id="notify-button" href="https://futureblur.com"
-                       class="w-full p-3 bg-white font-bold rounded-md text-center">
-                        Take me home 🏠
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<Layout title="404" description={SITE.DESCRIPTION} cover={HOME.COVER}>
+    <NotFoundLayout lang="en" />
 </Layout>

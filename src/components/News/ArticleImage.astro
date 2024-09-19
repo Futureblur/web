@@ -1,0 +1,22 @@
+---
+import { Image } from "astro:assets";
+const { src, alt, loading = "lazy" } = Astro.props;
+---
+
+<div class="py-8">
+    <div class="-mx-6 lg:-mx-28">
+        <Image
+            src={src}
+            alt={alt}
+            class={"w-full md:rounded-lg"}
+            widths={[240, 540, 960, 1960]}
+            loading={loading}
+            sizes={`(max-width: 360px) 240px, (max-width: 960px) 540px, (max-width: 1600px) 960px, ${1960}px`}
+        />
+    </div>
+    <div class="flex w-full justify-between text-left font-bold">
+        <div class="mt-1 w-full pr-2 text-xs tracking-wide text-black/80">
+            <slot />
+        </div>
+    </div>
+</div>

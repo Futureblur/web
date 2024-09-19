@@ -1,0 +1,40 @@
+---
+import Image from "astro/components/Image.astro";
+const { author, username } = Astro.props;
+---
+
+<a
+    class="mt-4 inline-flex space-x-2.5 no-underline after:hidden"
+    href={author.handle}
+    class="inline-flex gap-2 py-4"
+>
+    <Image
+        src=`/images/authors/${username}.jpeg`
+        alt={author.name}
+        width={40}
+        height={40}
+        class={"rounded-full"}
+        loading="lazy"
+    />
+    <div class="flex flex-col space-y-0.5">
+        <div class="flex space-x-0.5">
+            <div class="text-sm font-semibold">
+                {author.name}
+            </div>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                class="size-5 scale-90"
+            >
+                <path
+                    fill-rule="evenodd"
+                    d="M16.403 12.652a3 3 0 0 0 0-5.304 3 3 0 0 0-3.75-3.751 3 3 0 0 0-5.305 0 3 3 0 0 0-3.751 3.75 3 3 0 0 0 0 5.305 3 3 0 0 0 3.75 3.751 3 3 0 0 0 5.305 0 3 3 0 0 0 3.751-3.75Zm-2.546-4.46a.75.75 0 0 0-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </div>
+        <div class="font-mono text-sm text-black/60 dark:text-white/60">
+            @{username}
+        </div>
+    </div>
+</a>

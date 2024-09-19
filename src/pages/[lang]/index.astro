@@ -1,0 +1,66 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { SITE, HOME } from "@consts";
+import Card from "@components/News/Card.astro";
+import { getCollection } from "astro:content";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+
+export async function getStaticPaths() {
+    const news = (await getCollection("news")).sort(
+        (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    );
+
+    const paths = news.map((post) => {
+        const [lang, ...slug] = post.slug.split("/");
+        return {
+            params: { lang, slug: slug.join("/") || undefined },
+            props: post,
+        };
+    });
+
+    return paths;
+}
+
+const news = (await getCollection("news"))
+    .filter((post) => !post.data.draft)
+    .filter(
+        (post) =>
+            getLangFromUrl(new URL("https://futureblur.com/" + post.slug)) ===
+            lang,
+    )
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+    .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
+
+const t = useTranslations(lang);
+
+type Props = {
+    description: string;
+};
+
+const { description = t("site.description") } = Astro.props;
+---
+
+<Layout title={HOME.TITLE} description={description} cover={HOME.COVER}>
+    <div class="page-spacing mx-auto max-w-screen-lg px-6">
+        <h1
+            class="animate mb-10 text-3xl font-bold tracking-tight text-black dark:text-white"
+        >
+            {t("title.latestNews")}
+        </h1>
+        <div class="space-y-16">
+            <section class="animate space-y-6">
+                <ul class="not-prose flex flex-col gap-4">
+                    {
+                        news.map((post) => (
+                            <li>
+                                <Card entry={post} />
+                            </li>
+                        ))
+                    }
+                </ul>
+            </section>
+        </div>
+    </div>
+</Layout>

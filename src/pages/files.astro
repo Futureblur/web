@@ -1,32 +1,33 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import { HOME, SITE } from "@consts";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Project Files — Futureblur">
-    <div class="h-screen justify-center flex">
+<Layout title="Project Files" description={SITE.DESCRIPTION} cover={HOME.COVER}>
+    <div class="flex h-screen justify-center">
         <div
-            class="flex flex-col text-center m-auto w-full max-w-5xl space-y-14 px-4"
+            class="m-auto flex w-full max-w-5xl flex-col space-y-14 px-4 text-center text-black/85"
         >
             <h1
-                class="font-thin tracking-tight px-4 text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-tight lg:leading-[144px] text-white from-[#4d4d4d] to-[#fbfbfb] max-w-4xl m-auto bg-clip-text text-transparent"
+                class="m-auto max-w-4xl px-4 text-5xl font-thin leading-tight tracking-tight sm:text-7xl md:text-8xl lg:text-9xl lg:leading-[144px]"
             >
                 Look for <span
-                    class="bg-[#3B406E] p-4 py-0 text-[#C9CDFB] rounded-2xl font-mono font-normal"
+                    class="rounded-2xl bg-[#E7E8FE] p-4 py-0 font-mono font-normal text-[#4851C4]"
                     >#files</span
                 >
                 after joining.
             </h1>
             <div
-                class="flex flex-col m-auto justify-center items-center w-full md:max-w-lg space-y-10"
+                class="m-auto flex w-full flex-col items-center justify-center space-y-10 md:max-w-lg"
             >
-                <h2 class="text-md md:text-lg text-center text-white/50">
+                <h2 class="text-md text-center opacity-80 md:text-lg">
                     You're about to be redirected.
                 </h2>
-                <div class="inline-block w-full sm:max-w-xs space-y-2">
+                <div class="inline-block w-full space-y-2 sm:max-w-xs">
                     <button
                         type="submit"
                         id="join-button"
-                        class="w-full p-3 bg-white font-bold rounded-md text-center"
+                        class="rounded-full bg-black/90 p-3 px-6 text-center font-bold text-white"
                     >
                         Continue
                     </button>
@@ -35,6 +36,10 @@ import Layout from "../layouts/Layout.astro";
         </div>
     </div>
     <script is:inline>
+        function redirect() {
+            window.location.replace("https://discord.gg/blurads");
+        }
+
         function capture(redirect) {
             window.posthog.capture("user_joined_discord", {
                 source: "project files",
@@ -44,14 +49,16 @@ import Layout from "../layouts/Layout.astro";
 
         setTimeout(() => {
             capture(true);
-            window.location.replace("https://discord.gg/blurads");
-        }, 3300);
+            redirect();
+        }, 3400);
 
         const button = document.querySelector("#join-button");
         if (button) {
             button.addEventListener("click", () => {
                 capture(false);
+                redirect();
             });
         }
     </script>
 </Layout>
+

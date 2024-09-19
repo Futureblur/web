@@ -12,7 +12,6 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-src/pages/xfiwsv.astro
 
 # environment variables
 .env
@@ -20,3 +19,8 @@ src/pages/xfiwsv.astro
 
 # macOS-specific files
 .DS_Store
+
+# jetbrains setting folder
+.idea/
+
+.obsidian/

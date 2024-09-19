@@ -1,0 +1,21 @@
+---
+import { getLangFromUrl } from "@i18n/utils";
+import NotFoundLayout from "@layouts/NotFoundLayout.astro";
+import { languages, type Language } from "@i18n/ui";
+import Layout from "@layouts/Layout.astro";
+import { HOME, SITE } from "@consts";
+
+const lang = getLangFromUrl(Astro.url);
+
+export async function getStaticPaths() {
+    const paths = languages.map((lang: Language) => {
+        return { params: { lang: lang } };
+    });
+
+    return paths;
+}
+---
+
+<Layout title="404" description={SITE.DESCRIPTION} cover={HOME.COVER}>
+    <NotFoundLayout lang={lang} />
+</Layout>

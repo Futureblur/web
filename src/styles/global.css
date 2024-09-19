@@ -1,16 +1,212 @@
-body {
-    background-color: #000000;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --header-height: 52px;
+    --clip: inset(0 0 calc(100% - var(--header-height)) 0);
 }
 
-.animate-gradient {
-    background: linear-gradient(to right,
-    #707070,
-    #fbfbfb,
-    #a4a4a4,
-    #fbfbfb,
-    #707070,
-    #fbfbfb,
-    #a4a4a4);
-    background-size: 300% 300%;
-    background-clip: text;
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+  color-scheme: light;
+  scroll-padding-top: 100px;
 }
+
+html.dark {
+  color-scheme: dark;
+}
+
+html,
+body {
+  @apply size-full;
+}
+
+body {
+  @apply font-sans antialiased;
+  @apply flex flex-col;
+  @apply bg-neutral-100 dark:bg-neutral-900;
+  @apply text-black/75 dark:text-white/75;
+}
+
+header {
+  @apply fixed left-0 right-0 top-0 z-50 py-1 sm:py-0;
+  @apply bg-neutral-100/75 dark:bg-neutral-900/75;
+  backdrop-filter: blur(30px) saturate(200%);
+  transition: clip-path 300ms ease;
+}
+
+header.unblur {
+    clip-path: inset(0 0 calc(100% - var(--header-height)) 0);
+    transition: clip-path 300ms ease;
+}
+
+header.mobileExpanded {
+    backdrop-filter: blur(0px) saturate(100%);
+}
+
+header.mobileCollapsed {
+    backdrop-filter: blur(30px) saturate(140%);
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+#curtain {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    backdrop-filter: blur(20px);
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity ease 450ms;
+}
+
+#curtain.blur {
+    opacity: 1;
+}
+
+.dropdown {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 10px;
+    transition: ease 300ms;
+}
+
+.dropdown.show {
+    max-height: 500px;
+    margin: 20px 0 20px 0;
+    transition: ease 450ms;
+}
+
+footer {
+  @apply py-6 text-sm;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    cursor: pointer;
+}
+
+.hide {
+    max-height: 0;
+    overflow: hidden;
+    transition: ease 350ms;
+}
+
+.page-spacing {
+    @apply pt-20 md:pt-36;
+}
+
+article {
+  @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+  @apply prose-headings:font-semibold;
+  @apply prose-headings:text-black prose-headings:dark:text-white;
+  @apply prose-code:before:hidden prose-code:after:hidden;
+}
+
+article h1 {
+  @apply pt-8;
+  @apply tracking-tight md:text-3xl text-2xl font-light;
+}
+
+article h2 {
+  @apply tracking-tight text-2xl pt-4 hyphens-manual;
+}
+
+article h3 {
+  @apply pt-6;
+}
+
+article p:has(img + em) {
+    @apply -mx-6 py-8 lg:-mx-28;
+}
+
+article img {
+    @apply md:rounded-lg pointer-events-none;
+}
+
+article img + em {
+    @apply mt-5 px-6 lg:px-28 block w-full text-xs tracking-wide font-bold text-black/80 not-italic;
+}
+
+@layer utilities {
+  article a {
+    @apply font-sans text-current underline underline-offset-[3px];
+    @apply decoration-black/30 dark:decoration-white/30;
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  article a::after {
+    content: "↗";
+    @apply ml-0;
+  }
+
+  article a:hover {
+    @apply text-black dark:text-white;
+    @apply decoration-black/50 dark:decoration-white/50;
+  }
+}
+
+.no-arrow::after {
+    content: none;
+}
+
+.animate {
+  @apply -translate-y-3 opacity-0;
+  @apply transition-all duration-300 ease-out;
+}
+
+.animate.show {
+  @apply translate-y-0 opacity-100;
+}
+
+html #back-to-top {
+  @apply pointer-events-none opacity-0;
+}
+
+html.scrolled #back-to-top {
+  @apply pointer-events-auto opacity-100;
+}
+
+/* shiki config */
+pre {
+  @apply border border-black/15 py-5 dark:border-white/20;
+}
+
+:root {
+  --astro-code-color-text: #09090b;
+  --astro-code-color-background: #fafafa;
+  --astro-code-token-comment: #a19595;
+  --astro-code-token-keyword: #f47067;
+  --astro-code-token-string: #00a99a;
+  --astro-code-token-function: #429996;
+  --astro-code-token-constant: #2b70c5;
+  --astro-code-token-parameter: #4e8fdf;
+  --astro-code-token-string-expression: #ae42a0;
+  --astro-code-token-punctuation: #8996a3;
+  --astro-code-token-link: #8d85ff;
+}
+
+.dark {
+  --astro-code-color-text: #fafafa;
+  --astro-code-color-background: #09090b;
+  --astro-code-token-comment: #a19595;
+  --astro-code-token-keyword: #f47067;
+  --astro-code-token-string: #00a99a;
+  --astro-code-token-function: #6eafad;
+  --astro-code-token-constant: #b3cceb;
+  --astro-code-token-parameter: #4e8fdf;
+  --astro-code-token-string-expression: #bf7db6;
+  --astro-code-token-punctuation: #8996a3;
+  --astro-code-token-link: #8d85ff;
+}
+

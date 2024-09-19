@@ -1,0 +1,150 @@
+---
+import "@styles/global.css";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource/instrument-serif";
+import "@fontsource-variable/instrument-sans";
+import type { Language } from "@i18n/ui";
+
+interface Props {
+    title: string;
+    siteName?: string;
+    description: string;
+    cover: string;
+    author?: string;
+    language: Language;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const {
+    title,
+    siteName = "Futureblur",
+    description,
+    cover,
+    author = "Futureblur",
+    language,
+} = Astro.props;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/favicons/apple-touch-icon.png"
+/>
+<link rel="icon" type="image/svg+xml" href="/images/favicons/favicon.svg" />
+<link rel="manifest" href="/images/favicons/site.webmanifest" />
+<link
+    rel="mask-icon"
+    href="/images/favicons/safari-pinned-tab.svg"
+    color="#000000"
+/>
+<link rel="shortcut icon" href="/images/favicons/favicon.ico" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="msapplication-config" content="images/favicons/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
+<meta name="generator" content={Astro.generator} />
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+<link rel="alternate" href={Astro.site} hreflang="x-default" />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="author" content={author} />
+<meta name="copyright" content={author} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:locale" content={language} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(cover, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(cover, Astro.url)} />
+
+<!-- <ViewTransitions /> -->
+<script is:inline>
+    function init() {
+        toggleTheme(false);
+        onScroll();
+        animate();
+
+        const backToTop = document.getElementById("back-to-top");
+        backToTop?.addEventListener("click", (event) => scrollToTop(event));
+
+        const backToPrev = document.getElementById("back-to-prev");
+        backToPrev?.addEventListener("click", () => window.history.back());
+
+        document.addEventListener("scroll", onScroll);
+    }
+
+    function animate() {
+        const animateElements = document.querySelectorAll(".animate");
+
+        animateElements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add("show");
+            }, index * 100);
+        });
+    }
+
+    function onScroll() {
+        if (window.scrollY > 0) {
+            document.documentElement.classList.add("scrolled");
+        } else {
+            document.documentElement.classList.remove("scrolled");
+        }
+    }
+
+    function scrollToTop(event) {
+        event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    }
+
+    function toggleTheme(dark) {
+        const css = document.createElement("style");
+
+        css.appendChild(
+            document.createTextNode(
+                `* {
+             -webkit-transition: none !important;
+             -moz-transition: none !important;
+             -o-transition: none !important;
+             -ms-transition: none !important;
+             transition: none !important;
+          }
+        `,
+            ),
+        );
+
+        document.head.appendChild(css);
+
+        if (dark) {
+            document.documentElement.classList.add("dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+        }
+
+        window.getComputedStyle(css).opacity;
+        document.head.removeChild(css);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => init());
+    document.addEventListener("astro:after-swap", () => init());
+</script>

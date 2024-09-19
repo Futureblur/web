@@ -1,29 +1,26 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    darkMode: 'class',
+    content:
+        [
+            './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+            'node_modules/preline/dist/*.js',
+        ],
     theme: {
         extend: {
-            animation: {
-                'spin-slow': 'spin 20s linear infinite',
-                'gradient': 'gradient 6s linear infinite',
-                'banner-reveal': 'bannerReveal 1s ease forwards',
-            },
-            keyframes: {
-                gradient: {
-                    "0%": {backgroundPosition: "0% 50%"},
-                    "100%": {backgroundPosition: "100% 50%"},
-                },
-                bannerReveal: {
-                    "0%": {transform: "translateY(-150%)"},
-                    "100%": {width: "translateY(0px)"},
-                }
-            },
             fontFamily: {
-                mono: ['Space Grotesk Variable', ...defaultTheme.fontFamily.mono],
+                mono:
+                    ['Space Grotesk Variable', ...defaultTheme.fontFamily.mono],
+                serif: ['Instrument Serif', ...defaultTheme.fontFamily.serif],
+                sans:
+                    [
+                        'Instrument Sans Variable',
+                        ...defaultTheme.fontFamily.sans
+                    ],
             },
         },
     },
-    plugins: [],
-}
+    plugins: [require('@tailwindcss/typography'), require('preline/plugin')],
+};

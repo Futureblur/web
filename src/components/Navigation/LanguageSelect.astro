@@ -1,0 +1,45 @@
+---
+import ChevronDown from "@components/Icons/ChevronDown.astro";
+---
+
+<div class="flex items-center">
+    <select
+        name="languages"
+        class="max-w-48 bg-transparent py-1 pe-16 pl-1.5"
+        id="language-select"
+        aria-label="Choose your language"
+    >
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+    </select>
+    <ChevronDown class="pointer-events-none -ml-6" />
+</div>
+
+<script>
+    import { getLangFromUrl } from "@i18n/utils";
+    let select = document.getElementById(
+        "language-select",
+    ) as HTMLSelectElement;
+
+    let url = window.location.href;
+    const currentLang = getLangFromUrl(new URL(url));
+
+    function init() {
+        if (select) {
+            select.addEventListener("change", onLanguageChange);
+            select.value = currentLang;
+        }
+    }
+
+    function onLanguageChange() {
+        const targetLang = select.value;
+        url = url.replace(currentLang, targetLang);
+        window.location.href = url;
+    }
+
+    if (document.readyState !== "loading") {
+        init();
+    } else {
+        document.addEventListener("DOMContentLoaded", init);
+    }
+</script>
