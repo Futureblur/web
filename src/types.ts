@@ -1,5 +1,5 @@
 export type Site = {
-    TITLE: string; DESCRIPTION: string; EMAIL: string;
+    TITLE: string; DESCRIPTION: string; COVER: string; EMAIL: string;
     NUM_POSTS_ON_HOMEPAGE: number;
 };
 

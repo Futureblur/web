@@ -1,23 +1,6 @@
 ---
 import Head from "@components/Head.astro";
 import { SITE } from "@consts";
-import { getLangFromUrl, useTranslations } from "@i18n/utils";
-
-type Props = {
-    title: string;
-    siteName?: string;
-    description: string;
-    cover: string;
-    author?: string;
-};
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
-
-const {
-    description = t("site.description"),
-    cover = "/images/glyph-banner.png",
-} = Astro.props;
 ---
 
 <!doctype html>
@@ -25,10 +8,10 @@ const {
     <head>
         <Head
             title={SITE.TITLE}
-            description={description}
-            cover={cover}
+            description={SITE.DESCRIPTION}
+            cover={SITE.COVER}
             language={"en"}
         />
-        <meta http-equiv="refresh" content="0; url=/en" /></head
-    >
+        <meta http-equiv="refresh" content="0; url=/en" />
+    </head>
 </html>

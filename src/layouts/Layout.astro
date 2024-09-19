@@ -3,7 +3,6 @@ import Head from "@components/Head.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import PageFind from "@components/PageFind.astro";
-import { SITE } from "@consts";
 import { getLangFromUrl } from "@i18n/utils";
 
 type Props = {
@@ -22,7 +21,7 @@ const lang = getLangFromUrl(Astro.url);
 <html lang={lang}>
     <head>
         <Head
-            title={`${title} — ${SITE.TITLE}`}
+            title={`${title} — Futureblur`}
             siteName={siteName}
             description={description}
             cover={cover}

@@ -1,8 +1,8 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import { HOME } from "@consts";
-import { getLangFromUrl } from "@i18n/utils";
+import { NEWS } from "@consts";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import Card from "@components/News/Card.astro";
 
 export async function getStaticPaths() {
@@ -22,6 +22,7 @@ export async function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
+const t = useTranslations(getLangFromUrl(Astro.url));
 
 const data = (await getCollection("news"))
     .filter((post) => !post.data.draft)
@@ -50,10 +51,10 @@ const years = Object.keys(news).sort((a, b) => parseInt(b) - parseInt(a));
 ---
 
 <Layout
-    title={HOME.TITLE}
+    title={NEWS.TITLE}
     siteName="Futureblur Newsroom"
-    description={HOME.DESCRIPTION}
-    cover={HOME.COVER}
+    description={t("news.description")}
+    cover={NEWS.COVER}
 >
     <div class="page-spacing mx-auto max-w-screen-lg px-6">
         <div class="space-y-10">

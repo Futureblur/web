@@ -7,7 +7,8 @@ export const showDefaultLang = true;
 
 export const ui = {
     en: {
-        'site.description': 'Latest updates and announcements from Futureblur.',
+        'site.title': 'Home',
+        'site.description': 'Home of 3D.',
         'nav.search': 'Search',
         'nav.back': 'Back',
         'nav.backToTop': 'Back to top',
@@ -33,6 +34,8 @@ export const ui = {
         'tag.announcement': 'Announcement',
         'tag.tip': 'Tip',
         'tag.story': 'Story',
+        'news.title': 'Latest News',
+        'news.description': 'Latest updates and annoucements from Futureblur.',
         'post.draftMode': 'Draft Mode',
         'post.share': 'Share',
         'post.copied': 'Copied',
@@ -41,13 +44,13 @@ export const ui = {
         'post.philosophy':
             'Start with an incredible idea. Don\'t be afraid to reach for the stars. The first step is all about creating the prototype. But why stop there? Next up is polishing, where most of the time will be spent. Embrace the countless hours, because deep down we know it\'s worth it. Once happy with the results, repeat as often as needed. The journey isn\'t an easy one for sure, but that\'s exactly what makes it so special. So rewarding. So uplifting. So beautiful.',
         'post.by': 'Posted by',
-        'title.latestNews': 'Latest News',
         '404.title': 'This page does not exist.',
         '404.back': 'Go back home',
         'soon.title': 'This page is in development. Check back later.'
     },
     de: {
-        'site.description': 'Das Neuste von Futureblur.',
+        'site.title': 'Startseite',
+        'site.description': 'Heimat des 3D.',
         'nav.search': 'Suchen',
         'nav.back': 'Zurück',
         'nav.title.store': 'Store',
@@ -73,6 +76,8 @@ export const ui = {
         'tag.announcement': 'Ankündigung',
         'tag.tip': 'Tipp',
         'tag.story': 'Story',
+        'news.title': 'Das Neuste',
+        'news.description': 'Das Neuste von Futureblur.',
         'post.draftMode': 'Entwurfsmodus',
         'post.share': 'Teilen',
         'post.copied': 'Kopiert',
@@ -81,7 +86,6 @@ export const ui = {
         'post.philosophy':
             'Jede Reise beginnt mit einer großen Idee. So groß, dass sie fast unmöglich scheint. Doch wie gelangt man ans Ziel? Das Rezept ist simpel: man nehme einen Prototyp und verbessere ihn so lange, bis er glänzt. Gut verrühren. Mit halb-fertigen Dingen geben wir uns nicht zufrieden, dafür sind wir nicht hier. Offenheit und Mut liegt in unserer DNA. Wir werden uns durchsetzen, uns den Thron erkämpfen, egal wie, wann, und wo.',
         'post.by': 'Veröffentlicht von',
-        'title.latestNews': 'Das Neuste',
         '404.title': 'Diese Seite konnte nicht gefunden werden.',
         '404.back': 'Zurück nach Hause',
         'soon.title':

@@ -1,9 +1,9 @@
 ---
-import { HOME, SITE } from "@consts";
+import { SITE } from "@consts";
 import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Project Files" description={SITE.DESCRIPTION} cover={HOME.COVER}>
+<Layout title="Project Files" description={SITE.DESCRIPTION} cover={SITE.COVER}>
     <div class="flex h-screen justify-center">
         <div
             class="m-auto flex w-full max-w-5xl flex-col space-y-14 px-4 text-center text-black/85"
@@ -61,4 +61,3 @@ import Layout from "@layouts/Layout.astro";
         }
     </script>
 </Layout>
-
