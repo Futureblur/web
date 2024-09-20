@@ -9,9 +9,12 @@
 
 /news/* /en/news/:splat
 
+/zip https://github.com/futureblur/zip
+/magnet https://github.com/futureblur/magnet
 /instagram https://fut.red/i
 /youtube https://fut.red/y
 /github https://fut.red/g
+/wa https://wa.me/message/DCEQGSVL7ZXZG1
 /tut01 https://youtu.be/RYgU2nR5KlA
 /tut02 https://youtu.be/M-y6ZKelWoc
 /tut03 https://youtu.be/F3VZXgntQZc
