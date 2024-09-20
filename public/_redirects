@@ -8,3 +8,11 @@
 /contact /en/contact
 
 /news/* /en/news/:splat
+
+/instagram https://fut.red/i
+/youtube https://fut.red/y
+/github https://fut.red/g
+/tut01 https://youtu.be/RYgU2nR5KlA
+/tut02 https://youtu.be/M-y6ZKelWoc
+/tut03 https://youtu.be/F3VZXgntQZc
+/tut04 https://youtu.be/Z3QPnB061XM
