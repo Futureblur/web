@@ -31,9 +31,14 @@ export function getUsername(url: string) {
     return url.substring(n + 1);
 }
 
-export function getTranslatedSlug(slug: string) {
-    let lang = getLangFromUrl(new URL(`https://news.futureblur.com/${slug}`));
+export function getTranslatedSlug(slug: string, basePath: string = '') {
+    // Remove first slash if exists
+    if (slug.charAt(0) === '/') {
+        slug = slug.slice(1);
+    }
+
+    let lang = getLangFromUrl(new URL(`https://futureblur.com/${slug}`));
     let removedSlug = slug.replace(`${lang}`, '');
-    return `../../${lang}/news${removedSlug}`;
+    return `/${lang}${basePath}${removedSlug}`;
 }
 

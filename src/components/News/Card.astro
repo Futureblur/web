@@ -29,7 +29,7 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 const coverSrc = images[entry.data.cover];
 ---
 
-<a href={getTranslatedSlug(entry.slug)} data-astro-prefetch>
+<a href={getTranslatedSlug(entry.slug, "/news")} data-astro-prefetch>
     <div
         class="flex flex-col overflow-hidden rounded-2xl bg-white dark:bg-black lg:flex-row"
     >
