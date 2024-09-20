@@ -71,20 +71,13 @@ const author = await getEntry(post.data.author);
 const username = getUsername(author.data.handle);
 
 const { Content } = await post.render();
-
-const images = import.meta.glob<{ default: ImageMetadata }>(
-    "/src/assets/*.{jpeg,jpg,png,webp}",
-);
-
-const coverSrc = images[post.data.cover];
-console.log(images);
 ---
 
 <Layout
     title={post.data.title}
     siteName="Futureblur Newsroom"
     description={post.data.description}
-    cover={post.data.cover}
+    cover={post.data.cover.src}
     author={author.data.name}
 >
     <Container props="max-w-[730px] page-spacing">
@@ -127,8 +120,10 @@ console.log(images);
         </div>
         <article class="animate text-lg" data-pagefind-body>
             <h1 class="font-medium">{post.data.tagline}</h1>
-            <ArticleImage src={coverSrc()} alt={post.data.alt} loading="eager"
-                ><p>{post.data.caption}</p></ArticleImage
+            <ArticleImage
+                src={post.data.cover}
+                alt={post.data.alt}
+                loading="eager"><p>{post.data.caption}</p></ArticleImage
             >
             <Content />
             <hr />
