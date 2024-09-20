@@ -35,27 +35,18 @@ import Layout from "@layouts/Layout.astro";
             </div>
         </div>
     </div>
-    <script is:inline>
+    <script>
         function redirect() {
-            window.location.replace("https://discord.gg/blurads");
-        }
-
-        function capture(redirect) {
-            window.posthog.capture("user_joined_discord", {
-                source: "project files",
-                auto_redirect: redirect,
-            });
+            window.location.replace("https://fut.red/d");
         }
 
         setTimeout(() => {
-            capture(true);
             redirect();
         }, 3400);
 
         const button = document.querySelector("#join-button");
         if (button) {
             button.addEventListener("click", () => {
-                capture(false);
                 redirect();
             });
         }
