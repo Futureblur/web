@@ -82,8 +82,6 @@ Beispiele für die von uns verwendeten Cookies:
 
 **(c) Sicherheits-Cookies:** Wir verwenden Sicherheits-Cookies zu Sicherheitszwecken.
 
-**(d) Werbe-Cookies:** Werbe-Cookies werden verwendet, um Ihnen Werbung anzuzeigen, die für Sie und Ihre Interessen relevant sein könnte.
-
 **Sonstige Daten**
 
 Bei der Nutzung unseres Dienstes können wir auch folgende Informationen erfassen: Geschlecht, Alter, Geburtsdatum, Geburtsort, Passdaten, Staatsangehörigkeit, Wohnort, Telefonnummer (Arbeit, Mobil), Angaben zu Ausbildung, beruflichen Qualifikationen, Arbeitsverträgen, Informationen zu Boni und Vergütungen, Familienstand, Familienmitglieder, Sozialversicherungsnummer oder andere Steueridentifikationsnummern sowie weitere ähnliche Informationen.

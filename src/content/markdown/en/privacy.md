@@ -82,8 +82,6 @@ Examples of Cookies we use:
 
 **(c) Security Cookies:** We use Security Cookies for security purposes.
 
-**(d) Advertising Cookies:** Advertising Cookies are used to serve you with advertisements that may be relevant to you and your interests.
-
 **Other Data**
 
 While using our Service, we may also collect the following information: sex, age, date of birth, place of birth, passport details, citizenship, registration at place of residence and actual address, telephone number (work, mobile), details of documents on education, qualification, professional training, employment agreements, non-disclosure agreements, information on bonuses and compensation, information on marital status, family members, social security (or other taxpayer identification) number, office location and other data.
