@@ -7,6 +7,9 @@ export const showDefaultLang = true;
 
 export const ui = {
     en: {
+        'header.locale.description':
+            'Based on your location, the English version of this site might be a better fit.',
+        'header.locale.switch': 'Switch',
         'site.title': 'Home',
         'site.description': 'Home of 3D.',
         'nav.search': 'Search',
@@ -50,6 +53,9 @@ export const ui = {
         'soon.title': 'This page is in development. Check back later.'
     },
     de: {
+        'header.locale.description':
+            'Basierend auf deinem Standort ist die deutsche Version dieser Seite womöglich besser geeignet.',
+        'header.locale.switch': 'Wechseln',
         'site.title': 'Startseite',
         'site.description': 'Heimat des 3D.',
         'nav.search': 'Suchen',
