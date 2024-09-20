@@ -174,6 +174,10 @@ export const footerGroup: NavigationGroup[] = [
                 title: 'footer.press',
                 url: '/brand',
             },
+            {
+                title: 'footer.contact',
+                url: '/contact',
+            },
         ],
     },
     {

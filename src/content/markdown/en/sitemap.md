@@ -16,3 +16,4 @@ coverDescription: ""
 - [Newsroom](/en/news)
 - [About](/en/soon/?about)
 - [Press Kit and Brand Guidelines](/en/brand)
+- [Contact Us](/en/contact)
