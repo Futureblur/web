@@ -5,7 +5,7 @@ cover: "/public/images/legal-banner.png"
 coverDescription: "" 
 ---
 
-Gültig ab: 24.04.2024
+Stand: 20.09.2024
 
 ## **1. Einleitung**
 

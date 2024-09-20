@@ -5,7 +5,7 @@ cover: "/public/images/legal-banner.png"
 coverDescription: "" 
 ---
 
-Effective date: 04/24/2024
+Last updated: 09/20/2024
 
 ## **1. Introduction**
 
