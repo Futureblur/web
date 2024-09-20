@@ -1,7 +1,7 @@
 ---
 title: "Cookie Policy"
 description: ""
-cover: "/public/images/glyph-banner.png"
+cover: "/public/images/legal-banner.png"
 coverDescription: ""
 ---
 
