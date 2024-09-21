@@ -14,7 +14,7 @@ const newsCollection = defineCollection({
         caption: z.string(),
         author: reference('authors'),
         draft: z.boolean({ message: 'Draft mode was not specified' }),
-        type: z.enum(['Tip', 'Story', 'Announcement']),
+        type: z.enum(['Announcement', 'Tip', 'Update', 'Story']),
         url: z.string().url({ message: 'You need to specify a valid url' }),
     })
 })
