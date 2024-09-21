@@ -8,7 +8,6 @@
 }
 
 html {
-  overflow-y: auto;
   overflow-x: hidden;
   overflow-wrap: break-word;
   color-scheme: light;
@@ -19,11 +18,6 @@ html.dark {
   color-scheme: dark;
 }
 
-html,
-body {
-  @apply size-full;
-}
-
 body {
   @apply font-sans antialiased;
   @apply flex flex-col;
@@ -32,7 +26,7 @@ body {
 }
 
 header {
-  @apply fixed left-0 right-0 top-0 z-50 py-1 sm:py-0;
+  @apply sticky left-0 right-0 top-0 z-50 py-1 sm:py-0;
   @apply bg-neutral-100/75 dark:bg-neutral-900/75;
   backdrop-filter: blur(30px) saturate(200%);
   transition: clip-path 300ms ease;
@@ -45,6 +39,7 @@ header.unblur {
 
 header.mobileExpanded {
     backdrop-filter: blur(0px) saturate(100%);
+    position: fixed;
 }
 
 header.mobileCollapsed {
@@ -104,7 +99,7 @@ select {
 }
 
 .page-spacing {
-    @apply pt-20 md:pt-36;
+    @apply pt-6 md:pt-10;
 }
 
 article {
