@@ -5,7 +5,7 @@ cover: "/public/images/legal-banner.png"
 coverDescription: "" 
 ---
 
-Stand: 20.09.2024
+Stand: 21.09.2024
 
 ## **1. Einleitung**
 
@@ -133,7 +133,7 @@ Die Sicherheit Ihrer Daten ist uns wichtig. Dennoch ist keine Methode der Übert
 
 ## **10. Ihre Rechte zum Datenschutz gemäß der Datenschutz-Grundverordnung (DSGVO)**
 
-Wenn Sie in der Europäischen Union (EU) oder im Europäischen Wirtschaftsraum (EWR) ansässig sind, haben Sie bestimmte Datenschutzrechte, die durch die DSGVO geschützt sind. – Weitere Informationen finden Sie [hier](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
+Wenn Sie in der Europäischen Union (EU) oder im Europäischen Wirtschaftsraum (EWR) ansässig sind, haben Sie bestimmte [Datenschutzrechte](https://eur-lex.europa.eu/eli/reg/2016/679/oj), die durch die DSGVO geschützt sind.
 
 Wir streben danach, angemessene Maßnahmen zu ergreifen, um Ihnen zu ermöglichen, Ihre personenbezogenen Daten zu korrigieren, zu ändern, zu löschen oder deren Verwendung einzuschränken.
 
@@ -154,7 +154,7 @@ Sie haben das Recht, sich bei einer Datenschutzbehörde über die Erhebung und N
 
 ## **11. Ihre Datenschutzrechte gemäß dem California Privacy Protection Act (CalOPPA)**
 
-CalOPPA ist das erste Gesetz in den USA, das kommerzielle Websites und Online-Dienste verpflichtet, eine Datenschutzerklärung zu veröffentlichen. Das Gesetz reicht weit über Kalifornien hinaus und verlangt von Personen oder Unternehmen in den USA (und möglicherweise weltweit), die Websites betreiben und personenbezogene Daten von kalifornischen Verbrauchern sammeln, eine deutlich sichtbare Datenschutzerklärung auf ihrer Website bereitzustellen, die genau angibt, welche Informationen gesammelt werden und mit wem sie geteilt werden, und sich an diese Richtlinie zu halten. – Weitere Informationen finden Sie [hier](https://consumercal.org/about-cfc/cfc-education-foundation/california-online-privacy-protection-act-caloppa-3/).
+[CalOPPA](https://consumercal.org/about-cfc/cfc-education-foundation/california-online-privacy-protection-act-caloppa-3/) ist das erste Gesetz in den USA, das kommerzielle Websites und Online-Dienste verpflichtet, eine Datenschutzerklärung zu veröffentlichen. Das Gesetz reicht weit über Kalifornien hinaus und verlangt von Personen oder Unternehmen in den USA (und möglicherweise weltweit), die Websites betreiben und personenbezogene Daten von kalifornischen Verbrauchern sammeln, eine deutlich sichtbare Datenschutzerklärung auf ihrer Website bereitzustellen, die genau angibt, welche Informationen gesammelt werden und mit wem sie geteilt werden, und sich an diese Richtlinie zu halten.
 
 Gemäß CalOPPA stimmen wir Folgendem zu:
 
@@ -181,13 +181,13 @@ Wir nutzen möglicherweise Drittanbieter-Dienstleister zur Überwachung und Anal
 
 **Cloudflare-Analyse**
 
-Cloudflare-Analyse ist ein Webanalyse-Service, der von Cloudflare Inc. betrieben wird. Lesen Sie die Datenschutzerklärung hier: https://www.cloudflare.com/privacypolicy/
+Cloudflare-Analyse ist ein Webanalyse-Service, der von Cloudflare Inc. betrieben wird. Lesen Sie die [Datenschutzerklärung](https://www.cloudflare.com/privacypolicy/) for mehr Informationen.
 
 **PostHog**
 
 PostHog ist eine Produktanalyseplattform, die für moderne Unternehmen entwickelt wurde und sich durch Open Source und ein umfassenderes Verständnis der für den Erfolg eines Produkts erforderlichen Tools auszeichnet.
 
-Weitere Informationen zu PostHog finden Sie in der Datenschutzerklärung: https://posthog.com/privacy
+Weitere Informationen zu PostHog finden Sie in der [Datenschutzerklärung](https://posthog.com/privacy).
 
 ## **14. CI/CD-Tools**
 
@@ -199,7 +199,7 @@ GitHub wird von GitHub, Inc. bereitgestellt.
 
 GitHub ist eine Entwicklungsplattform zum Hosting und zur Überprüfung von Code, zur Verwaltung von Projekten und zur Erstellung von Software.
 
-Weitere Informationen darüber, welche Daten GitHub zu welchem Zweck erhebt und wie der Schutz der Daten gewährleistet wird, finden Sie auf der Datenschutzerklärungsseite von GitHub: https://help.github.com/en/articles/github-privacy-statement.
+Weitere Informationen darüber, welche Daten GitHub zu welchem Zweck erhebt und wie der Schutz der Daten gewährleistet wird, finden Sie auf der [Datenschutzerklärungsseite](https://help.github.com/en/articles/github-privacy-statement) von GitHub.
 
 ## **15. Verhaltensbezogenes Remarketing**
 
@@ -209,13 +209,11 @@ Futureblur verwendet Remarketing-Dienste, um nach Ihrem Besuch unseres Services 
 
 Der Remarketing-Service von Facebook wird von Facebook Inc. bereitgestellt.
 
-Weitere Informationen über interessebasierte Werbung von Facebook finden Sie [hier](https://www.facebook.com/help/164968693837950).
-
 Um sich von den interessenbasierten Anzeigen von Facebook abzumelden, [folgen Sie diesen Anweisungen von Facebook](https://www.facebook.com/help/568137493302217).
 
-Facebook hält sich an die Selbstregulierungsgrundsätze für Online-Verhaltenswerbung, die von der Digital Advertising Alliance festgelegt wurden. Sie können sich auch über die Digital Advertising Alliance in den USA http://www.aboutads.info/choices/, die Digital Advertising Alliance of Canada in Kanada http://youradchoices.ca/ oder die European Interactive Digital Advertising Alliance in Europa http://www.youronlinechoices.eu/ von Facebook und anderen teilnehmenden Unternehmen abmelden oder Ihre mobilen Geräteeinstellungen nutzen.
+Facebook hält sich an die Selbstregulierungsgrundsätze für Online-Verhaltenswerbung, die von der Digital Advertising Alliance festgelegt wurden. Sie können sich auch über die [Digital Advertising Alliance](https://www.aboutads.info/choices/) in den USA, die [Digital Advertising Alliance of Canada](https://youradchoices.ca/) in Kanada oder die [European Interactive Digital Advertising Alliance in Europa](https://www.youronlinechoices.eu/) von Facebook und anderen teilnehmenden Unternehmen abmelden oder Ihre mobilen Geräteeinstellungen nutzen.
 
-Weitere Informationen zu den Datenschutzpraktiken von Facebook finden Sie in der Datenschutzerklärung von Facebook: https://www.facebook.com/privacy/explanation
+Weitere Informationen zu den Datenschutzpraktiken von Facebook finden Sie in der [Datenschutzerklärung](https://www.facebook.com/privacy/explanation) von Facebook.
 
 ## **16. Zahlungen**
 
@@ -227,15 +225,15 @@ Die Zahlungsabwickler, mit denen wir zusammenarbeiten, sind:
 
 **PayPal oder Braintree:**
 
-Die Datenschutzerklärung finden Sie unter: https://www.paypal.com/webapps/mpp/ua/privacy-full
+Lesen Sie die [Datenschutzerklärung](https://www.paypal.com/webapps/mpp/ua/privacy-full) für mehr Informationen.
 
 **Stripe:**
 
-Die Datenschutzerklärung finden Sie unter: https://stripe.com/us/privacy
+Lesen Sie die [Datenschutzerklärung](https://stripe.com/us/privacy) für mehr Informationen.
 
 **Klarna:**
 
-Die Geschäftsbedingungen, Datenschutzerklärung und Käuferschutzrichtlinie finden Sie unter: https://www.klarna.com/us/legal/.
+Lesen Sie die [Geschäftsbedingungen, Datenschutzerklärung und Käuferschutzrichtlinie](https://www.klarna.com/us/legal/) für weitere Informationen.
 
 ## **17. Links zu anderen Websites**
 

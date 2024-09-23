@@ -5,7 +5,7 @@ cover: "/public/images/legal-banner.png"
 coverDescription: "" 
 ---
 
-Last updated: 09/20/2024
+Last updated: 09/21/2024
 
 ## **1. Introduction**
 
@@ -144,7 +144,7 @@ The security of your data is important to us but remember that no method of tran
 
 ## **10. Your Data Protection Rights Under General Data Protection Regulation (GDPR)**
 
-If you are a resident of the European Union (EU) and European Economic Area (EEA), you have certain data protection rights, covered by GDPR. – See more [here](https://eur-lex.europa.eu/eli/reg/2016/679/oj).
+If you are a resident of the European Union (EU) and European Economic Area (EEA), you have certain [data protection rights](https://consumercal.org/about-cfc/cfc-education-foundation/california-online-privacy-protection-act-caloppa-3/), covered by GDPR.
 
 We aim to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Data.
 
@@ -165,7 +165,7 @@ You have the right to complain to a Data Protection Authority about our collecti
 
 ## **11. Your Data Protection Rights under the California Privacy Protection Act (CalOPPA)**
 
-CalOPPA is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law’s reach stretches well beyond California to require a person or company in the United States (and conceivable the world) that operates websites collecting personally identifiable information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals with whom it is being shared, and to comply with this policy. – See more [here](https://consumercal.org/about-cfc/cfc-education-foundation/california-online-privacy-protection-act-caloppa-3/).
+[CalOPPA](https://consumercal.org/about-cfc/cfc-education-foundation/california-online-privacy-protection-act-caloppa-3/) is the first state law in the nation to require commercial websites and online services to post a privacy policy. The law’s reach stretches well beyond California to require a person or company in the United States (and conceivable the world) that operates websites collecting personally identifiable information from California consumers to post a conspicuous privacy policy on its website stating exactly the information being collected and those individuals with whom it is being shared, and to comply with this policy.
 
 According to CalOPPA we agree to the following:
 
@@ -192,13 +192,13 @@ We may use third-party Service Providers to monitor and analyze the use of our S
 
 **Cloudflare analytics**
 
-Cloudflare analytics is a web analytics service operated by Cloudflare Inc. Read the Privacy Policy here: https://www.cloudflare.com/privacypolicy/
+Cloudflare analytics is a web analytics service operated by Cloudflare Inc. Visit their [Privacy Policy](https://www.cloudflare.com/privacypolicy) for more information.
 
 **PostHog**
 
 PostHog is a product analytics platform built for the modern enterprise, with the differentiators of being open source and having a broader view of the tools needed to make a product successful.
 
-For more information about PostHog, please visit their Privacy Policy: https://posthog.com/privacy
+For more information about PostHog, please visit their [Privacy Policy](https://posthog.com/privacy).
 
 ## **14. CI/CD tools**
 
@@ -210,7 +210,7 @@ GitHub is provided by GitHub, Inc.
 
 GitHub is a development platform to host and review code, manage projects, and build software.
 
-For more information on what data GitHub collects for what purpose and how the protection of the data is ensured, please visit GitHub Privacy Policy page: https://help.github.com/en/articles/github-privacy-statement.
+For more information on what data GitHub collects for what purpose and how the protection of the data is ensured, please visit [GitHub Privacy Policy](https://help.github.com/en/articles/github-privacy-statement).
 
 ## **15. Behavioral Remarketing**
 
@@ -220,13 +220,11 @@ Futureblur uses remarketing services to advertise on third party websites to yo
 
 Facebook remarketing service is provided by Facebook Inc.
 
-You can learn more about interest-based advertising from Facebook by visiting [this page](https://www.facebook.com/help/164968693837950).
-
 To opt-out from Facebook's interest-based ads, [follow these instructions from Facebook](https://www.facebook.com/help/568137493302217).
 
-Facebook adheres to the Self-Regulatory Principles for Online Behavioral Advertising established by the Digital Advertising Alliance. You can also opt-out from Facebook and other participating companies through the Digital Advertising Alliance in the USA http://www.aboutads.info/choices/, the Digital Advertising Alliance of Canada in Canada http://youradchoices.ca/ or the European Interactive Digital Advertising Alliance in Europe http://www.youronlinechoices.eu/, or opt-out using your mobile device settings.
+Facebook adheres to the Self-Regulatory Principles for Online Behavioral Advertising established by the Digital Advertising Alliance. You can also opt-out from Facebook and other participating companies through the [Digital Advertising Alliance](http://www.aboutads.info/choices/) in the USA, the [Digital Advertising Alliance of Canada](http://youradchoices.ca/) in Canada or the [European Interactive Digital Advertising Alliance](http://www.youronlinechoices.eu/) in Europe, or opt-out using your mobile device settings.
 
-For more information on the privacy practices of Facebook, please visit Facebook's Data Policy: https://www.facebook.com/privacy/explanation
+For more information on the privacy practices of Facebook, please visit [Facebook's Data Policy](https://www.facebook.com/privacy/explanation).
 
 ## **16. Payments**
 
@@ -238,15 +236,15 @@ The payment processors we work with are:
 
 **PayPal or Braintree:**
 
-Their Privacy Policy can be viewed at https://www.paypal.com/webapps/mpp/ua/privacy-full
+Visit their [Privacy Policy](https://www.paypal.com/webapps/mpp/ua/privacy-full) for more information.
 
 **Stripe:**
 
-Their Privacy Policy can be viewed at: https://stripe.com/us/privacy
+Visit their [Privacy Policy](https://stripe.com/us/privacy) for more information.
 
 **Klarna:**
 
-Their Services Terms, Privacy Policy and Buyer Protection Policy can be viewed at https://www.klarna.com/us/legal/.
+Visit their [Services Terms, Privacy Policy and Buyer Protection Policy](https://www.klarna.com/us/legal/) for more information.
 
 ## **17. Links to Other Sites**
 
