@@ -10,7 +10,7 @@ author: rasul-adasov
 date: 2024-09-23
 tagline: Lokalisierte Inhalte, verbesserte Navigation und neue Seiten sind ab sofort verfügbar.
 type: Update
-url: https://fut.red
+url: https://fut.red/26IwH-de
 ---
 
 

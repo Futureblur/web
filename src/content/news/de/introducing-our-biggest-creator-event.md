@@ -1,20 +1,16 @@
 ---
 title: Wir stellen unser größtes Creator-Event vor
 caption: Dieses Event wurde vollständig in Blender gerendert.
-description: Wir streben danach, die besten und am wenigsten geschätzten Talente
-  aus der gesamten Welt ins Rampenlicht zu bringen — und heute haben wir das
-  Fundament gelegt.
+description: Wir streben danach, die besten und am wenigsten geschätzten Talente aus der gesamten Welt ins Rampenlicht zu bringen — und heute haben wir das Fundament gelegt.
 authors: rasul-adasov
 cover: /src/assets/museum.jpeg
-alt: "Eine große Ausstellung in einem warm beleuchteten Innenraum zwischen zwei
-  Bäumen. Das Display in der Mitte hat die zeigt die Folie: Create, Polish,
-  Repeat."
+alt: "Eine große Ausstellung in einem warm beleuchteten Innenraum zwischen zwei Bäumen. Das Display in der Mitte hat die zeigt die Folie: Create, Polish, Repeat."
 draft: false
 author: rasul-adasov
 date: 2024-06-07
 tagline: Sieh dir den Livestream auf YouTube an.
 type: Announcement
-url: https://fut.red/R5PDS
+url: https://fut.red/R5PDS-de
 ---
 
 Wir streben danach, die besten und am wenigsten geschätzten Talente aus der gesamten Welt ins Rampenlicht zu bringen — und heute haben wir das Fundament gelegt. In einem [speziellen virtuellen Event](https://fut.red/SvNo9) haben wir mehrere spannende Methoden angekündigt, die Creator helfen werden, ihre Träume schneller zu verwirklichen als je zuvor.
