@@ -1,0 +1,56 @@
+---
+import { SITE } from "@consts";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout title="Dashboard" description="" cover={SITE.COVER}>
+    <div class="flex w-full items-center justify-center py-20">
+        <div class="grid gap-2 text-center">
+            <span id="generated-shortcode" class="font-mono">fut.red/</span>
+            <button id="generate-button" class="button mx-auto">Generate</button
+            >
+        </div>
+    </div>
+</Layout>
+
+<script>
+    let button: HTMLButtonElement | null;
+
+    async function generateShortcode() {
+        const characters =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let code = "";
+        let i = 0;
+        while (i < 5) {
+            code += characters.charAt(
+                Math.floor(Math.random() * characters.length),
+            );
+            i++;
+        }
+
+        await navigator.clipboard.writeText(code);
+
+        const span: HTMLSpanElement = document.querySelector(
+            "#generated-shortcode",
+        ) as HTMLSpanElement;
+        span.innerHTML = "fut.red/" + code;
+
+        if (button) {
+            button.innerHTML = "Copied";
+            setTimeout(() => (button!.innerHTML = "Generate"), 2000);
+        }
+    }
+
+    function init() {
+        button = document.querySelector(
+            "#generate-button",
+        ) as HTMLButtonElement;
+        button.onclick = generateShortcode;
+    }
+
+    if (document.readyState !== "loading") {
+        init();
+    } else {
+        document.addEventListener("DOMContentLoaded", init);
+    }
+</script>
