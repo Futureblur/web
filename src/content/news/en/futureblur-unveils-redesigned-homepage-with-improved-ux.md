@@ -10,7 +10,7 @@ author: rasul-adasov
 date: 2024-09-23
 tagline: Localized content, enhanced navigation and streamlined pages are now here.
 type: Update
-url: https://fut.red
+url: https://fut.red/26IwH
 ---
 
 Futureblur today introduced its heavily redesigned homepage, offering a modern, intuitive user experience, and expanded resources. Built on the reliable [Astro framework](https://astro.build), the updated site incorporates sleek design elements, simplified navigation, and enhanced accessibility — all while maintaining the core identity of Futureblur. The homepage now includes localized content, a refined legal section, and several new pages designed to support both users and partners.

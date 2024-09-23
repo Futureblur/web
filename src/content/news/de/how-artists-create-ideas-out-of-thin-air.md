@@ -4,14 +4,13 @@ caption: Aufgenommen von Rasul Adasov.
 description: Content ist überall. Warum ist es dann so schwer, neue Ideen zu finden?
 authors: rasul-adasov
 cover: /src/assets/autmn-landscape.jpg
-alt: Eine friedliche Wiese mit Blick auf eine hügelige Landschaft unter einem
-  trüben Himmel.
+alt: Eine friedliche Wiese mit Blick auf eine hügelige Landschaft unter einem trüben Himmel.
 draft: true
 author: rasul-adasov
 date: 2024-09-08
 tagline: Content ist überall. Warum ist es dann so schwer, neue Ideen zu finden?
 type: Tip
-url: https://fut.red/6ktMf
+url: https://fut.red/6ktMf-de
 ---
 
 In diesem Artikel schauen wir uns ungewöhnliche Methoden an, um kreative Blockaden zu überwinden und dir zu helfen, schneller zu deinem ersten Entwurf zu gelangen.
