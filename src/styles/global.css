@@ -102,6 +102,10 @@ select {
     @apply pt-6 md:pt-10;
 }
 
+.button {
+    @apply rounded-full text-sm text-white p-1.5 px-3 bg-black/85 font-mono cursor-pointer;
+}
+
 article {
   @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold;
