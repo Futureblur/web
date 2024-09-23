@@ -19,6 +19,17 @@ export default defineConfig({
                 defaultLocale: 'en',
                 locales: { en: 'en', de: 'de' },
             },
+            serialize(item) {
+                if (/admin/.test(item.url)) {
+                    return undefined;
+                }
+
+                if (/soon/.test(item.url)) {
+                    return undefined;
+                }
+
+                return item;
+            }
         }),
         mdx(), pagefind(), critters(), robotsTxt()
     ],
