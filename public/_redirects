@@ -1,14 +1,18 @@
-/legal /en/legal
-/privacy /en/privacy
-/terms /en/terms
-/cookie-policy /en/cookie-policy
-/sitemap /en/sitemap
+# Resources
+/legal /en/legal 301
+/privacy /en/privacy 301
+/terms /en/terms 301
+/cookie-policy /en/cookie-policy 301
+/sitemap /en/sitemap 301
 
-/brand /en/brand
-/contact /en/contact
+# Company
+/brand /en/brand 301
+/contact /en/contact 301
 
-/news/* /en/news/:splat
+# Newsroom
+/news/* /en/news/:splat 301
 
+# Legacy
 /zip https://github.com/futureblur/zip
 /magnet https://github.com/futureblur/magnet
 /instagram https://fut.red/i
