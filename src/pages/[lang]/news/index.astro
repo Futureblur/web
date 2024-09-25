@@ -4,6 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import { NEWS } from "@consts";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import Card from "@components/News/Card.astro";
+import { shouldLoadCardLazy } from "@lib/utils";
 
 export async function getStaticPaths() {
     const news = (await getCollection("news")).sort(
@@ -69,7 +70,13 @@ const years = Object.keys(news).sort((a, b) => parseInt(b) - parseInt(a));
                                 <ul class="not-prose flex flex-col gap-4">
                                     {news[year].map((post) => (
                                         <li>
-                                            <Card entry={post} />
+                                            <Card
+                                                entry={post}
+                                                lazy={shouldLoadCardLazy(
+                                                    news[year],
+                                                    post,
+                                                )}
+                                            />
                                         </li>
                                     ))}
                                 </ul>
