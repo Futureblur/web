@@ -13,7 +13,7 @@ let currentNavItem = "";
 ---
 
 <nav
-    class="bg-secondary/80 top-0 mx-auto flex h-fit w-full flex-col rounded-lg px-4 py-1 sm:max-w-screen-lg sm:py-0"
+    class="bg-secondary/80 top-0 mx-auto flex h-fit w-full flex-col rounded-lg px-4 py-1 font-mono sm:max-w-screen-lg sm:py-0"
     aria-label="Global"
 >
     <div id="empty" class=""></div>
@@ -29,11 +29,10 @@ let currentNavItem = "";
             <div class="flex items-center gap-4 sm:hidden">
                 <button
                     type="button"
-                    class="hs-collapse-toggle text-primary inline-flex scale-125 items-center justify-center gap-x-2 rounded-md p-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-transparent"
+                    class="text-primary group inline-flex scale-125 items-center justify-center gap-x-2 rounded-md p-2 disabled:pointer-events-none disabled:opacity-50 dark:bg-transparent"
                     aria-label="Toggle navigation"
                     aria-controls="navbar-items"
                     aria-expanded="false"
-                    data-hs-collapse="#empty"
                     id="navbar-menu"
                 >
                     <MenuIcon />
@@ -96,8 +95,6 @@ let currentNavItem = "";
 </nav>
 
 <script>
-    const preline = await import("preline/dist/preline.js");
-
     let isToggled = false;
     let curtain: HTMLElement | null;
     let header: HTMLElement | null;
@@ -112,7 +109,16 @@ let currentNavItem = "";
         curtain?.classList.remove("blur");
     }
 
+    function toggleMenuIcon() {
+        if (navBarMenu) {
+            const expanded = navBarMenu.ariaExpanded;
+            navBarMenu.ariaExpanded = expanded === "false" ? "true" : "false";
+        }
+    }
+
     function toggleMenu() {
+        toggleMenuIcon();
+
         navBarContent?.classList.toggle("hide");
         curtain?.classList.toggle("blur");
         header?.classList.toggle("unblur");
@@ -126,7 +132,7 @@ let currentNavItem = "";
         const mediaQuery = window.matchMedia("(width > 640px)");
         mediaQuery.addEventListener("change", () => {
             if (!isToggled) return;
-            if (navBarMenu) preline.HSCollapse.hide(navBarMenu);
+            if (navBarMenu) navBarMenu.ariaExpanded = "false";
 
             navBarContent?.classList.add("hide");
             header?.classList.remove("unblur");
@@ -138,8 +144,6 @@ let currentNavItem = "";
     }
 
     function init() {
-        preline.HSStaticMethods.autoInit();
-
         navBarMenu = document.querySelector(
             "#navbar-menu",
         ) as HTMLButtonElement;
