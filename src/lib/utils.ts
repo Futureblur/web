@@ -1,5 +1,6 @@
 import type { Language } from '@i18n/ui';
 import { getLangFromUrl, useTranslations } from '@i18n/utils';
+import type { CollectionEntry } from 'astro:content';
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -42,3 +43,10 @@ export function getTranslatedSlug(slug: string, basePath: string = '') {
     return `/${lang}${basePath}${removedSlug}`;
 }
 
+// Returns false for the first 3 elements of news.
+export function shouldLoadCardLazy(
+    news: Array<CollectionEntry<'news'>>,
+    post: CollectionEntry<'news'>,
+) {
+    return news.includes(post, 3);
+}

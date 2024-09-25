@@ -8,11 +8,12 @@ import { ui } from "@i18n/ui";
 
 type Props = {
     entry: CollectionEntry<"news">;
-    url?: string;
+    lazy?: boolean;
 };
 
-const { entry } = Astro.props as {
+const { entry, lazy = true } = Astro.props as {
     entry: CollectionEntry<"news">;
+    lazy: boolean;
 };
 
 const lang = getLangFromUrl(Astro.url);
@@ -33,6 +34,7 @@ function getTag(tag: string) {
             alt={entry.data.alt}
             widths={[240, 540, 960, 1960]}
             sizes={`(max-width: 360px) 240px, (max-width: 960px) 540px, (max-width: 1600px) 960px, ${1960}px`}
+            loading={lazy === true ? "lazy" : "eager"}
         />
         <div class="flex flex-col justify-between p-6 lg:p-8">
             <div class="flex flex-col">

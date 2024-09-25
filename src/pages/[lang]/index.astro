@@ -4,6 +4,7 @@ import { SITE } from "@consts";
 import Card from "@components/News/Card.astro";
 import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { shouldLoadCardLazy } from "@lib/utils";
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -53,7 +54,10 @@ const t = useTranslations(lang);
                     {
                         news.map((post) => (
                             <li>
-                                <Card entry={post} />
+                                <Card
+                                    entry={post}
+                                    lazy={shouldLoadCardLazy(news, post)}
+                                />
                             </li>
                         ))
                     }
