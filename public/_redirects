@@ -9,12 +9,9 @@
 /brand /en/brand 301
 /contact /en/contact 301
 
-# Newsroom
-/news/* /en/news/:splat 301
-
 # Legacy
-/zip https://github.com/futureblur/zip
-/magnet https://github.com/futureblur/magnet
+/zip https://github.com/futureblur/zip 301
+/magnet https://github.com/futureblur/magnet 301
 /instagram https://fut.red/i
 /youtube https://fut.red/y
 /github https://fut.red/g
@@ -23,3 +20,7 @@
 /tut02 https://youtu.be/M-y6ZKelWoc
 /tut03 https://youtu.be/F3VZXgntQZc
 /tut04 https://youtu.be/Z3QPnB061XM
+
+# Newsroom
+/news/* /en/news/:splat 301
+
