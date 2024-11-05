@@ -7,7 +7,7 @@ cover: /src/assets/autmn-landscape.jpg
 alt: Eine friedliche Wiese mit Blick auf eine hügelige Landschaft unter einem trüben Himmel.
 draft: false
 author: rasul-adasov
-date: 2024-09-08
+date: 2024-11-05
 tagline: Content ist überall. Warum ist es dann so schwer, neue Ideen zu finden?
 type: Tip
 url: https://fut.red/6ktMf-de
