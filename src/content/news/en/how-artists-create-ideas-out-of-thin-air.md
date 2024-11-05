@@ -5,7 +5,7 @@ description: Content is everywhere. Why is it so hard to find new ideas then?
 authors: rasul-adasov
 cover: /src/assets/autmn-landscape.jpg
 alt: A serene meadow with a distant view of a hilly landscape under a hazy sky.
-draft: true
+draft: false
 author: rasul-adasov
 date: 2024-09-08
 tagline: Content is everywhere. Why is it so hard to find new ideas then?
