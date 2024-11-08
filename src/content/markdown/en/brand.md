@@ -16,6 +16,7 @@ In certain scenarios — such as on social media — you might simply refer to u
 - @blurads on Instagram, YouTube, Threads, Discord, Gumroad
 - @futureblur on GitHub, GitLab, YouTube, Facebook, Discord
 - @askblur on Instagram, Threads, Facebook
+- @blurdgn on Instagram, Threads, Facebook
 
 ## Usage
 

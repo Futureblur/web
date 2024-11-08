@@ -16,6 +16,7 @@ In manchen Fällen — wie z.B. auf Social Media — ist "blur" ausreichend. Hie
 - @blurads auf Instagram, YouTube, Threads, Discord und Gumroad
 - @futureblur auf GitHub, GitLab, YouTube, Facebook und Discord
 - @askblur auf Instagram, Threads und Facebook
+- @blurdgn auf Instagram, Threads und Facebook
 
 ## Verwendung
 
