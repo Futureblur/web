@@ -30,6 +30,7 @@ export const ui = {
         'footer.newsroom': 'Newsroom',
         'footer.about': 'About',
         'footer.press': 'Press',
+        'footer.investors': 'Investors',
         'footer.contact': 'Contact Us',
         'footer.socials': 'Socials',
         'footer.instagram': 'Instagram',
@@ -52,7 +53,10 @@ export const ui = {
         'post.by': 'Posted by',
         '404.title': 'This page does not exist.',
         '404.back': 'Go back home',
-        'soon.title': 'This page is in development. Check back later.'
+        'soon.title': 'This page is in development. Check back later.',
+        'investors.title': 'Investor Relations',
+        'investors.description':
+            'Get access to our reports in the Investor Relations Center.'
     },
     de: {
         'header.locale.description':
@@ -78,6 +82,7 @@ export const ui = {
         'footer.newsroom': 'Newsroom',
         'footer.about': 'Über uns',
         'footer.press': 'Presse',
+        'footer.investors': 'Investoren',
         'footer.contact': 'Kontakt',
         'footer.socials': 'Socials',
         'footer.instagram': 'Instagram',
@@ -101,6 +106,9 @@ export const ui = {
         '404.title': 'Diese Seite konnte nicht gefunden werden.',
         '404.back': 'Zurück nach Hause',
         'soon.title':
-            'Diese Seite ist in Entwicklung. Schaue später noch einmal vorbei.'
+            'Diese Seite ist in Entwicklung. Schaue später noch einmal vorbei.',
+        'investors.title': 'Investor Relations',
+        'investors.description':
+            'Erhalte Zugang zu unseren Berichten im Investor Relations Center.'
     }
 } as const;

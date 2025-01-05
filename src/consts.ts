@@ -14,6 +14,12 @@ export const NEWS: Metadata = {
     COVER: '/images/newsroom-banner.png',
 };
 
+export const INVESTORS: Metadata = {
+    TITLE: 'Investor Relations',
+    DESCRIPTION: 'Latest updates and announcements from Futureblur.',
+    COVER: '/images/investors-banner.png',
+};
+
 export const navBarLinks: NavigationLink[] = [
     {
         title: 'nav.title.store',
@@ -173,6 +179,10 @@ export const footerGroup: NavigationGroup[] = [
             {
                 title: 'footer.press',
                 url: '/brand',
+            },
+            {
+                title: 'footer.investors',
+                url: '/investors',
             },
             {
                 title: 'footer.contact',
