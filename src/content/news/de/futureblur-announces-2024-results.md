@@ -15,7 +15,7 @@ url: https://fut.red/B6Y0b-de
 ## Wichtige Kennzahlen
 
 - Die kumulierte Anzahl der Aufrufe hat 8,1 Millionen erreicht (was 773.536.521% mehr ist als im Vorjahr)
-- Die kumulierte Zahl der Follower hat 20 Tsd. erreicht (was 15.836% mehr ist als im letzten Jahr)
+- Die kumulierte Zahl der Follower hat 20 Tsd. erreicht (was 15.836% mehr ist als im Vorjahr)
 - Die kumulierte Zahl der Interaktionen liegt bei 679 Tsd. (was 65.038.338% mehr ist als im Vorjahr)
 - Futureblur war der am schnellsten wachsende Instagram-Account weltweit, im Vergleich zu anderen Accounts in der gleichen Nische, Zeitraum und mit dem gleichen Startdatum. 
 
