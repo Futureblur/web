@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
-import { NEWS } from "@consts";
+import { INVESTORS } from "@consts";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import Card from "@components/News/Card.astro";
 import { shouldLoadCardLazy } from "@lib/utils";
@@ -27,6 +27,7 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 
 const data = (await getCollection("news"))
     .filter((post) => !post.data.draft)
+    .filter((post) => post.data.type === "Investors")
     .filter(
         (post) =>
             getLangFromUrl(
@@ -52,13 +53,18 @@ const years = Object.keys(news).sort((a, b) => parseInt(b) - parseInt(a));
 ---
 
 <Layout
-    title={NEWS.TITLE}
-    siteName="Futureblur Newsroom"
-    description={t("news.description")}
-    cover={NEWS.COVER}
+    title={INVESTORS.TITLE}
+    siteName="Futureblur Investor Relations"
+    description={t("investors.description")}
+    cover={INVESTORS.COVER}
 >
     <div class="page-spacing mx-auto max-w-screen-lg px-6">
         <div class="space-y-10">
+            <h1
+                class="text-3xl font-bold tracking-tight text-black dark:text-white lg:text-4xl"
+            >
+                Investor Relations
+            </h1>
             <div class="space-y-10">
                 {
                     years.map((year) => (
