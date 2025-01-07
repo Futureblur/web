@@ -56,7 +56,8 @@ export const ui = {
         'soon.title': 'This page is in development. Check back later.',
         'investors.title': 'Investor Relations',
         'investors.description':
-            'Get access to our reports in the Investor Relations Center.'
+            'Get access to our reports in the Investor Relations Center.',
+        'store.title': 'Store',
     },
     de: {
         'header.locale.description':
@@ -109,6 +110,7 @@ export const ui = {
             'Diese Seite ist in Entwicklung. Schaue später noch einmal vorbei.',
         'investors.title': 'Investor Relations',
         'investors.description':
-            'Erhalte Zugang zu unseren Berichten im Investor Relations Center.'
+            'Erhalte Zugang zu unseren Berichten im Investor Relations Center.',
+        'store.title': 'Store'
     }
 } as const;
