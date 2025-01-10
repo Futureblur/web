@@ -20,6 +20,12 @@ export const INVESTORS: Metadata = {
     COVER: '/images/investors-banner.png',
 };
 
+export const STORE: Metadata = {
+    TITLE: 'Store',
+    DESCRIPTION: 'Shop the latest products from Futureblur.',
+    COVER: '/images/store-banner.png',
+};
+
 export const navBarLinks: NavigationLink[] = [
     {
         title: 'nav.title.store',
