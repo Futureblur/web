@@ -58,6 +58,7 @@ export const ui = {
         'investors.description':
             'Get access to our reports in the Investor Relations Center.',
         'store.title': 'Store',
+        'store.description': 'Shop the latest products from Futureblur.',
     },
     de: {
         'header.locale.description':
@@ -111,6 +112,7 @@ export const ui = {
         'investors.title': 'Investor Relations',
         'investors.description':
             'Erhalte Zugang zu unseren Berichten im Investor Relations Center.',
-        'store.title': 'Store'
+        'store.title': 'Store',
+        'store.description': 'Entdecke die neusten Produkte von Futureblur.'
     }
 } as const;

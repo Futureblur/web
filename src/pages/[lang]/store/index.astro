@@ -1,0 +1,44 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import { STORE } from "@consts";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Layout from "@layouts/Layout.astro";
+import Item from "@components/Store/Item.astro";
+
+export async function getStaticPaths() {
+    const news = (await getCollection("news")).sort(
+        (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    );
+
+    const paths = news.map((post) => {
+        const [lang, ...slug] = post.slug.split("/");
+        return {
+            params: { lang, slug: slug.join("/") || undefined },
+            props: post,
+        };
+    });
+
+    return paths;
+}
+
+const items = await getCollection("store");
+
+const { lang } = Astro.params;
+const t = useTranslations(getLangFromUrl(Astro.url));
+---
+
+<Layout
+    title={STORE.TITLE}
+    siteName="Futureblur Store"
+    description={t("store.description")}
+    cover={STORE.COVER}
+>
+    <div class="page-spacing max-w-screen-3xl mx-auto px-6">
+        <div class="space-y-10">
+            <h1>Store</h1>
+            <div class="flex flex-wrap">
+                {items.map((item) => <Item item={item} />)}
+            </div>
+        </div>
+    </div>
+</Layout>
