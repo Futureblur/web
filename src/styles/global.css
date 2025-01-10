@@ -21,13 +21,13 @@ html.dark {
 body {
   @apply font-sans antialiased;
   @apply flex flex-col;
-  @apply bg-neutral-100 dark:bg-neutral-900;
-  @apply text-black/75 dark:text-white/75;
+  @apply bg-neutral-100;
+  @apply text-black/75;
 }
 
 header {
   @apply sticky left-0 right-0 top-0 z-50 py-1 sm:py-0;
-  @apply bg-neutral-100/75 dark:bg-neutral-900/75;
+  @apply bg-neutral-100/75;
   backdrop-filter: blur(30px) saturate(200%);
   transition: clip-path 300ms ease;
 }
@@ -104,6 +104,10 @@ select {
 
 .button {
     @apply rounded-full text-sm text-white p-1.5 px-3 bg-black/85 font-mono cursor-pointer;
+}
+
+h1 {
+    @apply text-3xl font-bold tracking-tight text-black dark:text-white lg:text-4xl;
 }
 
 article {
