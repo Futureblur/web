@@ -1,11 +1,16 @@
 ---
 import type { ui } from "@i18n/ui";
-import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import {
+    getLangFromUrl,
+    useTranslatedPath,
+    useTranslations,
+} from "@i18n/utils";
 import type { NavigationLink } from "@types";
 
 const { link } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
 const t = useTranslations(lang);
 
 function getLinkTitle(link: NavigationLink) {
@@ -14,7 +19,11 @@ function getLinkTitle(link: NavigationLink) {
 ---
 
 <li class="text-black">
-    <a href={link.url} target={link.external ? "_blank" : "_self"} class="py-3">
+    <a
+        href={link.external ? link.url : translatePath(link.url)}
+        target={link.external ? "_blank" : "_self"}
+        class="py-3"
+    >
         {t(getLinkTitle(link))}
     </a>
 </li>

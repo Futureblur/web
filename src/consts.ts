@@ -23,8 +23,8 @@ export const INVESTORS: Metadata = {
 export const navBarLinks: NavigationLink[] = [
     {
         title: 'nav.title.store',
-        url: 'https://store.futureblur.com',
-        external: true,
+        url: '/store',
+        external: false,
     },
     { title: 'nav.title.products', url: 'https://fut.red/g', external: true },
     { title: 'nav.title.portfolio', url: 'https://fut.red/i', external: true },
