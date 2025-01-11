@@ -208,6 +208,16 @@ export const footerGroup: NavigationGroup[] = [
                 url: 'https://fut.red/g',
                 external: true,
             },
+            {
+                title: 'footer.threads',
+                url: 'https://fut.red/threads',
+                external: true,
+            },
+            {
+                title: 'footer.linkedin',
+                url: 'https://fut.red/l',
+                external: true,
+            },
         ],
     },
 ];
