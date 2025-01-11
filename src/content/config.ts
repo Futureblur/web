@@ -54,6 +54,7 @@ const storeCollection = defineCollection({
                 .max(30, {
                     message: 'Short name cannot be longer than 30 characters'
                 }),
+        category: z.enum(['StarterKit'], { message: 'Invalid category' }),
         description: z.string(),
         releaseDate: z.coerce.date({ message: 'Invalid date' }),
         price: z.coerce.number()

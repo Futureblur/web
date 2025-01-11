@@ -35,10 +35,12 @@ const t = useTranslations(getLangFromUrl(Astro.url));
 >
     <div class="page-spacing max-w-screen-3xl mx-auto px-6">
         <div class="space-y-10">
-            <h1>Store</h1>
-            <div class="flex flex-wrap">
-                {items.map((item) => <Item item={item} />)}
-            </div>
+            <section class="animate space-y-10">
+                <h1>Starter Kits</h1>
+                <div class="flex flex-wrap">
+                    {items.map((item) => <Item item={item} />)}
+                </div>
+            </section>
         </div>
     </div>
 </Layout>
