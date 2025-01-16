@@ -30,7 +30,9 @@ function isNew() {
         item.data.releaseDate.getMonth() +
         12 * (now.getFullYear() - item.data.releaseDate.getFullYear());
 
-    return delta <= 2;
+    const maxMonthDelta = 2;
+
+    return delta <= maxMonthDelta;
 }
 
 function getPriceText(price: number) {
