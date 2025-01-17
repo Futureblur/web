@@ -24,3 +24,6 @@ export type NavBarDropdown = {
     id: string; primary: NavigationGroup; secondary: NavigationGroup[];
 };
 
+export interface BaseButtonClickEvent {
+    id: string;
+}
