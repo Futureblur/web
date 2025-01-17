@@ -1,0 +1,142 @@
+---
+import { getCollection } from "astro:content";
+import Image from "astro/components/Image.astro";
+import Layout from "@layouts/Layout.astro";
+import BackToPrevious from "@components/News/BackToPrevious.astro";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import Navigation from "@components/Store/Navigation.astro";
+import Button from "@components/Button.astro";
+
+export async function getStaticPaths() {
+    const store = (await getCollection("store")).sort(
+        (a, b) => b.data.releaseDate.valueOf() - a.data.releaseDate.valueOf(),
+    );
+
+    const paths = store.map((item) => {
+        const [lang, ...slug] = item.id.split("/");
+        return {
+            params: { lang, slug: slug.join("/") || undefined },
+            props: item,
+        };
+    });
+
+    return paths;
+}
+
+const store = await getCollection("store");
+const { slug } = Astro.params;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const item = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/store/**/*.{jpg, jpeg, png}",
+);
+
+const coverPath = `/src/assets/store/${slug}/cover.jpg`;
+if (!images[coverPath]) {
+    throw new Error("Cover image path does not exist.");
+}
+
+function isNew() {
+    const now = new Date();
+    const delta =
+        now.getMonth() -
+        item.data.releaseDate.getMonth() +
+        12 * (now.getFullYear() - item.data.releaseDate.getFullYear());
+
+    const maxMonthDelta = 2;
+
+    return delta <= maxMonthDelta;
+}
+
+function getPriceText(price: number) {
+    return price === 0
+        ? "Free"
+        : price.toLocaleString("us", {
+              minimumFractionDigits: 2,
+              style: "currency",
+              currency: "USD",
+              trailingZeroDisplay: "stripIfInteger",
+          });
+}
+---
+
+<Layout
+    title={item.data.name}
+    siteName="Futureblur Store"
+    description={item.data.description}
+    cover={`/src/assets/store/${slug}/cover.jpg`}
+>
+    <div class="page-spacing mx-auto max-w-screen-2xl px-6">
+        <div class="animate">
+            <BackToPrevious href=`/${lang}/store`
+                >{t("nav.back")}</BackToPrevious
+            >
+        </div>
+        <section class="animate my-10 mb-0 flex gap-10 space-y-2 md:mb-6">
+            <div>
+                <Image
+                    src={images[coverPath]()}
+                    alt={"Alt"}
+                    width={800}
+                    height={700}
+                    class="pointer-events-none"
+                />
+            </div>
+            <div class="flex flex-col gap-11">
+                <Navigation selectedIndex={0} basePath={Astro.url.pathname} />
+                <div class="flex flex-col gap-20">
+                    <div class="flex flex-col gap-1.5">
+                        <span
+                            class=`font-mono text-accent ${!isNew() && "hidden"}`
+                            >New</span
+                        >
+                        <h1>{item.data.name}</h1>
+                        <span class="mt-1 font-mono"
+                            >{getPriceText(item.data.price)}</span
+                        >
+                    </div>
+                    <p>{item.data.description}</p>
+                    <div class="flex flex-col gap-14">
+                        <div class="flex flex-col gap-1">
+                            <span class="text-neutral-700">Used in</span>
+                            <a href="#" class="link"
+                                >How To Make Blender Look Like Octane</a
+                            >
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-neutral-700">Compatibility</span>
+                            <span>Blender 4.0 or later</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-neutral-700">Size</span>
+                            <span>10.5 MB</span>
+                        </div>
+                        <Button id="download" style="outlined">Download</Button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
+<script>
+    import type { BaseButtonClickEvent } from "@types";
+
+    function init() {
+        const buttons = document.querySelectorAll("base-button");
+        buttons.forEach((it) => {
+            it.addEventListener("base-button-click", ((
+                event: CustomEvent<BaseButtonClickEvent>,
+            ) => {
+                const detail = event.detail;
+                console.log("Event found", detail.id);
+            }) as EventListener);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => init());
+    document.addEventListener("astro:after-swap", () => init());
+</script>
