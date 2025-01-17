@@ -197,6 +197,10 @@ pre {
   @apply border border-black/15 py-5 dark:border-white/20;
 }
 
+hr {
+    @apply text-neutral-300;
+}
+
 :root {
   --astro-code-color-text: #09090b;
   --astro-code-color-background: #fafafa;
