@@ -1,0 +1,44 @@
+---
+interface Props {
+    selectedIndex: number;
+    basePath: string;
+}
+
+const { selectedIndex, basePath } = Astro.props;
+
+function getTabColor(index: number) {
+    return selectedIndex !== index && "text-neutral-700";
+}
+
+function getDestination(tab: "home" | "gallery" | "details") {
+    let url = basePath;
+
+    // Remove trailing slash
+    if (url.endsWith("/")) url = url.slice(0, -1);
+
+    // Remove gallery/details slug if we're not in Home
+    if (selectedIndex !== 0) {
+        url = url.substring(0, url.lastIndexOf("/"));
+    }
+
+    let slug = ("/" + tab) as string;
+    if (slug === "/home") slug = "";
+
+    return url + slug;
+}
+
+const link = getDestination("home");
+---
+
+<div class="flex flex-col gap-7">
+    <div class="flex gap-8 font-mono text-sm text-black">
+        <a class:list={[getTabColor(0)]} href={getDestination("home")}>Home</a>
+        <a class:list={[getTabColor(1)]} href={getDestination("gallery")}
+            >Gallery</a
+        >
+        <a class:list={[getTabColor(2)]} href={getDestination("details")}
+            >Details</a
+        >
+    </div>
+    <hr />
+</div>
