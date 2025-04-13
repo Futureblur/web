@@ -1,0 +1,35 @@
+{
+    "name": "Octane Starter Kit",
+    "shortName": "Octane",
+    "category": "StarterKit",
+    "description": "This pack contains everything you need to follow along with this tutorial: \"How To Make Blender Look Like Octane\".",
+    "releaseDate": "2024-04-07",
+    "price": 0,
+    "details": {
+        "contents": [
+            {
+                "name": "projectFile",
+                "type": "blend"
+            },
+            {
+                "name": "userManual",
+                "type": "pdf"
+            }
+        ],
+        "usedIn": {
+            "tutorial": {
+                "name": "How To Make Blender Look Like Octane",
+                "url": "https://fut.red/5gaP9"
+            },
+            "series": "Lighting Essentials",
+            "level": 2
+        },
+        "meta": {
+            "fileType": "zip",
+            "size": "10.5 MB",
+            "fileCount": 3,
+            "authors": ["Rasul Adasov"],
+            "credits": "\"Creepy Lady Bust Statue Scan\" (https://skfb.ly/6B7pK) by alex.toporowicz is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/)."
+        }
+    }
+}
