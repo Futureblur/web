@@ -1,0 +1,193 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "@layouts/Layout.astro";
+import Navigation from "@components/Store/Navigation.astro";
+import Container from "@components/Container.astro";
+
+import { formatDate } from "@lib/utils";
+
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import type { ui } from "@i18n/ui";
+
+import type { StoreContentFile } from "@content/config";
+import { languages } from "@i18n/ui";
+
+export async function getStaticPaths() {
+    const store = (await getCollection("store")).sort(
+        (a, b) => b.data.releaseDate.valueOf() - a.data.releaseDate.valueOf(),
+    );
+
+    const paths = store.flatMap((item) =>
+        languages.map((lang) => ({
+            params: { lang, slug: item.id || undefined },
+            props: item,
+        })),
+    );
+
+    return paths;
+}
+
+const { slug } = Astro.params;
+
+const item = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+function getContents() {
+    return item.data.details.contents;
+}
+
+function getContentFileName(name: string) {
+    return ("store.details.contents." + name) as keyof (typeof ui)[typeof lang];
+}
+
+function getContentFile(file: StoreContentFile) {
+    return `${t(getContentFileName(file.name))} (.${file.type})`;
+}
+
+function getTutorialName() {
+    return item.data.details.usedIn.tutorial.name;
+}
+
+function getSeriesName() {
+    return item.data.details.usedIn.series;
+}
+
+function getLevel() {
+    return ("store.details.usedIn.level." +
+        item.data.details.usedIn.level) as keyof (typeof ui)[typeof lang];
+}
+
+function getFileType() {
+    return item.data.details.meta.fileType.toUpperCase();
+}
+
+function getSize() {
+    return item.data.details.meta.size;
+}
+
+function getFileCount() {
+    return item.data.details.meta.fileCount;
+}
+
+function getReleaseDate() {
+    return formatDate(item.data.releaseDate);
+}
+
+function getAuthors() {
+    return item.data.details.meta.authors.join(", ");
+}
+
+function getCredits() {
+    return item.data.details.meta.credits || "—";
+}
+---
+
+<Layout
+    title={item.data.name + " (Details)"}
+    siteName="Futureblur Store"
+    description={item.data.description}
+    cover={`/src/assets/store/${slug}/cover.jpg`}
+>
+    <Container>
+        <div class="animate my-10 mb-0 flex flex-col gap-8 space-y-2 md:mb-6">
+            <div>
+                <Navigation selectedIndex={2} basePath={Astro.url.pathname} />
+            </div>
+            <h1>{item.data.name}</h1>
+            <article>
+                <h2 class="mt-0">{t("store.details.contents")}</h2>
+                <ul>
+                    {
+                        getContents().map((file) => (
+                            <li>{getContentFile(file)}</li>
+                        ))
+                    }
+                </ul>
+
+                <h2>{t("store.details.usedIn")}</h2>
+                <table class="text-md">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="row-key"
+                                >{t("store.details.usedIn.tutorial")}</td
+                            >
+                            <td>{getTutorialName()}</td>
+                        </tr>
+                        <tr>
+                            <td class="row-key"
+                                >{t("store.details.usedIn.series")}</td
+                            >
+                            <td>{getSeriesName()}</td>
+                        </tr>
+                        <tr>
+                            <td class="row-key"
+                                >{t("store.details.usedIn.level")}</td
+                            >
+                            <td>{t(getLevel())}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>{t("store.details.meta")}</h2>
+                <table class="text-md">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="row-key"
+                                >{t("store.details.meta.fileType")}</td
+                            >
+                            <td>{getFileType()}</td>
+                        </tr>
+                        <tr>
+                            <td class="row-key"
+                                >{t("store.details.meta.size")}</td
+                            >
+                            <td>{getSize()}</td>
+                        </tr>
+                        <tr>
+                            <td class="row-key"
+                                >{t("store.details.meta.fileCount")}</td
+                            >
+                            <td>{getFileCount()}</td>
+                        </tr>
+                        <tr>
+                            <td class="row-key">{t("store.releaseDate")}</td>
+                            <td>{getReleaseDate()}</td>
+                        </tr>
+                        <tr>
+                            <td class="row-key"
+                                >{t("store.details.meta.authors")}</td
+                            >
+                            <td>{getAuthors()}</td>
+                        </tr>
+                        <tr>
+                            <td class="row-key"
+                                >{t("store.details.meta.credits")}</td
+                            >
+                            <td>{getCredits()}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </div>
+    </Container>
+</Layout>
+
+<style>
+    .row-key {
+        width: 30%;
+    }
+</style>
