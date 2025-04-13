@@ -14,7 +14,9 @@ const newsCollection = defineCollection({
         caption: z.string(),
         author: reference('authors'),
         draft: z.boolean({ message: 'Draft mode was not specified' }),
-        type: z.enum(['Announcement', 'Tip', 'Update', 'Story', 'Investors']),
+        type: z.enum(
+            ['Announcement', 'Tip', 'Update', 'Story', 'Investors'],
+            { message: 'Post type is invalid' }),
         url: z.string().url({ message: 'You need to specify a valid url' }),
     })
 })
@@ -39,6 +41,11 @@ const markdownCollection = defineCollection({
     })
 })
 
+export type StoreContentFile = {
+    name: string,
+    type: string
+}
+
 const storeCollection = defineCollection({
     type: 'data',
     schema: z.object({
@@ -62,6 +69,27 @@ const storeCollection = defineCollection({
             .max(999999, { message: 'Price cannot exceed 999999' })
             .multipleOf(
                 0.01, 'Price cannot have more than two decimal digits'),
+        details: z.object({
+            contents: z.array(z.custom<StoreContentFile>())
+                .nonempty({ message: 'Contents cannot be empty' }),
+            usedIn: z.object({
+                tutorial: z.object({
+                    name: z.string(),
+                    url: z.string().url({ message: 'Tutorial URL is invalid' })
+                }),
+                series: z.string(),
+                level: z.number().min(1).max(3)
+            }),
+            meta: z.object({
+                fileType: z.string(),
+                size: z.string(),
+                fileCount: z.number().positive(
+                    { message: 'File count needs to be a positive number' }),
+                authors: z.string().array().nonempty(
+                    { message: 'Authors cannot be empty' }),
+                credits: z.string().optional()
+            })
+        })
     })
 })
 
