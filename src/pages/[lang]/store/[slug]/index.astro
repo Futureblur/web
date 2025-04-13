@@ -53,7 +53,7 @@ function isNew() {
 
 function getPriceText(price: number) {
     return price === 0
-        ? "Free"
+        ? t("store.price.free")
         : price.toLocaleString("us", {
               minimumFractionDigits: 2,
               style: "currency",
@@ -91,7 +91,7 @@ function getPriceText(price: number) {
                     <div class="flex flex-col gap-1.5">
                         <span
                             class=`font-mono text-accent ${!isNew() && "hidden"}`
-                            >New</span
+                            >{t("store.new")}</span
                         >
                         <h1>{item.data.name}</h1>
                         <span class="mt-1 font-mono"
@@ -101,20 +101,30 @@ function getPriceText(price: number) {
                     <p>{item.data.description}</p>
                     <div class="flex flex-col gap-14">
                         <div class="flex flex-col gap-1">
-                            <span class="text-neutral-700">Used in</span>
-                            <a href="#" class="link"
+                            <span class="text-neutral-700"
+                                >{t("store.details.usedIn")}</span
+                            >
+                            <a
+                                href={item.data.details.usedIn.tutorial.url}
+                                class="link"
                                 >How To Make Blender Look Like Octane</a
                             >
                         </div>
                         <div class="flex flex-col gap-1">
-                            <span class="text-neutral-700">Compatibility</span>
+                            <span class="text-neutral-700"
+                                >{t("store.details.compatibility")}</span
+                            >
                             <span>Blender 4.0 or later</span>
                         </div>
                         <div class="flex flex-col gap-1">
-                            <span class="text-neutral-700">Size</span>
-                            <span>10.5 MB</span>
+                            <span class="text-neutral-700"
+                                >{t("store.details.meta.size")}</span
+                            >
+                            <span>{item.data.details.meta.size}</span>
                         </div>
-                        <Button id="download" style="outlined">Download</Button>
+                        <Button id="download" style="outlined"
+                            >{t("store.download")}</Button
+                        >
                     </div>
                 </div>
             </div>
