@@ -35,7 +35,7 @@ if (!images[coverPath]) {
 ---
 
 <Layout
-    title={item.data.name}
+    title={item.data.name + " (Gallery)"}
     siteName="Futureblur Store"
     description={item.data.description}
     cover={`/src/assets/store/${slug}/cover.jpg`}
@@ -51,7 +51,7 @@ if (!images[coverPath]) {
                     class="pointer-events-none"
                 />
             </div>
-            <div class="flex flex-col gap-11">
+            <div>
                 <Navigation selectedIndex={1} basePath={Astro.url.pathname} />
             </div>
         </section>
