@@ -1,8 +1,11 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import type { ImageMetadata } from "astro";
+
 import Image from "astro/components/Image.astro";
+
 import { getTranslatedSlug } from "@lib/utils";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 interface Props {
     item: CollectionEntry<"store">;
@@ -10,15 +13,16 @@ interface Props {
 
 const { item } = Astro.props;
 
-function getSlug() {
-    return item.id.substring(3);
-}
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const slug = item.id;
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
     "/src/assets/store/**/*.{jpg, jpeg, png}",
 );
 
-const coverPath = `/src/assets/store/${getSlug()}/cover.jpg`;
+const coverPath = `/src/assets/store/${slug}/cover.jpg`;
 if (!images[coverPath]) {
     throw new Error("Cover image path does not exist.");
 }
@@ -37,7 +41,7 @@ function isNew() {
 
 function getPriceText(price: number) {
     return price === 0
-        ? "Free"
+        ? t("store.price.free")
         : price.toLocaleString("us", {
               minimumFractionDigits: 2,
               style: "currency",
@@ -48,7 +52,7 @@ function getPriceText(price: number) {
 ---
 
 <a
-    href={getTranslatedSlug(item.id, "/store")}
+    href={getTranslatedSlug(lang, "/store/" + slug)}
     class="-mx-[0.5px] -my-[0.5px] inline-flex basis-1/2 flex-col border border-neutral-700 md:basis-1/3 lg:basis-1/4"
     data-astro-prefetch
 >
@@ -57,7 +61,7 @@ function getPriceText(price: number) {
         <div class="flex flex-col space-y-1.5">
             <span
                 class=`text-accent text-sm ${!isNew() && "invisible"}`
-                aria-hidden={!isNew()}>New</span
+                aria-hidden={!isNew()}>{t("store.new")}</span
             >
             <span class="uppercase">{item.data.shortName}</span>
         </div>

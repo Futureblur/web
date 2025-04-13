@@ -1,4 +1,6 @@
 ---
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
 interface Props {
     selectedIndex: number;
     basePath: string;
@@ -16,8 +18,8 @@ function getDestination(tab: "home" | "gallery" | "details") {
     // Remove trailing slash
     if (url.endsWith("/")) url = url.slice(0, -1);
 
-    // Remove gallery/details slug if we're not in Home
-    if (selectedIndex !== 0) {
+    const isInHome = selectedIndex === 0;
+    if (!isInHome) {
         url = url.substring(0, url.lastIndexOf("/"));
     }
 
@@ -27,17 +29,20 @@ function getDestination(tab: "home" | "gallery" | "details") {
     return url + slug;
 }
 
-const link = getDestination("home");
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <div class="flex flex-col gap-7">
     <div class="flex gap-8 font-mono text-sm text-black">
-        <a class:list={[getTabColor(0)]} href={getDestination("home")}>Home</a>
+        <a class:list={[getTabColor(0)]} href={getDestination("home")}
+            >{t("store.nav.home")}</a
+        >
         <a class:list={[getTabColor(1)]} href={getDestination("gallery")}
-            >Gallery</a
+            >{t("store.nav.gallery")}</a
         >
         <a class:list={[getTabColor(2)]} href={getDestination("details")}
-            >Details</a
+            >{t("store.nav.details")}</a
         >
     </div>
     <hr />
