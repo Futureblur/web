@@ -3,19 +3,19 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import Image from "astro/components/Image.astro";
 import Navigation from "@components/Store/Navigation.astro";
+import { languages } from "@i18n/ui";
 
 export async function getStaticPaths() {
     const store = (await getCollection("store")).sort(
         (a, b) => b.data.releaseDate.valueOf() - a.data.releaseDate.valueOf(),
     );
 
-    const paths = store.map((item) => {
-        const [lang, ...slug] = item.id.split("/");
-        return {
-            params: { lang, slug: slug.join("/") || undefined },
+    const paths = store.flatMap((item) =>
+        languages.map((lang) => ({
+            params: { lang, slug: item.id || undefined },
             props: item,
-        };
-    });
+        })),
+    );
 
     return paths;
 }

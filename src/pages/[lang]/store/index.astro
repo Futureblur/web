@@ -4,27 +4,27 @@ import { STORE } from "@consts";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import Layout from "@layouts/Layout.astro";
 import Item from "@components/Store/Item.astro";
+import { languages } from "@i18n/ui";
 
 export async function getStaticPaths() {
-    const news = (await getCollection("news")).sort(
-        (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+    const store = (await getCollection("store")).sort(
+        (a, b) => b.data.releaseDate.valueOf() - a.data.releaseDate.valueOf(),
     );
 
-    const paths = news.map((post) => {
-        const [lang, ...slug] = post.slug.split("/");
-        return {
-            params: { lang, slug: slug.join("/") || undefined },
-            props: post,
-        };
-    });
+    const paths = store.flatMap((item) =>
+        languages.map((lang) => ({
+            params: { lang, slug: item.id || undefined },
+            props: item,
+        })),
+    );
 
     return paths;
 }
 
 const items = await getCollection("store");
 
-const { lang } = Astro.params;
-const t = useTranslations(getLangFromUrl(Astro.url));
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <Layout

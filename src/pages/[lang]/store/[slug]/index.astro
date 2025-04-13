@@ -6,24 +6,23 @@ import BackToPrevious from "@components/News/BackToPrevious.astro";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import Navigation from "@components/Store/Navigation.astro";
 import Button from "@components/Button.astro";
+import { languages } from "@i18n/ui";
 
 export async function getStaticPaths() {
     const store = (await getCollection("store")).sort(
         (a, b) => b.data.releaseDate.valueOf() - a.data.releaseDate.valueOf(),
     );
 
-    const paths = store.map((item) => {
-        const [lang, ...slug] = item.id.split("/");
-        return {
-            params: { lang, slug: slug.join("/") || undefined },
+    const paths = store.flatMap((item) =>
+        languages.map((lang) => ({
+            params: { lang, slug: item.id || undefined },
             props: item,
-        };
-    });
+        })),
+    );
 
     return paths;
 }
 
-const store = await getCollection("store");
 const { slug } = Astro.params;
 
 const lang = getLangFromUrl(Astro.url);
