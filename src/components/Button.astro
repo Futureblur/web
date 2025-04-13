@@ -1,20 +1,29 @@
 ---
 interface Props {
     id: string;
+    className?: string;
     style: "primary" | "secondary" | "outlined";
+    size?: "normal" | "tall" | "taller";
 }
 
-const { id, style } = Astro.props;
+const { id, style, size, className } = Astro.props;
 ---
 
 <base-button data-id={id}>
     <button
         class:list={[
-            "flex w-full flex-nowrap justify-center rounded-full px-6 py-1.5 font-mono",
-            style === "primary" && "bg-black text-white",
-            style === "secondary" && "bg-neutral-300 text-black",
-            style === "outlined" && "border border-neutral-300 text-black",
+            "flex w-full flex-nowrap justify-center rounded-full px-6 py-1.5 font-mono transition-colors disabled:cursor-not-allowed",
+            style === "primary" &&
+                "bg-black text-white disabled:bg-neutral-200 disabled:text-neutral-700",
+            style === "secondary" &&
+                "bg-neutral-300 text-black disabled:bg-neutral-200 disabled:text-neutral-700",
+            style === "outlined" &&
+                "border border-neutral-300 text-black duration-300 hover:bg-neutral-200/50 disabled:bg-neutral-100 disabled:text-neutral-700",
+            size === "normal" && "py-1.5",
+            size === "tall" && "py-2",
+            size === "taller" && "py-2.5",
         ]}
+        class={className}
     >
         <div class="text-sm">
             <slot />
