@@ -58,9 +58,9 @@ function getLinkTitle(link: NavigationLink) {
                 {
                     footerGroup.map((group) => (
                         <div class="flex w-1/2 flex-col gap-2 px-2 md:w-auto md:px-0">
-                            <h2 class="text-primary font-medium">
+                            <span class="text-primary font-medium">
                                 {t(getGroupTitle(group))}
-                            </h2>
+                            </span>
                             <ul class="flex flex-col gap-2">
                                 {group.links.map((link) => (
                                     <li class="hyphens-auto">
