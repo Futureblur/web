@@ -8,6 +8,7 @@
 }
 
 html {
+  font-size: 16px;
   overflow-x: hidden;
   overflow-wrap: break-word;
   color-scheme: light;
@@ -107,7 +108,7 @@ select {
 }
 
 h1 {
-    @apply pb-2 font-serif text-5xl font-normal tracking-tight text-black dark:text-white md:text-6xl;
+    @apply pb-2 font-serif text-4xl font-normal tracking-tight text-black dark:text-white md:text-6xl;
 }
 
 h2 {
