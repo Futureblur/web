@@ -1,17 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { languages } from "@i18n/ui";
+import type { ui } from "@i18n/ui";
+import type { StoreContentFile } from "@lib/store/types.store";
+
 import Layout from "@layouts/Layout.astro";
+
 import Navigation from "@components/Store/Navigation.astro";
 import Container from "@components/Container.astro";
-
-import { formatDate } from "@lib/utils";
-
-import { getLangFromUrl, useTranslations } from "@i18n/utils";
-import type { ui } from "@i18n/ui";
-
-import type { StoreContentFile } from "@content/config";
-import { languages } from "@i18n/ui";
+import FormattedDate from "@components/News/FormattedDate.astro";
 
 export async function getStaticPaths() {
     const store = (await getCollection("store")).sort(
@@ -70,10 +69,6 @@ function getSize() {
 
 function getFileCount() {
     return item.data.details.meta.fileCount;
-}
-
-function getReleaseDate() {
-    return formatDate(item.data.releaseDate);
 }
 
 function getAuthors() {
@@ -167,7 +162,11 @@ function getCredits() {
                         </tr>
                         <tr>
                             <td class="row-key">{t("store.releaseDate")}</td>
-                            <td>{getReleaseDate()}</td>
+                            <td
+                                ><FormattedDate
+                                    date={item.data.releaseDate}
+                                /></td
+                            >
                         </tr>
                         <tr>
                             <td class="row-key"
