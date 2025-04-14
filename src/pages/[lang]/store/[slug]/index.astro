@@ -1,12 +1,15 @@
 ---
 import { getCollection } from "astro:content";
-import Image from "astro/components/Image.astro";
-import Layout from "@layouts/Layout.astro";
-import BackToPrevious from "@components/News/BackToPrevious.astro";
+import { languages } from "@i18n/ui";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { getLocalizedPrice, isNew } from "@lib/store/store-utils";
+
+import Layout from "@layouts/Layout.astro";
+
+import Image from "astro/components/Image.astro";
+import BackToPrevious from "@components/News/BackToPrevious.astro";
 import Navigation from "@components/Store/Navigation.astro";
 import Button from "@components/Button.astro";
-import { languages } from "@i18n/ui";
 import MobileNotSupported from "@components/Store/MobileNotSupported.astro";
 
 export async function getStaticPaths() {
@@ -39,29 +42,6 @@ const coverPath = `/src/assets/store/${slug}/cover.jpg`;
 if (!images[coverPath]) {
     throw new Error("Cover image path does not exist.");
 }
-
-function isNew() {
-    const now = new Date();
-    const delta =
-        now.getMonth() -
-        item.data.releaseDate.getMonth() +
-        12 * (now.getFullYear() - item.data.releaseDate.getFullYear());
-
-    const maxMonthDelta = 2;
-
-    return delta <= maxMonthDelta;
-}
-
-function getPriceText(price: number) {
-    return price === 0
-        ? t("store.price.free")
-        : price.toLocaleString("us", {
-              minimumFractionDigits: 2,
-              style: "currency",
-              currency: "USD",
-              trailingZeroDisplay: "stripIfInteger",
-          });
-}
 ---
 
 <Layout
@@ -93,12 +73,17 @@ function getPriceText(price: number) {
                 <div class="flex flex-col gap-10 lg:gap-16">
                     <div class="flex flex-col gap-1.5">
                         <span
-                            class=`font-mono text-accent ${!isNew() && "hidden"}`
+                            class=`font-mono text-accent ${!isNew(item.data) && "hidden"}`
                             >{t("store.new")}</span
                         >
                         <h1 class="text-5xl lg:text-6xl">{item.data.name}</h1>
-                        <span class="font-mono lg:mt-1"
-                            >{getPriceText(item.data.price)}</span
+                        <span class="font-mono text-sm lg:mt-1 lg:text-base"
+                            >{
+                                getLocalizedPrice(
+                                    item.data.price.base.amount,
+                                    lang,
+                                )
+                            }</span
                         >
                     </div>
                     <div class="flex flex-col gap-10">
