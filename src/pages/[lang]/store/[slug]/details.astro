@@ -139,7 +139,7 @@ function getCredits() {
                     </tbody>
                 </table>
                 <h2>{t("store.details.meta")}</h2>
-                <table class="text-md">
+                <table class="text-md max-w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -175,14 +175,10 @@ function getCredits() {
                             >
                             <td>{getAuthors()}</td>
                         </tr>
-                        <tr>
-                            <td class="row-key"
-                                >{t("store.details.meta.credits")}</td
-                            >
-                            <td>{getCredits()}</td>
-                        </tr>
                     </tbody>
                 </table>
+                <h2 class="mt-0">{t("store.details.meta.credits")}</h2>
+                <p class="hyphens-auto">{getCredits()}</p>
             </article>
         </div>
     </Container>
