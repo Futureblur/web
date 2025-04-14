@@ -1,10 +1,11 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
+import { getCollection } from "astro:content";
 import { STORE } from "@consts";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { languages } from "@i18n/ui";
+
 import Layout from "@layouts/Layout.astro";
 import Item from "@components/Store/Item.astro";
-import { languages } from "@i18n/ui";
 
 export async function getStaticPaths() {
     const store = (await getCollection("store")).sort(
