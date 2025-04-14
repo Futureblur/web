@@ -33,11 +33,11 @@ const t = useTranslations(lang);
     description={t("store.description")}
     cover={STORE.COVER}
 >
-    <div class="page-spacing max-w-screen-3xl mx-auto px-6">
+    <div class="page-spacing max-w-screen-3xl mx-auto px-5">
         <div class="space-y-10">
             <section class="animate space-y-10">
                 <h1>Starter Kits</h1>
-                <div class="-mx-10 flex flex-wrap">
+                <div class="flex w-full flex-row flex-wrap gap-4">
                     {items.map((item) => <Item item={item} />)}
                 </div>
             </section>

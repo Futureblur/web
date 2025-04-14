@@ -92,7 +92,9 @@ function getCredits() {
     cover={`/src/assets/store/${slug}/cover.jpg`}
 >
     <Container>
-        <div class="animate my-10 mb-0 flex flex-col gap-8 space-y-2 md:mb-6">
+        <div
+            class="animate mb-0 flex flex-col gap-5 space-y-2 md:my-10 md:mb-6 md:gap-8"
+        >
             <div>
                 <Navigation selectedIndex={2} basePath={Astro.url.pathname} />
             </div>
@@ -187,7 +189,29 @@ function getCredits() {
 </Layout>
 
 <style>
+    table {
+        display: flex;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody {
+        width: 100%;
+    }
+
+    tr {
+        display: flex !important;
+        width: 100%;
+    }
+
+    td {
+        flex: 1;
+    }
+
     .row-key {
-        width: 30%;
+        width: 6rem;
     }
 </style>

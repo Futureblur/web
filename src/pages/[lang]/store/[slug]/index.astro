@@ -70,14 +70,14 @@ function getPriceText(price: number) {
     description={item.data.description}
     cover={`/src/assets/store/${slug}/cover.jpg`}
 >
-    <div class="page-spacing mx-auto max-w-screen-2xl px-6">
+    <div class="md:page-spacing mx-auto mt-1 max-w-screen-2xl px-6">
         <div class="animate">
             <BackToPrevious href=`/${lang}/store`
                 >{t("nav.back")}</BackToPrevious
             >
         </div>
         <section
-            class="animate my-10 mb-0 flex flex-col gap-10 space-y-2 md:mb-6 lg:flex-row"
+            class="animate my-2 mb-4 flex flex-col gap-4 space-y-2 lg:my-10 lg:mb-6 lg:flex-row lg:gap-10"
         >
             <div>
                 <Image
@@ -88,7 +88,7 @@ function getPriceText(price: number) {
                     class="pointer-events-none mx-auto max-h-[600px] w-auto lg:h-auto"
                 />
             </div>
-            <div class="flex flex-col gap-11 lg:max-w-[600px]">
+            <div class="flex flex-col gap-7 md:gap-11 lg:max-w-[600px]">
                 <Navigation selectedIndex={0} basePath={Astro.url.pathname} />
                 <div class="flex flex-col gap-10 lg:gap-16">
                     <div class="flex flex-col gap-1.5">

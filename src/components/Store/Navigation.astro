@@ -4,9 +4,10 @@ import { getLangFromUrl, useTranslations } from "@i18n/utils";
 interface Props {
     selectedIndex: number;
     basePath: string;
+    className?: string;
 }
 
-const { selectedIndex, basePath } = Astro.props;
+const { selectedIndex, basePath, className } = Astro.props;
 
 function getTabColor(index: number) {
     return selectedIndex !== index && "text-neutral-700";
@@ -18,6 +19,7 @@ function getDestination(tab: "home" | "gallery" | "details") {
     // Remove trailing slash
     if (url.endsWith("/")) url = url.slice(0, -1);
 
+    // Remove gallery/details slug if we're not in Home
     const isInHome = selectedIndex === 0;
     if (!isInHome) {
         url = url.substring(0, url.lastIndexOf("/"));
@@ -33,7 +35,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<div class="flex flex-col gap-7">
+<div class=`flex flex-col gap-4 md:gap-7 ${className}`>
     <div class="flex gap-8 font-mono text-sm text-black">
         <a class:list={[getTabColor(0)]} href={getDestination("home")}
             >{t("store.nav.home")}</a
