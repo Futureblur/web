@@ -20,8 +20,6 @@
             url: window.location.href,
         };
 
-        console.log(data);
-
         if (!navigator.canShare || !navigator.canShare(data)) {
             shareWithEmail(data);
             return;
@@ -29,9 +27,7 @@
 
         try {
             await navigator.share(data);
-        } catch (error) {
-            alert(error);
-        }
+        } catch (error) {}
     }
 
     function shareWithEmail(data: ShareData) {
