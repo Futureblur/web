@@ -12,13 +12,13 @@ importers:
         specifier: ^0.7.0
         version: 0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.3.3)(typescript@5.6.2)
       '@astrojs/mdx':
-        specifier: ^3.0.1
+        specifier: ^3.1.5
         version: 3.1.5(astro@4.15.4(@types/node@20.14.12)(rollup@4.21.3)(typescript@5.6.2))
       '@astrojs/rss':
-        specifier: ^4.0.6
+        specifier: ^4.0.7
         version: 4.0.7
       '@astrojs/sitemap':
-        specifier: ^3.1.5
+        specifier: ^3.1.6
         version: 3.1.6
       '@astrojs/tailwind':
         specifier: ^5.1.0
@@ -27,44 +27,44 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0
       '@fontsource-variable/space-grotesk':
-        specifier: ^5.0.18
+        specifier: ^5.1.0
         version: 5.1.0
       '@fontsource/instrument-serif':
-        specifier: ^5.0.22
+        specifier: ^5.1.0
         version: 5.1.0
       astro:
-        specifier: ^4.9.2
+        specifier: ^4.15.4
         version: 4.15.4(@types/node@20.14.12)(rollup@4.21.3)(typescript@5.6.2)
       astro-critters:
-        specifier: ^2.1.10
+        specifier: ^2.2.0
         version: 2.2.0(@types/node@20.14.12)(rollup@4.21.3)(typescript@5.6.2)
       astro-pagefind:
-        specifier: ^1.5.0
+        specifier: ^1.6.0
         version: 1.6.0(astro@4.15.4(@types/node@20.14.12)(rollup@4.21.3)(typescript@5.6.2))
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
       tailwind-merge:
-        specifier: ^2.3.0
+        specifier: ^2.5.2
         version: 2.5.2
       tailwindcss:
-        specifier: ^3.4.3
+        specifier: ^3.4.11
         version: 3.4.11
       typescript:
-        specifier: ^5.4.5
+        specifier: ^5.6.2
         version: 5.6.2
     devDependencies:
       '@tailwindcss/typography':
-        specifier: ^0.5.13
+        specifier: ^0.5.15
         version: 0.5.15(tailwindcss@3.4.11)
       astro-robots-txt:
         specifier: ^1.0.0
         version: 1.0.0
       pagefind:
-        specifier: ^1.1.0
+        specifier: ^1.1.1
         version: 1.1.1
       prettier:
-        specifier: ^3.2.5
+        specifier: ^3.3.3
         version: 3.3.3
       prettier-plugin-astro:
         specifier: ^0.13.0
@@ -917,8 +917,8 @@ packages:
     resolution: {integrity: sha512-xlx1yCK2Oc1APsPXDL2LdlNP6+uu8OCDdhOBSVT279M/S+y75O30C2VuD8T2ogdePBBl7PfPF4504tnLgX3zfw==}
     engines: {node: '>=14.16'}
 
-  caniuse-lite@1.0.30001660:
-    resolution: {integrity: sha512-GacvNTTuATm26qC74pt+ad1fW15mlQ/zuTzzY1ZoIzECTP8HURDfF43kNxPgf7H1jmelCBQTTbBNxdSXOA7Bqg==}
+  caniuse-lite@1.0.30001713:
+    resolution: {integrity: sha512-wCIWIg+A4Xr7NfhTuHdX+/FKh3+Op3LBbSp2N5Pfx6T/LhdQy3GTyoTg48BReaW/MyMNZAkTadsBtai3ldWK0Q==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -3488,7 +3488,7 @@ snapshots:
   autoprefixer@10.4.20(postcss@8.4.45):
     dependencies:
       browserslist: 4.23.3
-      caniuse-lite: 1.0.30001660
+      caniuse-lite: 1.0.30001713
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.0
@@ -3528,7 +3528,7 @@ snapshots:
 
   browserslist@4.23.3:
     dependencies:
-      caniuse-lite: 1.0.30001660
+      caniuse-lite: 1.0.30001713
       electron-to-chromium: 1.5.20
       node-releases: 2.0.18
       update-browserslist-db: 1.1.0(browserslist@4.23.3)
@@ -3537,7 +3537,7 @@ snapshots:
 
   camelcase@7.0.1: {}
 
-  caniuse-lite@1.0.30001660: {}
+  caniuse-lite@1.0.30001713: {}
 
   ccount@2.0.1: {}
 
