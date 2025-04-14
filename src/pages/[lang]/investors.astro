@@ -1,10 +1,11 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
 import { INVESTORS } from "@consts";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { shouldLoadCardLazy } from "@lib/news/news-utils";
+
+import Layout from "@layouts/Layout.astro";
 import Card from "@components/News/Card.astro";
-import { shouldLoadCardLazy } from "@lib/utils";
 
 export async function getStaticPaths() {
     const news = (await getCollection("news")).sort(

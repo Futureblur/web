@@ -4,7 +4,7 @@ import { SITE } from "@consts";
 import Card from "@components/News/Card.astro";
 import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
-import { shouldLoadCardLazy } from "@lib/utils";
+import { shouldLoadCardLazy } from "@lib/news/news-utils";
 
 const lang = getLangFromUrl(Astro.url);
 

@@ -4,7 +4,7 @@ import Layout from "@layouts/Layout.astro";
 import { NEWS } from "@consts";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import Card from "@components/News/Card.astro";
-import { shouldLoadCardLazy } from "@lib/utils";
+import { shouldLoadCardLazy } from "@lib/news/news-utils";
 
 export async function getStaticPaths() {
     const news = (await getCollection("news")).sort(
