@@ -18,7 +18,10 @@ const newsCollection = defineCollection({
         type: z.enum(
             ['Announcement', 'Tip', 'Update', 'Story', 'Investors'],
             { message: 'Post type is invalid' }),
-        url: z.string().url({ message: 'You need to specify a valid url' }),
+        url: z.string().url({ message: 'Post URL is invalid' }).includes('fut.red', {
+            message:
+                'Post URL needs to be an official Futureblur shortlink (fut.red)'
+        }),
     })
 })
 
@@ -70,7 +73,13 @@ const storeCollection = defineCollection({
             usedIn: z.object({
                 tutorial: z.object({
                     name: z.string(),
-                    url: z.string().url({ message: 'Tutorial URL is invalid' })
+                    url:
+                        z.string()
+                            .url({ message: 'Tutorial URL is invalid' })
+                            .includes('fut.red', {
+                                message:
+                                    'Tutorial URL needs to be an official Futureblur shortlink (fut.red)'
+                            })
                 }),
                 series: z.string(),
                 level: z.number().min(1).max(3)
