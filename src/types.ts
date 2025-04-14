@@ -7,10 +7,6 @@ export type Metadata = {
     TITLE: string; DESCRIPTION: string; COVER: string;
 };
 
-export type Socials = {
-    NAME: string; HREF: string;
-}[];
-
 export type NavigationLink = {
     title: string; url: string;
     external?: boolean;
