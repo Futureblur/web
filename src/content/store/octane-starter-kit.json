@@ -4,7 +4,18 @@
     "category": "StarterKit",
     "description": "This pack contains everything you need to follow along with this tutorial: \"How To Make Blender Look Like Octane\".",
     "releaseDate": "2024-04-07",
-    "price": 0,
+    "price": {
+        "base": {
+            "currency": "usd",
+            "amount": 129
+        }, 
+        "overrides": [
+            {
+                "currency": "eur",
+                "amount": 99
+            }
+        ]
+    },
     "details": {
         "contents": [
             {

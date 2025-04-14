@@ -1,3 +1,4 @@
+import { type StoreContentFile, type StorePrice } from '@lib/store/types.store';
 import { defineCollection, reference, z } from 'astro:content';
 
 const newsCollection = defineCollection({
@@ -41,11 +42,6 @@ const markdownCollection = defineCollection({
     })
 })
 
-export type StoreContentFile = {
-    name: string,
-    type: string
-}
-
 const storeCollection = defineCollection({
     type: 'data',
     schema: z.object({
@@ -64,11 +60,10 @@ const storeCollection = defineCollection({
         category: z.enum(['StarterKit'], { message: 'Invalid category' }),
         description: z.string(),
         releaseDate: z.coerce.date({ message: 'Invalid date' }),
-        price: z.coerce.number()
-            .min(0, { message: 'Price cannot be a negative value' })
-            .max(999999, { message: 'Price cannot exceed 999999' })
-            .multipleOf(
-                0.01, 'Price cannot have more than two decimal digits'),
+        price: z.object({
+            base: z.custom<StorePrice>(),
+            overrides: z.array(z.custom<StorePrice>()).optional(),
+        }),
         details: z.object({
             contents: z.array(z.custom<StoreContentFile>())
                 .nonempty({ message: 'Contents cannot be empty' }),
