@@ -3,7 +3,7 @@ on:
     branches:
       - main
       - preview
-      - store
+      - v6
     paths-ignore: 
       - "*.md"
       - ".github/**/*.md"
