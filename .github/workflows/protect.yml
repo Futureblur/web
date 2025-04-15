@@ -1,0 +1,16 @@
+name: Enforce preview branch for main merges
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if not from preview branch
+        run: | 
+          if [[ "${{ github.head_ref }}" != "preview" ]]; then
+            echo "Only pull requests from 'preview' branch can be merged into 'main'."
+            exit 1
+          fi
