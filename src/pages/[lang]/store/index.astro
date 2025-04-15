@@ -22,7 +22,11 @@ export async function getStaticPaths() {
     return paths;
 }
 
-const items = await getCollection("store");
+let items = await getCollection("store");
+const mockStore = true;
+if (mockStore) {
+    items = [...items, ...items, ...items, ...items, ...items];
+}
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
