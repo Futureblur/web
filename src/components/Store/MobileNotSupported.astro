@@ -1,8 +1,18 @@
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <span
     id="mobile-not-supported"
     class="mt-2 hidden text-center text-sm font-bold text-neutral-800"
-    >This product is made for desktop devices.
-    <span class="link share-button mt-1 block cursor-pointer">Send to PC</span>
+>
+    {t("store.mobileNotSupported")}
+    <span class="link share-button mt-1 block cursor-pointer">
+        {t("store.sendToPC")}
+    </span>
 </span>
 <script>
     function init() {
