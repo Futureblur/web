@@ -1,0 +1,20 @@
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<span
+    id="paid-not-supported"
+    class="mt-2 text-center text-sm font-bold text-neutral-800"
+>
+    {t("store.paidNotSupported")}
+    <a
+        href="https://fut.red/i"
+        target="_blank"
+        class="link mt-1 block font-normal"
+    >
+        {t("store.remindMe")}
+    </a>
+</span>
