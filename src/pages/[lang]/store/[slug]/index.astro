@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import { languages } from "@i18n/ui";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
-import { getLocalizedPrice, isNew } from "@lib/store/store-utils";
+import { getLocalizedPrice, isFree, isNew } from "@lib/store/store-utils";
 
 import Layout from "@layouts/Layout.astro";
 
@@ -96,6 +96,7 @@ if (!images[coverPath]) {
                             <a
                                 href={item.data.details.usedIn.tutorial.url}
                                 class="link"
+                                target="_blank"
                                 >How To Make Blender Look Like Octane</a
                             >
                         </div>
