@@ -48,14 +48,16 @@ if (!images[coverPath]) {
         <div class="flex flex-col space-y-1.5">
             <span
                 class=`text-accent text-xs md:text-sm ${isNew(item.data) && "invisible"}`
-                aria-hidden={!isNew(item.data)}>{t("store.new")}</span
+                aria-hidden={!isNew(item.data)}
             >
-            <span class="text-xs uppercase md:text-base"
-                >{item.data.shortName}</span
-            >
+                {t("store.new")}
+            </span>
+            <span class="text-xs uppercase md:text-base">
+                {item.data.shortName}
+            </span>
         </div>
-        <span class="text-xs md:text-sm"
-            >{getLocalizedPrice(item.data.price.base.amount, lang)}</span
-        >
+        <span class="text-xs md:text-sm">
+            {getLocalizedPrice(item.data.price.base.amount, lang)}
+        </span>
     </div>
 </a>
