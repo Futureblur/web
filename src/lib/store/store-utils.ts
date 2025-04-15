@@ -20,7 +20,7 @@ export function isFree(item: StoreItem) {
 export function getLocalizedPrice(price: number, lang: keyof typeof ui) {
     const t = useTranslations(lang);
 
-    return price === 0 ? t('store.price.free') : price.toLocaleString('us', {
+    return price === 0 ? t('store.price.free') : price.toLocaleString(lang, {
         minimumFractionDigits: 2,
         style: 'currency',
         currency: 'USD',
