@@ -4,9 +4,10 @@ interface Props {
     className?: string;
     style: "primary" | "secondary" | "outlined";
     size?: "normal" | "tall" | "taller";
+    disabled?: boolean;
 }
 
-const { id, style, size, className } = Astro.props;
+const { id, style, size, className, disabled } = Astro.props;
 ---
 
 <base-button data-id={id}>
@@ -24,6 +25,7 @@ const { id, style, size, className } = Astro.props;
             size === "taller" && "py-2.5",
         ]}
         class={className}
+        disabled={disabled}
     >
         <div class="text-sm">
             <slot />
