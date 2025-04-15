@@ -4,7 +4,6 @@ export const SITE: Site = {
     TITLE: 'Home',
     DESCRIPTION: 'Home of 3D.',
     COVER: '/images/glyph-banner.png',
-    EMAIL: 'hello@futureblur.com',
     NUM_POSTS_ON_HOMEPAGE: 5,
 };
 
