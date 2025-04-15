@@ -2,7 +2,6 @@ import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import critters from 'astro-critters';
-import pagefind from 'astro-pagefind';
 import robotsTxt from 'astro-robots-txt';
 import { defineConfig } from 'astro/config';
 
@@ -31,7 +30,7 @@ export default defineConfig({
                 return item;
             }
         }),
-        mdx(), pagefind(), critters(), robotsTxt()
+        mdx(), critters(), robotsTxt()
     ],
     markdown: { shikiConfig: { theme: 'css-variables' } },
     i18n: {
