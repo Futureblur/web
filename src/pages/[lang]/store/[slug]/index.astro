@@ -11,6 +11,7 @@ import BackToPrevious from "@components/News/BackToPrevious.astro";
 import Navigation from "@components/Store/Navigation.astro";
 import Button from "@components/Button.astro";
 import MobileNotSupported from "@components/Store/MobileNotSupported.astro";
+import PaidNotSupported from "@components/Store/PaidNotSupported.astro";
 
 export async function getStaticPaths() {
     const store = (await getCollection("store")).sort(
@@ -112,14 +113,31 @@ if (!images[coverPath]) {
                         </div>
                         <div class="flex flex-col gap-5">
                             <MobileNotSupported />
-                            <Button
-                                id="download"
-                                className="action-button"
-                                style="primary"
-                                size="taller"
-                            >
-                                {t("store.download")}
-                            </Button>
+                            {
+                                isFree(item.data) ? (
+                                    <Button
+                                        id="download"
+                                        className="action-button"
+                                        style="primary"
+                                        size="taller"
+                                    >
+                                        {t("store.download")}
+                                    </Button>
+                                ) : (
+                                    <div class="flex flex-col gap-5">
+                                        <PaidNotSupported />
+                                        <Button
+                                            id="add-to-cart"
+                                            className="action-button"
+                                            style="primary"
+                                            size="taller"
+                                            disabled={!isFree(item.data)}
+                                        >
+                                            {t("store.addToCart")}
+                                        </Button>
+                                    </div>
+                                )
+                            }
                         </div>
                     </div>
                 </div>

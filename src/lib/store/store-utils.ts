@@ -13,6 +13,10 @@ export function isNew(item: StoreItem) {
     return delta <= maxMonthDelta;
 }
 
+export function isFree(item: StoreItem) {
+    return item.price.base.amount === 0;
+}
+
 export function getLocalizedPrice(price: number, lang: keyof typeof ui) {
     const t = useTranslations(lang);
 
@@ -23,3 +27,4 @@ export function getLocalizedPrice(price: number, lang: keyof typeof ui) {
         trailingZeroDisplay: 'stripIfInteger',
     });
 }
+
