@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Image from "astro/components/Image.astro";
+import Navigation from "@components/Store/Navigation.astro";
+import { languages } from "@i18n/ui";
+
+export async function getStaticPaths() {
+    const store = (await getCollection("store")).sort(
+        (a, b) => b.data.releaseDate.valueOf() - a.data.releaseDate.valueOf(),
+    );
+
+    const paths = store.flatMap((item) =>
+        languages.map((lang) => ({
+            params: { lang, slug: item.id || undefined },
+            props: item,
+        })),
+    );
+
+    return paths;
+}
+
+const { slug } = Astro.params;
+
+const item = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/store/**/*.{jpg, jpeg, png}",
+);
+
+const coverPath = `/src/assets/store/${slug}/cover.jpg`;
+if (!images[coverPath]) {
+    throw new Error("Cover image path does not exist.");
+}
+---
+
+<Layout
+    title={item.data.name + " (Gallery)"}
+    siteName="Futureblur Store"
+    description={item.data.description}
+    cover={`/src/assets/store/${slug}/cover.jpg`}
+>
+    <div class="page-spacing mx-auto max-w-screen-2xl px-6">
+        <section class="animate my-10 mb-0 flex gap-10 space-y-2 md:mb-6">
+            <div>
+                <Image
+                    src={images[coverPath]()}
+                    alt={"Alt"}
+                    width={800}
+                    height={700}
+                    class="pointer-events-none"
+                />
+            </div>
+            <div>
+                <Navigation selectedIndex={1} basePath={Astro.url.pathname} />
+            </div>
+        </section>
+    </div>
+</Layout>

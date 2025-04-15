@@ -8,6 +8,7 @@
 }
 
 html {
+  font-size: 16px;
   overflow-x: hidden;
   overflow-wrap: break-word;
   color-scheme: light;
@@ -21,13 +22,13 @@ html.dark {
 body {
   @apply font-sans antialiased;
   @apply flex flex-col;
-  @apply bg-neutral-100 dark:bg-neutral-900;
-  @apply text-black/75 dark:text-white/75;
+  @apply bg-neutral-100;
+  @apply text-black/75;
 }
 
 header {
   @apply sticky left-0 right-0 top-0 z-50 py-1 sm:py-0;
-  @apply bg-neutral-100/75 dark:bg-neutral-900/75;
+  @apply bg-neutral-100/75;
   backdrop-filter: blur(30px) saturate(200%);
   transition: clip-path 300ms ease;
 }
@@ -106,6 +107,14 @@ select {
     @apply rounded-full text-sm text-white p-1.5 px-3 bg-black/85 font-mono cursor-pointer;
 }
 
+h1 {
+    @apply pb-2 font-serif text-4xl font-normal tracking-tight text-black dark:text-white md:text-6xl;
+}
+
+h2 {
+    @apply font-bold text-2xl tracking-tight text-black;
+}
+
 article {
   @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold;
@@ -136,6 +145,17 @@ article img {
 
 article img + em {
     @apply mt-5 px-6 lg:px-28 block w-full text-xs tracking-wide font-bold text-black/80 not-italic;
+}
+
+.link {
+    @apply font-sans text-current underline underline-offset-[3px] font-medium;
+    @apply decoration-black/30 dark:decoration-white/30;
+    @apply transition-colors duration-300 ease-in-out;
+}
+
+.link::after {
+    content: "↗";
+    @apply ml-0;
 }
 
 @layer utilities {
@@ -180,6 +200,10 @@ html.scrolled #back-to-top {
 /* shiki config */
 pre {
   @apply border border-black/15 py-5 dark:border-white/20;
+}
+
+hr {
+    @apply text-neutral-300;
 }
 
 :root {

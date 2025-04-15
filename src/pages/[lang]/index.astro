@@ -4,7 +4,7 @@ import { SITE } from "@consts";
 import Card from "@components/News/Card.astro";
 import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
-import { shouldLoadCardLazy } from "@lib/utils";
+import { shouldLoadCardLazy } from "@lib/news/news-utils";
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -44,7 +44,7 @@ const t = useTranslations(lang);
 >
     <div class="page-spacing mx-auto max-w-screen-lg px-6">
         <h1
-            class="animate mb-10 text-3xl font-bold tracking-tight text-black dark:text-white"
+            class="animate mb-10 font-sans text-3xl font-bold tracking-tight text-black dark:text-white"
         >
             {t("news.title")}
         </h1>

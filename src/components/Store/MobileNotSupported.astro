@@ -1,0 +1,48 @@
+---
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<span
+    id="mobile-not-supported"
+    class="mt-2 hidden text-center text-sm font-bold text-neutral-800"
+>
+    {t("store.mobileNotSupported")}
+    <span class="link share-button mt-1 block cursor-pointer">
+        {t("store.sendToPC")}
+    </span>
+</span>
+<script>
+    function init() {
+        const button = document.querySelector(
+            ".share-button",
+        ) as HTMLSpanElement;
+        if (button) {
+            button.onclick = shareLink;
+        }
+    }
+
+    async function shareLink() {
+        const data: ShareData = {
+            title: "Save for later: " + document.title,
+            url: window.location.href,
+        };
+
+        if (!navigator.canShare || !navigator.canShare(data)) {
+            shareWithEmail(data);
+            return;
+        }
+
+        try {
+            await navigator.share(data);
+        } catch (error) {}
+    }
+
+    function shareWithEmail(data: ShareData) {
+        window.location.href = `mailto:?subject=${data.title}&body=View on PC: ${encodeURIComponent(data.url!)}`;
+    }
+
+    window.onload = init;
+</script>

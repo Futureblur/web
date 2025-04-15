@@ -20,6 +20,20 @@ export default {
                     ],
             },
         },
+        colors: {
+            'current': 'currentColor',
+            'transparent': 'transparent',
+            'black': '#000000',
+            'white': '#FFFFFF',
+            'accent': '#BA1F00',
+            'neutral': {
+                100: '#F5F5F5',
+                200: '#E5E5E5',
+                300: '#D4D4D4',
+                700: '#7B7B7B',
+                800: '#404040',
+            }
+        },
     },
     plugins: [require('@tailwindcss/typography')],
 };

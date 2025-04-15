@@ -1,10 +1,11 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import Layout from "@layouts/Layout.astro";
 import { INVESTORS } from "@consts";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { shouldLoadCardLazy } from "@lib/news/news-utils";
+
+import Layout from "@layouts/Layout.astro";
 import Card from "@components/News/Card.astro";
-import { shouldLoadCardLazy } from "@lib/utils";
 
 export async function getStaticPaths() {
     const news = (await getCollection("news")).sort(
@@ -61,7 +62,7 @@ const years = Object.keys(news).sort((a, b) => parseInt(b) - parseInt(a));
     <div class="page-spacing mx-auto max-w-screen-lg px-6">
         <div class="space-y-10">
             <h1
-                class="text-3xl font-bold tracking-tight text-black dark:text-white lg:text-4xl"
+                class="font-sans text-3xl font-black tracking-tight text-black dark:text-white lg:text-4xl"
             >
                 Investor Relations
             </h1>

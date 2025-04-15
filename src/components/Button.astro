@@ -1,0 +1,62 @@
+---
+interface Props {
+    id: string;
+    className?: string;
+    style: "primary" | "secondary" | "outlined";
+    size?: "normal" | "tall" | "taller";
+    disabled?: boolean;
+}
+
+const { id, style, size, className, disabled } = Astro.props;
+---
+
+<base-button data-id={id}>
+    <button
+        class:list={[
+            "flex w-full flex-nowrap justify-center rounded-full px-6 py-1.5 font-mono transition-colors disabled:cursor-not-allowed",
+            style === "primary" &&
+                "bg-black text-white disabled:bg-neutral-200 disabled:text-neutral-700",
+            style === "secondary" &&
+                "bg-neutral-300 text-black disabled:bg-neutral-200 disabled:text-neutral-700",
+            style === "outlined" &&
+                "border border-neutral-300 text-black duration-300 hover:bg-neutral-200/50 disabled:bg-neutral-100 disabled:text-neutral-700",
+            size === "normal" && "py-1.5",
+            size === "tall" && "py-2",
+            size === "taller" && "py-2.5",
+        ]}
+        class={className}
+        disabled={disabled}
+    >
+        <div class="text-sm">
+            <slot />
+        </div>
+    </button>
+</base-button>
+
+<script>
+    import type { BaseButtonClickEvent } from "@types";
+
+    class BaseButton extends HTMLElement {
+        connectedCallback() {
+            const id: string = this.dataset.id as string;
+            const button = this.querySelector("button");
+            button?.addEventListener("click", () => onClick());
+
+            function onClick() {
+                const event = new CustomEvent<BaseButtonClickEvent>(
+                    "base-button-click",
+                    {
+                        bubbles: true,
+                        detail: {
+                            id,
+                        },
+                    },
+                );
+
+                button?.dispatchEvent(event);
+            }
+        }
+    }
+
+    customElements.define("base-button", BaseButton);
+</script>

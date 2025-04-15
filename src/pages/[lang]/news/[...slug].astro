@@ -1,15 +1,17 @@
 ---
-import { getCollection } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
+
+import { getUsername, readingTime } from "@lib/news/news-utils";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
 import Layout from "@layouts/Layout.astro";
+
 import Container from "@components/Container.astro";
 import FormattedDate from "@components/News/FormattedDate.astro";
 import ArticleImage from "@components/News/ArticleImage.astro";
-import { getUsername, readingTime } from "@lib/utils";
 import BackToPrevious from "@components/News/BackToPrevious.astro";
 import PostNavigation from "@components/News/PostNavigation.astro";
-import { getEntry } from "astro:content";
 import AuthorInfo from "@components/News/AuthorInfo.astro";
-import { getLangFromUrl, useTranslations } from "@i18n/utils";
 
 export async function getStaticPaths() {
     const news = (await getCollection("news")).sort(
@@ -81,10 +83,10 @@ const { Content } = await post.render();
     author={author.data.name}
 >
     <Container props="max-w-[730px] page-spacing">
-        <div class="animate">
+        <div class="animate hidden lg:block">
             <BackToPrevious href=`/${lang}`>{t("nav.back")}</BackToPrevious>
         </div>
-        <div class="my-10 mb-0 space-y-2 md:mb-6">
+        <div class="my-6 mb-0 space-y-2 md:mb-6 lg:my-10">
             <div
                 class="animate flex flex-wrap items-center gap-1.5 pb-3 text-sm tracking-wide md:pb-2"
             >
@@ -105,7 +107,7 @@ const { Content } = await post.render();
                 }
             </div>
             <h1
-                class="animate pb-2 font-serif text-5xl tracking-tight text-black dark:text-white md:text-6xl"
+                class="animate pb-2 font-serif text-5xl font-normal tracking-tight text-black dark:text-white md:text-6xl"
                 data-pagefind-body
             >
                 {post.data.title}
@@ -119,7 +121,7 @@ const { Content } = await post.render();
             </button>
         </div>
         <article class="animate text-lg" data-pagefind-body>
-            <h1 class="font-medium">{post.data.tagline}</h1>
+            <h1 class="font-sans font-medium">{post.data.tagline}</h1>
             <ArticleImage
                 src={post.data.cover}
                 alt={post.data.alt}

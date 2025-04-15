@@ -1,0 +1,188 @@
+---
+import { getCollection } from "astro:content";
+import { languages } from "@i18n/ui";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+import { getLocalizedPrice, isFree, isNew } from "@lib/store/store-utils";
+
+import Layout from "@layouts/Layout.astro";
+
+import Image from "astro/components/Image.astro";
+import BackToPrevious from "@components/News/BackToPrevious.astro";
+import Navigation from "@components/Store/Navigation.astro";
+import Button from "@components/Button.astro";
+import MobileNotSupported from "@components/Store/MobileNotSupported.astro";
+import PaidNotSupported from "@components/Store/PaidNotSupported.astro";
+
+export async function getStaticPaths() {
+    const store = (await getCollection("store")).sort(
+        (a, b) => b.data.releaseDate.valueOf() - a.data.releaseDate.valueOf(),
+    );
+
+    const paths = store.flatMap((item) =>
+        languages.map((lang) => ({
+            params: { lang, slug: item.id || undefined },
+            props: item,
+        })),
+    );
+
+    return paths;
+}
+
+const { slug } = Astro.params;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const item = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/store/**/*.{jpg, jpeg, png}",
+);
+
+const coverPath = `/src/assets/store/${slug}/cover.jpg`;
+if (!images[coverPath]) {
+    throw new Error("Cover image path does not exist.");
+}
+---
+
+<Layout
+    title={item.data.name}
+    siteName="Futureblur Store"
+    description={item.data.description}
+    cover={`/src/assets/store/${slug}/cover.jpg`}
+>
+    <div class="md:page-spacing mx-auto mt-1 max-w-screen-2xl px-6">
+        <div class="animate">
+            <BackToPrevious href=`/${lang}/store`
+                >{t("nav.back")}</BackToPrevious
+            >
+        </div>
+        <section
+            class="animate my-2 mb-4 flex flex-col gap-4 space-y-2 lg:my-10 lg:mb-6 lg:flex-row lg:gap-10"
+        >
+            <div>
+                <Image
+                    src={images[coverPath]()}
+                    alt={"Alt"}
+                    width={800}
+                    height={700}
+                    class="pointer-events-none mx-auto max-h-[600px] w-auto lg:h-auto"
+                />
+            </div>
+            <div class="flex flex-col gap-7 md:gap-11 lg:max-w-[600px]">
+                <Navigation selectedIndex={0} basePath={Astro.url.pathname} />
+                <div class="flex flex-col gap-10 lg:gap-16">
+                    <div class="flex flex-col gap-1.5">
+                        <span
+                            class=`font-mono text-accent ${!isNew(item.data) && "hidden"}`
+                            >{t("store.new")}</span
+                        >
+                        <h1 class="text-5xl lg:text-6xl">{item.data.name}</h1>
+                        <span class="font-mono text-sm lg:mt-1 lg:text-base"
+                            >{
+                                getLocalizedPrice(
+                                    item.data.price.base.amount,
+                                    lang,
+                                )
+                            }</span
+                        >
+                    </div>
+                    <div class="flex flex-col gap-10">
+                        <p>{item.data.description}</p>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-neutral-700"
+                                >{t("store.details.usedIn")}</span
+                            >
+                            <a
+                                href={item.data.details.usedIn.tutorial.url}
+                                class="link"
+                                target="_blank"
+                                >How To Make Blender Look Like Octane</a
+                            >
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-neutral-700"
+                                >{t("store.details.compatibility")}</span
+                            >
+                            <span>Blender 4.0 or later</span>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <span class="text-neutral-700">
+                                {t("store.details.meta.size")}
+                            </span>
+                            <span>{item.data.details.meta.size}</span>
+                        </div>
+                        <div class="flex flex-col gap-5">
+                            <MobileNotSupported />
+                            {
+                                isFree(item.data) ? (
+                                    <Button
+                                        id="download"
+                                        className="action-button"
+                                        style="primary"
+                                        size="taller"
+                                    >
+                                        {t("store.download")}
+                                    </Button>
+                                ) : (
+                                    <div class="flex flex-col gap-5">
+                                        <PaidNotSupported />
+                                        <Button
+                                            id="add-to-cart"
+                                            className="action-button"
+                                            style="primary"
+                                            size="taller"
+                                            disabled={!isFree(item.data)}
+                                        >
+                                            {t("store.addToCart")}
+                                        </Button>
+                                    </div>
+                                )
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</Layout>
+<script>
+    import type { BaseButtonClickEvent } from "@types";
+
+    function init() {
+        const buttons = document.querySelectorAll("base-button");
+        buttons.forEach((it) => {
+            it.addEventListener("base-button-click", ((
+                event: CustomEvent<BaseButtonClickEvent>,
+            ) => {
+                const detail = event.detail;
+                console.log("Event found", detail.id);
+            }) as EventListener);
+        });
+
+        if (isMobile()) {
+            const mobileNotSupported = document.querySelector(
+                "#mobile-not-supported",
+            ) as HTMLSpanElement;
+            if (mobileNotSupported) {
+                mobileNotSupported.style.display = "inline";
+            }
+
+            const button = document.querySelector(
+                ".action-button",
+            ) as HTMLButtonElement;
+            if (button) {
+                button.disabled = true;
+            }
+        }
+    }
+
+    function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent,
+        );
+    }
+
+    document.addEventListener("DOMContentLoaded", () => init());
+    document.addEventListener("astro:after-swap", () => init());
+</script>
