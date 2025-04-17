@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+
+import type { ImageMetadata } from "astro";
+import type { InferEntrySchema } from "astro:content";
+
+type Props = {
+    data: InferEntrySchema<"promotion">;
+};
+
+const { data } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/home/*.{png,jpg,jpeg,gif,webp,svg}",
+    {
+        eager: true,
+    },
+);
+
+const promotionImagePath = `/src/assets/home/${data.image}`;
+const promotionImage = images[promotionImagePath];
+if (!promotionImage) {
+    throw new Error(`Image not found: ${promotionImagePath}`);
+}
+---
+
+<a
+    class="relative flex items-center justify-center bg-black"
+    href={data.url}
+    target="_blank"
+>
+    <Image
+        class:list={[
+            "pointer-events-none h-[600px] min-h-[40vh] object-cover md:min-h-0 lg:h-[900px]",
+            data.dimLevel === 1 && "opacity-80",
+            data.dimLevel === 2 && "opacity-60",
+            data.dimLevel === 3 && "opacity-40",
+        ]}
+        alt={data.alt}
+        src={promotionImage.default}
+    />
+    <div class="absolute flex flex-col justify-center gap-3">
+        <h1
+            class="text-center font-serif text-5xl tracking-tight text-white md:text-6xl xl:text-7xl"
+        >
+            {data.title}
+        </h1>
+        <p
+            class="mx-auto max-w-sm text-center text-white md:max-w-md md:text-lg"
+        >
+            {data.subtitle}
+        </p>
+        <span
+            class="button-secondary button-large md:button-larger mx-auto mt-2"
+        >
+            {data.cta}
+        </span>
+    </div>
+</a>
