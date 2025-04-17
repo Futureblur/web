@@ -105,6 +105,19 @@ select {
     @apply rounded-full text-sm text-white p-1.5 px-3 bg-black/85 font-mono cursor-pointer;
 }
 
+
+.button-secondary {
+    @apply rounded-full text-sm p-1.5 px-3 font-mono cursor-pointer bg-white text-black;
+}
+
+.button-large {
+    @apply py-2 px-3.5;
+}
+
+.button-larger {
+    @apply py-2.5 px-4;
+}
+
 article {
   @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
   @apply prose-headings:font-semibold;
