@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-    --header-height: 52px;
+    --header-height: 32px;
     --clip: inset(0 0 calc(100% - var(--header-height)) 0);
 }
 
@@ -26,7 +26,7 @@ body {
 }
 
 header {
-  @apply sticky left-0 right-0 top-0 z-50 py-1 sm:py-0;
+  @apply fixed left-0 right-0 top-0 z-50;
   @apply bg-neutral-100/75 dark:bg-neutral-900/75;
   backdrop-filter: blur(30px) saturate(200%);
   transition: clip-path 300ms ease;
@@ -39,7 +39,6 @@ header.unblur {
 
 header.mobileExpanded {
     backdrop-filter: blur(0px) saturate(100%);
-    position: fixed;
 }
 
 header.mobileCollapsed {
@@ -99,7 +98,7 @@ select {
 }
 
 .page-spacing {
-    @apply pt-6 md:pt-10;
+    @apply pt-12 md:pt-16;
 }
 
 .button {

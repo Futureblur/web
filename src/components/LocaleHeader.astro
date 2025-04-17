@@ -3,20 +3,24 @@ import CloseIcon from "./Icons/CloseIcon.astro";
 ---
 
 <div
-    class="mx-auto hidden w-full max-w-screen-lg items-center justify-between gap-3 px-4 py-3 font-mono text-xs text-black"
+    class="mx-auto hidden w-full bg-white py-3 font-mono text-xs text-black"
     id="locale-header"
 >
-    <span id="locale-description"
-        >Based on your location, the English version of our site might be a
-        better fit.</span
+    <div
+        class="mx-auto flex w-full max-w-screen-lg items-center justify-between gap-3 px-4"
     >
-    <div class="flex items-center gap-1">
-        <a
-            class="rounded-full bg-black/85 p-1.5 px-3 text-sm text-white"
-            id="locale-switch-button"
-            type="button">Switch</a
+        <span id="locale-description"
+            >Based on your location, the English version of our site might be a
+            better fit.</span
         >
-        <button class="p-2" id="locale-close-button"><CloseIcon /></button>
+        <div class="flex items-center gap-1">
+            <a
+                class="rounded-full bg-black/85 p-1.5 px-3 text-sm text-white"
+                id="locale-switch-button"
+                type="button">Switch</a
+            >
+            <button class="p-2" id="locale-close-button"><CloseIcon /></button>
+        </div>
     </div>
 </div>
 
