@@ -111,7 +111,7 @@ select {
 }
 
 .page-spacing {
-    @apply pt-12 md:pt-16;
+    @apply md:pt-4 pt-2;
 }
 
 .button {
