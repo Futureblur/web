@@ -1,6 +1,7 @@
 ---
-import { navBarDropdowns, navBarLinks } from "@consts";
+import { navBarDropdowns } from "@consts";
 import NavBarLink from "./NavBarLink.astro";
+import NavBarLinks from "./NavBarLinks.astro";
 import FutureblurLogo from "@components/Icons/FutureblurLogo.astro";
 import MenuIcon from "@components/Icons/MenuIcon.astro";
 import type { NavBarDropdown, NavigationLink } from "@types";
@@ -44,123 +45,118 @@ let currentNavItem = "";
             tabindex="-1"
             class="hide navbar-content max-h-screen w-full grow basis-full overflow-hidden text-lg font-medium transition-all duration-500 sm:max-h-fit sm:py-4 sm:pl-8 sm:text-xs sm:font-normal"
         >
-            <ul
-                class="order-0 mt-5 flex h-screen flex-col gap-4 sm:mt-0 sm:h-fit sm:flex-row sm:items-center sm:gap-8"
-            >
-                {
-                    navBarLinks.map((link: NavigationLink) => (
-                        <NavBarLink
-                            class="navbar-link block px-2 sm:py-3"
-                            data-navbar-item={link.title}
-                            {link}
-                        />
-                    ))
-                }
+            <ul class="mt-0 hidden h-fit flex-row items-center gap-8 sm:flex">
+                <NavBarLinks />
             </ul>
         </div>
-    </div>
-    <div class="dropdown order-1">
-        {
-            navBarDropdowns.map(
-                (dropdown: NavBarDropdown) =>
-                    dropdown.id === currentNavItem && (
-                        <div class="flex gap-20 text-lg font-bold">
-                            <div class="flex flex-col gap-3">
-                                <p class="animate text-xs font-normal opacity-60">
-                                    {dropdown.primary.title}
-                                </p>
-                                <ul class="flex flex-col gap-1">
-                                    {dropdown.primary.links.map((link) => (
-                                        <NavBarLink animate="true" {link} />
-                                    ))}
-                                </ul>
-                            </div>
-                            {dropdown.secondary.map((secondary) => (
-                                <div class="mb-14 flex flex-col gap-3 text-sm font-medium">
+        <div class="dropdown order-1">
+            {
+                navBarDropdowns.map(
+                    (dropdown: NavBarDropdown) =>
+                        dropdown.id === currentNavItem && (
+                            <div class="flex gap-20 text-lg font-bold">
+                                <div class="flex flex-col gap-3">
                                     <p class="animate text-xs font-normal opacity-60">
-                                        {secondary.title}
+                                        {dropdown.primary.title}
                                     </p>
                                     <ul class="flex flex-col gap-1">
-                                        {secondary.links.map((link) => (
-                                            <NavBarLink animate={true} {link} />
+                                        {dropdown.primary.links.map((link) => (
+                                            <NavBarLink animate="true" {link} />
                                         ))}
                                     </ul>
                                 </div>
-                            ))}
-                        </div>
-                    ),
-            )
-        }
+                                {dropdown.secondary.map((secondary) => (
+                                    <div class="mb-14 flex flex-col gap-3 text-sm font-medium">
+                                        <p class="animate text-xs font-normal opacity-60">
+                                            {secondary.title}
+                                        </p>
+                                        <ul class="flex flex-col gap-1">
+                                            {secondary.links.map((link) => (
+                                                <NavBarLink
+                                                    animate={true}
+                                                    {link}
+                                                />
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        ),
+                )
+            }
+        </div>
     </div>
+
+    <script>
+        let isToggled = false;
+        let curtain: HTMLElement | null;
+        let header: HTMLElement | null;
+        let navBarContent: HTMLElement | null;
+        let navBarMenu: HTMLButtonElement | null;
+
+        function updateHeaderHeight() {
+            const height = header?.clientHeight;
+            document.documentElement.style.setProperty(
+                "--header-height",
+                `${height}px`,
+            );
+        }
+
+        function unblurBackground() {
+            curtain?.classList.remove("blur");
+        }
+
+        function toggleMenuIcon() {
+            if (navBarMenu) {
+                const expanded = navBarMenu.ariaExpanded;
+                navBarMenu.ariaExpanded =
+                    expanded === "false" ? "true" : "false";
+            }
+        }
+
+        function toggleMenu() {
+            toggleMenuIcon();
+
+            navBarContent?.classList.toggle("hide");
+            curtain?.classList.toggle("blur");
+            header?.classList.toggle("mobileExpanded");
+
+            isToggled = !isToggled;
+        }
+
+        function windowListener() {
+            const mediaQuery = window.matchMedia("(width > 640px)");
+            mediaQuery.addEventListener("change", () => {
+                if (!isToggled) return;
+                if (navBarMenu) navBarMenu.ariaExpanded = "false";
+
+                navBarContent?.classList.add("hide");
+                header?.classList.remove("mobileExpanded");
+                isToggled = false;
+                unblurBackground();
+            });
+        }
+
+        function init() {
+            navBarMenu = document.querySelector(
+                "#navbar-menu",
+            ) as HTMLButtonElement;
+            if (navBarMenu) {
+                navBarMenu.onclick = toggleMenu;
+            }
+
+            navBarContent = document.querySelector(".navbar-content");
+            header = document.querySelector("header");
+            curtain = document.querySelector("#curtain");
+            updateHeaderHeight();
+
+            windowListener();
+        }
+
+        if (document.readyState !== "loading") {
+            init();
+        } else {
+            document.addEventListener("DOMContentLoaded", init);
+        }
+    </script>
 </nav>
-
-<script>
-    let isToggled = false;
-    let curtain: HTMLElement | null;
-    let header: HTMLElement | null;
-    let navBarContent: HTMLElement | null;
-    let navBarMenu: HTMLButtonElement | null;
-
-    function setHeaderHeight(value: string) {
-        document.documentElement.style.setProperty("--header-height", value);
-    }
-
-    function unblurBackground() {
-        curtain?.classList.remove("blur");
-    }
-
-    function toggleMenuIcon() {
-        if (navBarMenu) {
-            const expanded = navBarMenu.ariaExpanded;
-            navBarMenu.ariaExpanded = expanded === "false" ? "true" : "false";
-        }
-    }
-
-    function toggleMenu() {
-        toggleMenuIcon();
-
-        navBarContent?.classList.toggle("hide");
-        curtain?.classList.toggle("blur");
-        header?.classList.toggle("unblur");
-        setHeaderHeight(isToggled ? "52px" : "100%");
-
-        header?.classList.toggle("mobileExpanded");
-        isToggled = !isToggled;
-    }
-
-    function windowListener() {
-        const mediaQuery = window.matchMedia("(width > 640px)");
-        mediaQuery.addEventListener("change", () => {
-            if (!isToggled) return;
-            if (navBarMenu) navBarMenu.ariaExpanded = "false";
-
-            navBarContent?.classList.add("hide");
-            header?.classList.remove("unblur");
-            header?.classList.remove("mobileExpanded");
-            setHeaderHeight("52px");
-            isToggled = false;
-            unblurBackground();
-        });
-    }
-
-    function init() {
-        navBarMenu = document.querySelector(
-            "#navbar-menu",
-        ) as HTMLButtonElement;
-        if (navBarMenu) {
-            navBarMenu.onclick = toggleMenu;
-        }
-
-        navBarContent = document.querySelector(".navbar-content");
-        header = document.querySelector("header");
-        curtain = document.querySelector("#curtain");
-
-        windowListener();
-    }
-
-    if (document.readyState !== "loading") {
-        init();
-    } else {
-        document.addEventListener("DOMContentLoaded", init);
-    }
-</script>

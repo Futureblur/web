@@ -52,6 +52,7 @@ const t = useTranslations(lang);
     title={t("site.title")}
     description={t("site.description")}
     cover={SITE.COVER}
+    className="home-layout"
 >
     {promotions.map((item) => <Promotion data={item.data} />)}
     <div class="mx-auto max-w-screen-lg px-6 pt-10">
