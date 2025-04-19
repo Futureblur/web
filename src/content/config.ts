@@ -7,8 +7,10 @@ const promotionDimError = {
 const promotionCollection = defineCollection({
     type: 'data',
     schema: z.object({
-        order: z.number().nonnegative(
-            { message: 'Promotion object order needs to be positive.' }),
+        order: z.number().nonnegative({
+            message:
+                'Promotion object order needs to be a value between 0 and 3.'
+        }),
         hide: z.boolean().optional(),
         title: z.string(),
         subtitle: z.string(),
