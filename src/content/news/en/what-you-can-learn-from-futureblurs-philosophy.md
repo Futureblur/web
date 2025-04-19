@@ -3,9 +3,9 @@ title: What you can learn from Futureblur's philosophy
 tagline: Every sentence holds wisdom. Let's uncover the mystery once and for all.
 caption: "Here is how we tell a story, using just three words." 
 description: Successful communities need successful mindsets. Today, you'll learn what this looks like at Futureblur and how it can be applied to your life. 
-date: 2025-01-13
+date: 2025-04-18
 author: rasul-adasov
-draft: true
+draft: false
 type: Story
 cover: /src/assets/create-polish-repeat.png
 alt: The text “Create, Polish, Repeat.” on a black background. 

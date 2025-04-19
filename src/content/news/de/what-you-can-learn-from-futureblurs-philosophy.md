@@ -3,9 +3,9 @@ title: Was du aus der Philosophie von Futureblur lernen kannst
 tagline: Jeder Satz birgt Weisheit. Lass uns das Geheimnis ein für alle Mal lüften.
 description: Erfolgreiche Communities brauchen erfolgreiche Mentalitäten. Heute erfährst du, wie das bei Futureblur aussieht und wie du es auf dein persönliches Leben anwenden kannst.
 caption: "So erzählen wir mit nur drei Worten eine große Geschichte." 
-date: 2025-01-13
+date: 2025-04-18
 author: rasul-adasov
-draft: true
+draft: false
 type: Story
 cover: /src/assets/create-polish-repeat.png
 alt: Der Text „Create, Polish, Repeat“ auf schwarzem Hintergrund.
@@ -22,7 +22,7 @@ Ideen sind magische Dinge, die scheinbar aus dem Nichts auftauchen. Sie sind ein
 
 „Schieß auf den Mond. Selbst wenn du ihn verfehlst, wirst du zwischen den Sternen landen“ von Norman Vincent Peale fasst diesen Abschnitt ziemlich gut zusammen.
 
-## "Das Rezept ist simpel: man nehme einen Prototyp und verbessere ihn so lange, bis er glänzt"
+## "Das Rezept ist simpel: man nehme einen Prototyp und verbessere ihn so lange, bis er glänzt."
 
 Du arbeitest von der endgültigen Vision rückwärts, indem du einen einfachen, aber effektiven Prototyp entwirfst. In dieser Phase solltest du dich nicht ums Aussehen kümmern, denn ein großartiges Produkt erfordert ein funktionales Design.
 
