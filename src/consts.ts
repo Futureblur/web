@@ -4,7 +4,6 @@ export const SITE: Site = {
     TITLE: 'Home',
     DESCRIPTION: 'Home of 3D.',
     COVER: '/images/glyph-banner.png',
-    EMAIL: 'hello@futureblur.com',
     NUM_POSTS_ON_HOMEPAGE: 5,
 };
 
@@ -206,6 +205,16 @@ export const footerGroup: NavigationGroup[] = [
             {
                 title: 'footer.github',
                 url: 'https://fut.red/g',
+                external: true,
+            },
+            {
+                title: 'footer.threads',
+                url: 'https://fut.red/threads',
+                external: true,
+            },
+            {
+                title: 'footer.linkedin',
+                url: 'https://fut.red/l',
                 external: true,
             },
         ],

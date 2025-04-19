@@ -1,10 +1,12 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import { SITE } from "@consts";
-import Card from "@components/News/Card.astro";
 import { getCollection } from "astro:content";
+import { SITE } from "@consts";
 import { getLangFromUrl, useTranslations } from "@i18n/utils";
 import { shouldLoadCardLazy } from "@lib/utils";
+
+import Layout from "@layouts/Layout.astro";
+import Card from "@components/News/Card.astro";
+import Promotion from "@components/Home/Promotion.astro";
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -34,6 +36,15 @@ const news = (await getCollection("news"))
     .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
     .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE);
 
+const promotions = (await getCollection("promotion"))
+    .filter((item) => !item.data.hide)
+    .filter(
+        (item) =>
+            getLangFromUrl(new URL("https://futureblur.com/" + item.id)) ===
+            lang,
+    )
+    .sort((a, b) => a.data.order - b.data.order);
+
 const t = useTranslations(lang);
 ---
 
@@ -41,8 +52,10 @@ const t = useTranslations(lang);
     title={t("site.title")}
     description={t("site.description")}
     cover={SITE.COVER}
+    className="home-layout"
 >
-    <div class="page-spacing mx-auto max-w-screen-lg px-6">
+    {promotions.map((item) => <Promotion data={item.data} />)}
+    <div class="mx-auto max-w-screen-lg px-6 pt-10">
         <h1
             class="animate mb-10 text-3xl font-bold tracking-tight text-black dark:text-white"
         >

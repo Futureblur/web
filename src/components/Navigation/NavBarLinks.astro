@@ -1,0 +1,15 @@
+---
+import { navBarLinks } from "@consts";
+import NavBarLink from "./NavBarLink.astro";
+import type { NavigationLink } from "@types";
+---
+
+{
+    navBarLinks.map((link: NavigationLink) => (
+        <NavBarLink
+            class="navbar-link block px-2 sm:py-3"
+            data-navbar-item={link.title}
+            {link}
+        />
+    ))
+}

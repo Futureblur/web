@@ -1,5 +1,30 @@
 import { defineCollection, reference, z } from 'astro:content';
 
+const promotionDimError = {
+    message: 'Promotion image dim level needs to be between 0 and 3'
+};
+
+const promotionCollection = defineCollection({
+    type: 'data',
+    schema: z.object({
+        order: z.number().nonnegative({
+            message:
+                'Promotion object order needs to be a value between 0 and 3.'
+        }),
+        hide: z.boolean().optional(),
+        title: z.string(),
+        subtitle: z.string(),
+        image: z.string(),
+        alt: z.string(),
+        dimLevel: z.number()
+            .min(0, promotionDimError)
+            .max(3, promotionDimError)
+            .optional(),
+        cta: z.string(),
+        url: z.string().url()
+    })
+})
+
 const newsCollection = defineCollection({
     type: 'content',
     schema: ({ image }) => z.object({
@@ -40,6 +65,7 @@ const markdownCollection = defineCollection({
 })
 
 export const collections = {
+    promotion: promotionCollection,
     news: newsCollection,
     authors: authorsCollection,
     markdown: markdownCollection,
