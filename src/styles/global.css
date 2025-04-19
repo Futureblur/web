@@ -3,92 +3,112 @@
 @tailwind utilities;
 
 :root {
-    --header-height: 52px;
+    --header-height: 48px;
     --clip: inset(0 0 calc(100% - var(--header-height)) 0);
 }
 
 html {
-  overflow-x: hidden;
-  overflow-wrap: break-word;
-  color-scheme: light;
-  scroll-padding-top: 100px;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    scroll-padding-top: 100px;
+    color-scheme: light;
 }
 
 html.dark {
-  color-scheme: dark;
+    color-scheme: dark;
 }
 
 body {
-  @apply font-sans antialiased;
-  @apply flex flex-col;
-  @apply bg-neutral-100 dark:bg-neutral-900;
-  @apply text-black/75 dark:text-white/75;
+    @apply font-sans antialiased;
+    @apply flex flex-col;
+    @apply bg-neutral-100 dark:bg-neutral-900;
+    @apply text-black/75 dark:text-white/75;
+}
+
+.home-layout {
+    margin-top: calc(0px - var(--header-height));
 }
 
 header {
-  @apply sticky left-0 right-0 top-0 z-50 py-1 sm:py-0;
-  @apply bg-neutral-100/75 dark:bg-neutral-900/75;
-  backdrop-filter: blur(30px) saturate(200%);
-  transition: clip-path 300ms ease;
-}
-
-header.unblur {
-    clip-path: inset(0 0 calc(100% - var(--header-height)) 0);
-    transition: clip-path 300ms ease;
+    @apply sticky left-0 right-0 top-0 z-50;
+    transition: all 300ms ease-out 270ms;
 }
 
 header.mobileExpanded {
+    background-color: rgba(255, 255, 255, 0);
     backdrop-filter: blur(0px) saturate(100%);
-    position: fixed;
-}
-
-header.mobileCollapsed {
-    backdrop-filter: blur(30px) saturate(140%);
-}
-
-.noscroll {
-    overflow: hidden;
+    transition: all 50ms ease;
 }
 
 #curtain {
+    @apply bg-neutral-100/85;
+
     position: fixed;
     width: 100%;
-    height: 100%;
-    z-index: 10;
-    backdrop-filter: blur(20px);
+    height: var(--header-height);
+    z-index: 20;
+    padding: 1rem;
+
+    filter: none;
+    backdrop-filter: blur(30px) saturate(200%);
     -webkit-transform: translate3d(0,0,0);
+
     transform: translate3d(0,0,0);
+    transition: all 400ms ease;
+}
+
+#curtain ul {
+    padding-top: calc(var(--header-height) - 44px);
+    
+    filter: blur(3px);
     opacity: 0;
     pointer-events: none;
-    transition: opacity ease 450ms;
+    
+    transition: all 400ms ease;
 }
 
 #curtain.blur {
+    height: 100vh;
+
+    backdrop-filter: blur(60px) saturate(200%);
+    background-color: rgba(255, 255, 255, 0.8);
+
+    transition: all 400ms ease;
+}
+
+#curtain.blur ul {
+    padding-top: calc(var(--header-height) - 20px);
+
+    filter: blur(0px);
     opacity: 1;
+    pointer-events: auto;
+    
+    transition: all 500ms ease 80ms;
 }
 
 .dropdown {
     max-height: 0;
-    overflow: hidden;
     padding: 0 10px;
-    transition: ease 300ms;
+    overflow: hidden;
+
+    transition: ease 400ms;
 }
 
 .dropdown.show {
     max-height: 500px;
     margin: 20px 0 20px 0;
+
     transition: ease 450ms;
 }
 
 footer {
-  @apply py-6 text-sm;
+    @apply py-6 text-sm;
 }
 
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
     cursor: pointer;
 }
 
@@ -99,31 +119,44 @@ select {
 }
 
 .page-spacing {
-    @apply pt-6 md:pt-10;
+    @apply md:pt-4 pt-2;
 }
 
 .button {
     @apply rounded-full text-sm text-white p-1.5 px-3 bg-black/85 font-mono cursor-pointer;
 }
 
+
+.button-secondary {
+    @apply rounded-full text-sm p-1.5 px-3 font-mono cursor-pointer bg-white text-black;
+}
+
+.button-large {
+    @apply py-2 px-3.5;
+}
+
+.button-larger {
+    @apply py-2.5 px-4;
+}
+
 article {
-  @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
-  @apply prose-headings:font-semibold;
-  @apply prose-headings:text-black prose-headings:dark:text-white;
-  @apply prose-code:before:hidden prose-code:after:hidden;
+    @apply prose prose-neutral max-w-full dark:prose-invert prose-img:mx-auto prose-img:my-auto;
+    @apply prose-headings:font-semibold;
+    @apply prose-headings:text-black prose-headings:dark:text-white;
+    @apply prose-code:before:hidden prose-code:after:hidden;
 }
 
 article h1 {
-  @apply pt-8;
-  @apply tracking-tight md:text-3xl text-2xl font-light;
+    @apply pt-8;
+    @apply tracking-tight md:text-3xl text-2xl font-light;
 }
 
 article h2 {
-  @apply tracking-tight text-2xl pt-4 hyphens-manual;
+    @apply tracking-tight text-2xl pt-4 hyphens-manual;
 }
 
 article h3 {
-  @apply pt-6;
+    @apply pt-6;
 }
 
 article p:has(img + em) {
@@ -139,21 +172,21 @@ article img + em {
 }
 
 @layer utilities {
-  article a {
-    @apply font-sans text-current underline underline-offset-[3px];
-    @apply decoration-black/30 dark:decoration-white/30;
-    @apply transition-colors duration-300 ease-in-out;
-  }
+    article a {
+        @apply font-sans text-current underline underline-offset-[3px];
+        @apply decoration-black/30 dark:decoration-white/30;
+        @apply transition-colors duration-300 ease-in-out;
+    }
 
-  article a::after {
-    content: "↗";
-    @apply ml-0;
-  }
+    article a::after {
+      content: "↗";
+      @apply ml-0;
+    }
 
-  article a:hover {
-    @apply text-black dark:text-white;
-    @apply decoration-black/50 dark:decoration-white/50;
-  }
+    article a:hover {
+        @apply text-black dark:text-white;
+        @apply decoration-black/50 dark:decoration-white/50;
+    }
 }
 
 .no-arrow::after {
@@ -161,52 +194,24 @@ article img + em {
 }
 
 .animate {
-  @apply -translate-y-3 opacity-0;
-  @apply transition-all duration-300 ease-out;
+    @apply -translate-y-3 opacity-0;
+    @apply transition-all duration-300 ease-out;
 }
 
 .animate.show {
-  @apply translate-y-0 opacity-100;
+    @apply translate-y-0 opacity-100;
 }
 
 html #back-to-top {
-  @apply pointer-events-none opacity-0;
+    @apply pointer-events-none opacity-0;
 }
 
 html.scrolled #back-to-top {
-  @apply pointer-events-auto opacity-100;
+    @apply pointer-events-auto opacity-100;
 }
 
 /* shiki config */
 pre {
-  @apply border border-black/15 py-5 dark:border-white/20;
-}
-
-:root {
-  --astro-code-color-text: #09090b;
-  --astro-code-color-background: #fafafa;
-  --astro-code-token-comment: #a19595;
-  --astro-code-token-keyword: #f47067;
-  --astro-code-token-string: #00a99a;
-  --astro-code-token-function: #429996;
-  --astro-code-token-constant: #2b70c5;
-  --astro-code-token-parameter: #4e8fdf;
-  --astro-code-token-string-expression: #ae42a0;
-  --astro-code-token-punctuation: #8996a3;
-  --astro-code-token-link: #8d85ff;
-}
-
-.dark {
-  --astro-code-color-text: #fafafa;
-  --astro-code-color-background: #09090b;
-  --astro-code-token-comment: #a19595;
-  --astro-code-token-keyword: #f47067;
-  --astro-code-token-string: #00a99a;
-  --astro-code-token-function: #6eafad;
-  --astro-code-token-constant: #b3cceb;
-  --astro-code-token-parameter: #4e8fdf;
-  --astro-code-token-string-expression: #bf7db6;
-  --astro-code-token-punctuation: #8996a3;
-  --astro-code-token-link: #8d85ff;
+    @apply border border-black/15 py-5 dark:border-white/20;
 }
 
