@@ -29,9 +29,6 @@ importers:
       '@fontsource-variable/space-grotesk':
         specifier: ^5.2.6
         version: 5.2.6
-      '@fontsource/instrument-serif':
-        specifier: ^5.2.5
-        version: 5.2.5
       astro:
         specifier: ^4.16.18
         version: 4.16.18(@types/node@22.10.5)(rollup@4.40.0)(typescript@5.8.3)
@@ -398,9 +395,6 @@ packages:
 
   '@fontsource-variable/space-grotesk@5.2.6':
     resolution: {integrity: sha512-caoLd9SfhtOGYNIis8ek+sOGxO0NNJ5xGcTtlhCG3UA9N4xPa1AkeCDNOABocH0djVKHYl23CYtsmuDFqh3tiQ==}
-
-  '@fontsource/instrument-serif@5.2.5':
-    resolution: {integrity: sha512-ojamX86Kqj+LPHCXdoiY/OWbiJ76L3Ie5WczdtlTZ/xRG+MBE7/+nLQaRSuIivF5YWf1XXQ0MWxZzcp6GlEFYA==}
 
   '@img/sharp-darwin-arm64@0.33.5':
     resolution: {integrity: sha512-UT4p+iz/2H4twwAoLCqfA9UH5pI6DggwKEGuaPy7nCVQ8ZsiY5PIcrRvD1DzuY3qYL07NtIQcWnBSY/heikIFQ==}
@@ -2933,8 +2927,6 @@ snapshots:
   '@fontsource-variable/instrument-sans@5.2.5': {}
 
   '@fontsource-variable/space-grotesk@5.2.6': {}
-
-  '@fontsource/instrument-serif@5.2.5': {}
 
   '@img/sharp-darwin-arm64@0.33.5':
     optionalDependencies:
