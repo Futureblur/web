@@ -17,7 +17,6 @@
     "@astrojs/tailwind": "^5.1.5",
     "@fontsource-variable/instrument-sans": "^5.2.5",
     "@fontsource-variable/space-grotesk": "^5.2.6",
-    "@fontsource/instrument-serif": "^5.2.5",
     "astro": "^4.16.18",
     "astro-critters": "^2.2.1",
     "astro-pagefind": "^1.8.3",

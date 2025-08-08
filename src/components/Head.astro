@@ -1,7 +1,6 @@
 ---
 import "@styles/global.css";
 import "@fontsource-variable/space-grotesk";
-import "@fontsource/instrument-serif";
 import "@fontsource-variable/instrument-sans";
 import type { Language } from "@i18n/ui";
 
@@ -55,6 +54,15 @@ const {
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
 <link rel="alternate" href={Astro.site} hreflang="x-default" />
+
+<!-- Fonts -->
+<link
+    rel="preload"
+    href="/fonts/Serif/InstrumentSerif-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin
+/>
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
