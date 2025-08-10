@@ -22,12 +22,17 @@ const promotionImage = images[promotionImagePath];
 if (!promotionImage) {
     throw new Error(`Image not found: ${promotionImagePath}`);
 }
+
+function getUrl() {
+    return data.isRelative ? Astro.url + data.url : data.url;
+}
+
 ---
 
 <a
     class="relative flex items-center justify-center bg-black"
-    href={data.url}
-    target="_blank"
+    href={getUrl()}
+    target={data.isRelative ? "_self" : "_blank"}
 >
     <Image
         class:list={[
