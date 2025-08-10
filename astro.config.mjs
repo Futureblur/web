@@ -12,6 +12,7 @@ export default defineConfig({
     site: `https://${subdomain}futureblur.com`,
     prefetch: true,
     build: { format: 'preserve' },
+    trailingSlash: 'never',
     integrations: [
         tailwind(), sitemap({
             i18n: {

@@ -1,0 +1,10 @@
+{
+    "order": 0,
+    "title": "Portfolio",
+    "subtitle": "Wir erstellen 3D-CGI, Werbung und Motion Graphics.",
+    "image": "car.jpg",
+    "alt": "Ein modernes, einstöckiges Haus mit großen Fenstern wird nachts beleuchtet, umgeben von dichtem Wald und Felsen.",
+    "cta": "Jetzt ansehen",
+    "url": "/work",
+    "isRelative": true
+}
