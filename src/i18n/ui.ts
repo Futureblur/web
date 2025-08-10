@@ -58,7 +58,9 @@ export const ui = {
         'soon.title': 'This page is in development. Check back later.',
         'investors.title': 'Investor Relations',
         'investors.description':
-            'Get access to our reports in the Investor Relations Center.'
+            'Get access to our reports in the Investor Relations Center.',
+        'work.title': 'Work',
+        'work.description': 'View our work and projects at Futureblur.',
     },
     de: {
         'header.locale.description':
@@ -113,6 +115,8 @@ export const ui = {
             'Diese Seite ist in Entwicklung. Schaue später noch einmal vorbei.',
         'investors.title': 'Investor Relations',
         'investors.description':
-            'Erhalte Zugang zu unseren Berichten im Investor Relations Center.'
+            'Erhalte Zugang zu unseren Berichten im Investor Relations Center.',
+        'work.title': 'Portfolio',
+        'work.description': 'Sieh dir unser Porttfolio an.',
     }
 } as const;

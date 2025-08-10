@@ -21,7 +21,8 @@ const promotionCollection = defineCollection({
             .max(3, promotionDimError)
             .optional(),
         cta: z.string(),
-        url: z.string().url()
+        url: z.string(),
+        isRelative: z.boolean().optional()
     })
 })
 
@@ -62,7 +63,7 @@ const markdownCollection = defineCollection({
         }),
         coverDescription: z.string(),
     })
-})
+});
 
 export const collections = {
     promotion: promotionCollection,

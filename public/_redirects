@@ -24,3 +24,5 @@
 # Newsroom
 /news/* /en/news/:splat 301
 
+/:slug/  /:slug  301!
+
