@@ -11,6 +11,7 @@ interface Props {
     cover: string;
     author?: string;
     language: Language;
+    noindex?: boolean;
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -22,6 +23,7 @@ const {
     cover,
     author = "Futureblur",
     language,
+    noindex = false,
 } = Astro.props;
 ---
 
@@ -70,6 +72,8 @@ const {
 <meta name="description" content={description} />
 <meta name="author" content={author} />
 <meta name="copyright" content={author} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />

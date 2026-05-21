@@ -12,9 +12,10 @@ type Props = {
     description: string;
     cover: string;
     author?: string;
+    noIndex?: boolean;
 };
 
-const { className, title, siteName, description, cover, author } = Astro.props;
+const { className, title, siteName, description, cover, author, noIndex } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 ---
 
@@ -28,6 +29,7 @@ const lang = getLangFromUrl(Astro.url);
             cover={cover}
             author={author}
             language={lang}
+            noindex={noIndex}
         />
     </head>
     <body>
