@@ -3,6 +3,7 @@ title: "Impressum"
 description: ""
 cover: "/public/images/legal-banner.png"
 coverDescription: ""
+noIndex: true
 ---
 
 **Angaben gemäß § 5 TMG**\

@@ -3,6 +3,7 @@ title: "Legal Notice"
 description: ""
 cover: "/public/images/legal-banner.png"
 coverDescription: ""
+noIndex: true
 ---
 
 **Providers pursuant to sec. 5 (1) German Telemedia Act (Telemediengesetz - TMG)**\

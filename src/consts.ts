@@ -204,11 +204,6 @@ export const footerGroup: NavigationGroup[] = [
                 external: true,
             },
             {
-                title: 'footer.youtube',
-                url: 'https://fut.red/y',
-                external: true,
-            },
-            {
                 title: 'footer.github',
                 url: 'https://fut.red/g',
                 external: true,
