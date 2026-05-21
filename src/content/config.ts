@@ -62,6 +62,7 @@ const markdownCollection = defineCollection({
             message: 'Cover image must be at least 1080px wide',
         }),
         coverDescription: z.string(),
+        noIndex: z.boolean().optional().default(false),
     })
 });
 

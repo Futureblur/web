@@ -9,6 +9,7 @@ const { post } = Astro.props;
     title={post.data.title}
     description={post.data.description}
     cover={post.data.cover.src}
+    noIndex={post.data.noIndex}
 >
     <Container props="max-w-[730px] page-spacing">
         <div class="my-10 space-y-2">
