@@ -1,5 +1,6 @@
 {
     "order": 1,
+    "hide": true,
     "title": "ArchViz",
     "subtitle": "Follow step by step. Gather ideas. Build the scene. Make it real. All in Blender.",
     "image": "archviz.jpg",
