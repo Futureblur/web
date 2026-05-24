@@ -135,12 +135,14 @@ const { Content } = await post.render();
                     {t("post.philosophy")}
                 </div>
             </div>
+            { false && (
             <div class="mt-12">
                 <div class="text-sm font-bold uppercase tracking-wide">
                     {t("post.by")}
                 </div>
                 <AuthorInfo author={author.data} username={username} />
             </div>
+            )}
             <div class="mt-24">
                 <PostNavigation prevPost={prevPost} nextPost={nextPost} />
             </div>
